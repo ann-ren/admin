@@ -1,0 +1,31 @@
+﻿/* ============================================================ reset  ============================================================ */
+html,body,body div,span,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,abbr,address,textarea,
+cite,code,del,dfn,em,img,ins,kbd,q,samp,small,strong,sub,sup,var,b,i,dl,dt,dd,ol,ul,li, 
+fieldset,legend,form,label,table,caption,tbody,tfoot,thead,tr,th,td,article,aside,figure,
+footer,header,hgroup,menu,nav,section,time,mark,audio,video,mark{
+	margin:0;padding:0;outline:0;font-size:100%;vertical-align:baseline;background:transparent;line-height:inherit;
+}
+//html{-webkit-text-size-adjust:none;} /* 当样式表里font-size<12px时，中文版chrome浏览器里字体显示仍为12px */
+//ul,ol{list-style-type:none;*list-style-position:outside}
+ul,ol{list-style:none}
+input,button,select,textarea{padding:0;margin:0;outline:none;*vertical-align:middle;}
+//select{overflow:hidden}
+textarea{resize:none}
+a{text-decoration:none;*vertical-align:middle;_height:1px;}
+table{border-collapse:collapse;border-spacing:0;width:100%;}
+th,td,img{vertical-align:middle;}
+em,i,address{font-style:normal;}
+img,fieldset{border:0;}
+legend{display:none;}
+h1,h2,h3,h4,h5,h6{font-weight:normal;}
+/* _________________________ html5 _________________________ */
+article,aside,footer,header,nav,section,figure,figcaption,hgroup,main,details,summary,menu,canvas,fieldset,audio,video{display:block}
+/* _________________________ 仅用于移动端 _________________________ */
+/*
+body{-moz-user-select:none;} // CSS阻止页面双击选中文本（FF），IE：<div onselectstart="return false;" style="-moz-user-select:none;"></div>
+input[type="submit"],input[type="reset"],input[type="button"],button {-webkit-appearance: none;} // CSS3 去除苹果浏览器按钮的默认样式
+*/
+/* _________________________ ie6 _________________________ */
+//*html body{background-attachment:fixed;background-image:url("../images/blank.txt");}
+/* 解决背景图片闪动和重复加载的 IE6 BUG */
+//*html{zoom:'expression(function(ele){ele.style.zoom="1";document.execCommand("BackgroundImageCache",false,true);}(this))'}
