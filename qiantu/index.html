@@ -1,0 +1,1584 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" type="text/css" href="css/reset.css">
+    <!-- <link rel="stylesheet" type="text/css" href="css/style.css"> -->
+    <script src="js/html5.js"></script>
+    <script src="js/jquery.js"></script>
+    <style type="text/css">
+      body{background-color:white;font-family: 'Microsoft YaHei', arial, 'courier new';font-size:14px;color:#666666;background-color:#f4f4f4;}
+      .w_auto{width:1200px;margin:0 auto;}
+      i{display:inline-block;vertical-align:middle;font-style:normal;}
+      a{color:#666666;}
+     
+      .header_topOut_wrap{height:39px;border-bottom:1px solid #eeeeee;}
+  
+      .headerL_contact,.qq_contact_wrap,.qq_team_wrap,.complaint,.phone{float:left;}
+      .header_user_operate{float:right;}
+      .fixed_head{position:fixed;left:0;top:0;width:100%;z-index:1100;box-shadow:0px 2px 5px #c3c3c3;}
+      .headerL_contact{padding-top:6px;}
+      .header_top_wrap .qq,.qqTeam{display:inline-block;background-color:white;color:#00b7d6;border:1px solid #00b7d6;line-height:26px;height:26px;border-radius:2px;}
+      .header_top_wrap .qq:hover,.qqTeam{color:#1f9bd9;}
+      .qq_contact_wrap{position:relative;margin-right:15px;}
+      .qq_contact{padding:0 13px 0 6px;}
+      .qq_contact .qq_ico{width:18px;height:19px;margin-bottom:3px;background-image:url(images/qq_talk.jpg);}
+      .qq_team_wrap{position:relative;}
+      .qq_team{padding-left:5px;padding-right:6px;}
+      .qq_team .team{width:20px;height:15px;margin-bottom:3px;background-image:url(images/qq_teams.jpg);}
+      .qq_team .slide{width:7px;height:4px;background-image:url(images/blue_slide.jpg);}
+      .qq_team_wrap:hover .qq_abs_hover,.qq_contact_wrap:hover .qq_abs_hover{display:block;}
+      .qq_abs_hover{display:none;position:absolute;left:0;top:28px;padding-top:6px;z-index:100;}
+      .qq_abs_hover .inner{background-color:white;border:1px solid #d6d6d6;}
+      .qq_contact_abs{width:210px;height:105px;}
+      .qq_contact_abs h2{margin-top:20px;margin-bottom:14px;font-size:18px;padding-left:9px;}
+      .qq_contact_abs p{padding-left:13px;}
+      .qq_contact_abs .custom{margin-top:17px;}
+      .qq_team_abs{width:375px;padding-top:9px;border:1px solid #d6d6d6;}
+      .qq_team_abs .num{float:left;line-height:28px;}
+      .qq_team_abs .qq{float:right;padding:0 6px 0 5px;}
+
+   
+      .qq_team_abs .team_ico{width:20px;height:15px;background-image:url(images/qq_teams.jpg);}
+      .qq_team_abs .team_list li{margin-top:10px;height:28px;}
+      .qq_team_abs .team_list{padding-bottom:10px;padding-left:15px;padding-right:15px;border-bottom:1px solid #d6d6d6;}
+      .qq_team_abs  .come_in{height:37px;padding-top:10px;}
+      .qq_team_abs .owner{display:inline-block;line-height:28px;margin-left:32px;margin-right:19px;}
+      .qq_team_abs .union{display:inline-block;width:98px;height:28px;line-height:28px;text-align:center;color:#79cb61;border:1px solid #79cb61;border-radius:2px;}
+      .qq_team_abs .union:hover{background-color:#5dd33b;color:#ffffff;}
+      .qq_team_abs .team_in{display:inline-block;line-height:28px;padding-left:32px;margin-left:34px;border-left:1px solid #dddddd;}
+      .headerL_contact .phone{line-height:28px;margin-left:19px;margin-right:27px;}
+      .headerL_contact .complaint{line-height:28px;font-size:12px;color:#969698;}
+      .header_user_operate .signIn{float:left;margin-top:5px;padding-left:13px;padding-right:21px;margin-right:25px;}
+      .header_user_wrap{float:left;}
+      .header_user_wrap>li{float:left;}
+      .parent_li_rela{position:relative;height:40px;line-height:40px;margin-right:12px;}
+    
+      .parent_li_rela .up_txt{position:relative;z-index:10;display:block;border-left:1px solid transparent;border-right:1px solid transparent;}
+      .parent_li_rela:hover .up_txt{color:#21a900;background-color:white;border-left:1px solid #d6d6d6;border-right:1px solid #d6d6d6;}
+      .parent_li_rela:hover .hover_user_operate{display:block;}
+      .hover_user_operate{display:none;text-align:left;position:absolute;z-index:1;left:0;top:39px;border:1px solid #d6d6d6;background-color:white;}
+      .hover_user_operate li:hover{background-color:#ebebeb;}
+      .header_user_operate .split{width:1px;height:26px;margin-top:7px;background-color:#d6d6d6;margin-right:12px;}
+      .top_upload_user{width:58px;text-align:center;}
+      .hover_user_upload{width:136px;line-height:32px;}
+      .hover_user_upload li{padding-left:14px;}
+      .hover_user_upload .ico-1{width:16px;height:16px;background-image:url(images/upload_simple.jpg);margin-right:10px;}
+      .hover_user_upload .ico-2{width:16px;height:13px;background-image:url(images/upload_creat.jpg);margin-right:10px;}
+      .top_message_user{width:58px;text-align:center;}
+      .hover_user_message{width:206px;}
+      .hover_user_message li{line-height:34px;padding-left:5px;}
+      .top_message_user .num{position:absolute;right:8px;top:3px;border-radius:100%;width:13px;height:13px;background-color:#ff6e0c;color:white;font-size:12px;line-height:13px;}
+      .top_user_name .up_txt{padding-left:14px;padding-right:60px;}
+      .top_user_name .vip{position:absolute;top:14px;right:21px;width:18px;height:15px;background-image:url(images/vip_become.jpg);}
+      .top_user_name .slide{position:absolute;top:17px;right:9px;width:7px;height:4px;background-image:url(images/grey_slide.jpg);}
+      .hover_user_name{width:138px;right:0;}
+      .hover_user_name li{padding-left:15px;line-height:30px;}
+      .hover_user_name .ico-1{width:18px;height:14px;background-image:url(images/user_back.jpg);}
+      .hover_user_name .ico-2{width:18px;height:14px;background-image:url(images/user_person.jpg);}
+      .hover_user_name .ico-3{width:18px;height:14px;background-image:url(images/user_collect.jpg);}
+      .hover_user_name .ico-4{width:18px;height:19px;background-image:url(images/user_forMe.jpg);}
+      .hover_user_name .ico-5{width:18px;height:16px;background-image:url(images/user_out.jpg);}
+      .hover_user_name .ico{margin-right:10px;}
+      .hover_user_name .last{line-height:48px;border-top:1px solid #d6d6d6;}
+      .get_vip_wrap{float:right;margin-top:5px;width:93px;height:28;line-height:28px;text-align:center;color:white;background-color:#3ebb2b;border-radius:3px;}
+      .get_vip_wrap:hover{background-color:#21a901;}
+      .header_bottom{height:85px;background-color:white;}
+      .header_bottom .logo{float:left;width:142px;height:59px;background-image:url(images/logo.jpg);margin-top:14px;}
+      .head_nav{float:right;}
+      .head_nav>li{float:left;position:relative;}
+      .head_nav>li>a{display:block;font-size:18px;line-height:83px;padding:0 26px;}
+      .head_nav>li>a:hover{color:#ff6c00;}
+      .head_nav .first{border-bottom:2px solid #ff6c00;}
+      .head_nav .first a{color:#ff6c00;}
+      .head_nav>li:hover .hover_nav_abs{display:block;}
+      .hover_nav_abs{display:none;position:absolute;left:10px;top:84px;border:1px solid #d7d7d7;border-top:1px solid #ff6c00;background-color:white;z-index:1100;}
+      .hover_nav_abs .triangle{position:absolute;border:5px solid transparent;border-bottom-color:#ff6c00;top:-10px;left:45px;}
+      .hover_nav_abs .h_tit{height:65px;line-height:65px;border-bottom:1px solid #d6d6d6;text-align:center;font-size:18px;color:#ff6c00;}
+      .hover_nav_abs .h_tit i{width:34px;height:34px;background-image:url(images/design_num.jpg);margin-right:17px;}
+      .hover_nav_abs a:hover{color:#3aab31;}
+      .hover_origi_abs{width:472px;line-height:20px;}
+      .all_original_design{margin-left:20px;margin-top:10px;}
+      .all_original_design .title{margin-right:10px;float:left;}
+      .all_original_design .title>a{width:86px;display:block;}
+      .all_original_design .design_type{float:left;width:330px;}
+      .hover_origi_abs .design_type>a{padding:0 8px;}
+     
+      .point_r{width:4px;height:7px;background-image:url(images/point_r.jpg);}
+      .hover_origi_abs .point_r{float:right;margin-top:8px;}
+      .hover_origi_abs dt a{color:#333333;}
+      .hover_origi_abs .line{margin-bottom:4px;}
+      .line{font-size:12px;color:#d7dee8;}
+      .hover_adver_abs{width:475px;padding-bottom:18px;}
+      .adver_list_wrap{padding-left:18px;padding-top:10px;line-height:34px;}
+      .adver_list_wrap>li{float:left;}
+      .adver_list_wrap>li>a{padding:0 10px;}
+      .adver_list_wrap .num{color:#c1bbc1;}
+      .hover_list_slide_wrap{width:101px;}
+      .hover_list_slide_wrap .list_wrap{padding-left:15px;line-height:34px;}
+      .hover_source_abs{width:620px;left:-186px;}
+      .hover_activity_wrap{left:-4px;}
+      .hover_source_abs .triangle{left:232px;}
+      .head_nav .last_vip .ico{width:11px;height:9px;background-image:url(images/vip_n.jpg);position:absolute;top:26px;right:7px;}
+      .form_search_bg_wrap{text-align:center;height:161px;background-image:url(images/indexbg.jpg);}
+      .form_search_bg_wrap .tit{font-size:36px;color:white;padding-top:26px;padding-bottom:17px;}
+      .form_wrap form{display:inline-block;padding:5px;background:rgba(255,255,255,0.3);border-radius:5px;}
+      .form_wrap .input_wrap{float:left;}
+      .form_wrap .input_wrap>input{width:568px;padding-left:20px;height:48px;line-height:48px;border:none;border-radius:5px 0 0 5px;}
+      .form_wrap .search_btn{float:left;width:112px;color:white;height:48px;line-height:48px;font-size:18px;background-color:#3ebb2b;cursor:pointer;border-radius:0 5px 5px 0;}
+      .form_wrap .search_btn:hover{background-color:#21a901;}
+      .form_wrap .search_ico{width:20px;height:20px;background-image:url(images/search.jpg);margin-left:22px;}
+
+      .banner_wrap{position:relative;margin-top:10px;height:340px;overflow:hidden;}
+      .banner_wrap .banner{float:left;overflow:hidden;}
+      .banner_btn{position:absolute;bottom:20px;width:100%;text-align:center;z-index:900;}
+      .banner_btn span{display:inline-block;width:14px;height:14px;background-color:#999999;margin-right:5px;border-radius:100%;cursor:pointer;}
+      .banner_btn span:hover{background-color:#3ebb2b;}
+      .banner_btn .banner_btn_click{background-color:#3ebb2b;}
+      .banner_wrap:hover .skip{opacity:1;}
+      .banner_wrap .skip{opacity:0;position:absolute;top:50%;margin-top:-70px;width:50px;height:140px;background-color:rgba(255,255,255,0.2);background-position:center center;background-repeat:no-repeat;cursor:pointer;transition:all 0.5s linear;}
+
+      .banner_wrap .last{left:0;border-radius:0 5px 5px 0;background-image:url(images/skip_last.jpg);}
+      .banner_wrap .next{right:0;border-radius:5px 0 0 5px;background-image:url(images/skip_next.jpg);}
+      .list_type_sec{padding:11px 0;}
+      .list_type_sec .item{float:left;width:164px;height:68px;line-height:68px;text-align:center;font-size:18px;margin-right:8px;border-radius:2px;}
+      .list_type_sec .item:hover{opacity:0.9;}
+      .list_type_sec .last{margin-right:0;background-color:#c1e7c0;color:#5f8e5d;}
+      .list_type_sec .item1{background-color:#eadfbf;color:#b1902a;}
+      .list_type_sec .item2{background-color:#eed9bb;color:#997f5e;}
+      .list_type_sec .item3{background-color:#eddbcc;color:#b47647;}
+      .list_type_sec .item4{background-color:#b8d2fb;color:#6882ad;}
+      .list_type_sec .item5{background-color:#b7e2ef;color:#488ca2;}
+      .list_type_sec .item6{background-color:#d6e7c0;color:#7a9472;}
+      .designer_search{float:left;width:800px;margin-right:6px;background-color:white;}
+      .designer_search .title{line-height:60px;height:60px;border-bottom:1px solid #f4f4f4;}
+      .designer_search .title h2{float:left;font-size:18px;text-indent:19px;}
+      .designer_search .title .more{float:right;width:120px;text-align:center;color:#999999;border-left:1px solid #f4f4f4;}
+      .designer_searchs_list{height:255px;padding-top:9px;padding-left:25px;}
+      .designer_searchs_list li{float:left;width:140px;text-align:left;line-height:32px;}
+      .designer_searchs_list li a:hover{color:#ff6c00;}
+      .about_design_wrap{float:right;width:394px;}
+      .about_design_talk{background-color:white;}
+      .about_design_talk .tit{float:left;height:60px;line-height:60px;width:96px;text-align:center;border-right:1px solid #f4f4f4;cursor:pointer;}
+      .about_design_talk .tit_wrap{border-bottom:1px solid #f4f4f4;}
+      .about_design_talk .tit:hover{color:#3ebb2b;}
+      .about_design_talk .last_tit{border-right:none;}
+      .about_design_talk .txt{height:89px;}
+      .about_design_talk .txt .left{float:left;}
+      .about_design_talk .txt .right{float:right;color:#999999;}
+      .about_design_talk .list{padding:0 20px;}
+      .about_design_talk .txt_c2{line-height:34px;}
+      .about_design_talk .txt_c2 a:hover{color:#ff6c00;}
+      .about_design_talk .txt_c2 .list{padding-top:10px;}
+      .about_design_talk .team_of_qq li{padding-top:10px;line-height:28px;}
+      .about_design_talk .qqTeam{padding:0 6px 0 5px;}
+      .about_design_talk .qqTeam i{width:20px;height:15px;background-image:url(images/qq_teams.jpg);}
+      .about_net_num{margin-top:10px;height:166px;background-color:white;}
+      .about_all_num_wrap{padding-top:15px;padding-left:19px;}
+      .about_all_num_wrap li{line-height:44px;border-bottom:1px dashed #d7d7d7;font-size:16px;}
+      .about_all_num_wrap .num{display:inline-block;width:173px;}
+      .about_all_num_wrap .last{border-bottom:none;}
+      .design_tool_wrap{background-color:white;margin-top:11px;}
+      .design_tool_list{float:left;}
+      .design_tool_list li{float:left;}
+      .design_tool_list li a{display:block;width:97px;height:81px;border:1px solid white;border-right-color:#f4f4f4;border-left-color:#f4f4f4;text-align:center;transition:all 0.2s linear;}
+      .design_tool_list .ico_wrap{padding-bottom:10px;padding-top:13px;}
+      .design_tool_list .ico_wrap i{height:36px;}
+      .design_tool_list a:hover{border:1px solid #99c800;color:#99c800;}
+      .design_tool_list .ico_1{width:35px;background-image:url(images/design_tool_1.jpg);}
+      .design_tool_list .ico_2{width:35px;background-image:url(images/design_tool_1.jpg);}
+      .design_tool_list .ico_3{width:35px;background-image:url(images/design_tool_1.jpg);}
+      .design_tool_list .ico_4{width:35px;background-image:url(images/design_tool_1.jpg);}
+      .design_tool_list .ico_5{width:35px;background-image:url(images/design_tool_1.jpg);}
+      .design_tool_list .ico_6{width:35px;background-image:url(images/design_tool_1.jpg);}
+      .design_tool_list .ico_7{width:35px;background-image:url(images/design_tool_1.jpg);}
+      .design_tool_list .ico_8{width:35px;background-image:url(images/design_tool_1.jpg);}
+      .design_tool_list .ico_9{width:35px;background-image:url(images/design_tool_1.jpg);}
+      .design_tool_list .ico_10{width:35px;background-image:url(images/design_tool_1.jpg);}
+      .design_tool_wrap .more_tool{float:right;line-height:83px;width:200px;text-align:center;font-size:16px;}
+      .design_tool_wrap .more_tool:hover a{color:#99c800;}
+      .img_list_top_tit_wrap{height:36px;padding-top:48px;}
+      .img_list_top_tit_wrap h2{float:left;font-size:18px;padding-left:9px;}
+      .img_list_top_tit_wrap .fr_txt{float:right;padding-top:3px;}
+      .img_list_top_tit_wrap .fr_txt i{width:14px;height:14px;background:#dcdcdc url(images/point_r.jpg) center center no-repeat;}
+      .img_list_top_tit_wrap .fr_txt:hover{color:#ff8500;}
+      .img_list_top_tit_wrap .fr_txt:hover i{background-color:#ff8500;}
+      .list_shadow{padding:8px 8px 0;transition:all 0.3s linear;}
+      .list_shadow:hover{background-color:white;box-shadow:0 0 3px #cdcdcd;}
+      .c_list_wrap_hot>li{float:left;margin-right:2px;overflow:hidden;}
+      .c_list_wrap_hot .last_one{margin-right:0;}
+      .c_list_wrap_hot .tit{height:48px;line-height:48px;font-size:16px;text-align:center;}
+      .c_list_wrap_hot .content_wrap{background-color:white;position:relative;}
+      .c_list_wrap_hot .footer{height:38px;line-height:38px;border-top:1px solid #eeeeee;}
+      .c_list_wrap_hot .footer .item{float:left;text-align:center;color:#888888;}
+      .c_list_wrap_hot .footer .split{float:left;font-size:20px;color:#c9c9c9;font-weight:100;}
+      .c_list_wrap_hot .collect i{width:14px;height:14px;background-image:url(images/collect.jpg);}
+      .c_list_wrap_hot .dload i{width:14px;height:14px;background-image:url(images/dload.jpg);}
+      .c_list_wrap_3 .item{width:48.6%;}
+      .c_list_wrap_3 .item:hover a{color:#ff6c00;}
+      .img_list_slide_wrap{width:1216px;margin:0 auto;}
+      .hover_abs_top{position:absolute;top:-45px;background-color:#3ebb2b;color:white;font-size:16px;text-align:center;line-height:35px;transition:all 0.2s linear;}
+      .hover_abs_collect{left:0;width:80px;border-top-right-radius:3px;border-bottom-right-radius:3px;}
+      .hover_abs_dload{right:0;width:90px;border-top-left-radius:3px;border-bottom-left-radius:3px;}
+      .c_list_wrap_hot>li:hover .hover_abs_top{top:0;display:block;}
+      .modal_source_wrap .scan i{width:15px;height:10px;background-image:url(images/scan.jpg);}
+      .modal_source_wrap .item{width:32%;}
+      .all_cooperate{padding-top:22px;}
+      .footer_nav{height:42px;line-height:42px;padding-top:16px;border-bottom:1px solid #d7d7d7;} 
+      .footer_nav a{color:#9e9e9e;margin-right:16px;}
+      .footer_nav a:hover{color:#737373;}
+      .footer_nav_show_wrap{position:relative;padding-top:16px;height:178px;}
+      .footer_nav_show_wrap .link{position:absolute;left:0;top:0;}
+      .footer_nav_show_wrap .link a{color:#9e9e9e;margin-right:15px;line-height:28px;}
+      .footer_nav_show_wrap .link a:hover{color:#3da337;}
+      .footer_bottom{height:119px;background-color:#212425;}
+      .footer_bottom_nav{padding-top:17px;padding-bottom:5px;line-height:30px;}
+      .footer_bottom_nav a{color:#eeeeee;margin-right:12px;}
+      .footer_bottom_nav a:hover{color:#3ebb2b;text-decoration:underline;}
+      .nav_qq_talk{display:inline-block;width:114px;height:30px;line-height:30px;color:#f0f9fd;border-radius:3px;background-color:#00b7d6;}
+      .footer_bottom_nav .nav_qq_talk:hover{background-color:#1f9bd7;color:#f0f9fd;text-decoration:none;}
+      .nav_qq_talk i{width:18px;height:19px;background-image:url(images/qq_footer.jpg);margin-left:4px;}
+      .footer_bottom .f_phone{color:#888884;}
+
+      .footer_bottom .txt{line-height:24px;color:#888888;}
+      .footer_bottom .c_txt{color:#3ebb2b;}
+      .footer_bottom .ico_addr{width:21px;height:24px;background-image:url(images/foo_addr.jpg);display:inline-block;}
+      .fixed_form_wrap{float:right;margin-top:20px;}
+      .fixed_form_wrap .search{float:left;width:587px;text-indent:10px;height:40px;line-height:40px;border:2px solid #3ebb2b;border-right:none;}
+      .fixed_form_wrap .btn{float:left;width:108px;height:44px;line-height:44px;text-align:center;background-color:#3ebb2b;font-size:18px;color:white;}
+    </style>
+  </head>
+  <body style="background-color:f4f4f4;">
+  <header class="header">
+    <div class="header_topOut_wrap">
+      <div class="w_auto header_top_wrap clearfix">
+        <div class="headerL_contact">
+          <div class="qq_contact_wrap">
+            <a href="#" class="qq qq_contact">
+              <i class="qq_ico"></i> QQ交谈
+            </a>
+            <div class="qq_abs_hover">
+              <div class="inner qq_contact_abs">
+                <h2>工作时间</h2>
+                <p>周一至周日 : 9 : 00 - 18 : 00</p>
+                <p class="custom">客服QQ : 4009987011</p>
+              </div>
+            </div>
+          </div>
+          <div class="qq_team_wrap">
+            <a href="#" class="qq qq_team">
+              <i class="team"></i> 官方QQ群 <i class="slide"></i>
+            </a>
+            <div class="qq_abs_hover">
+              <div class="inner qq_team_abs">
+               <ul class="team_list">
+                 <li>
+                   <p class="num">千图网设计交流群 : 117309918</p>
+                   <a href="#" class="qq"><i class="team_ico"></i> 加入QQ群</a>
+                 </li>
+                 <li>
+                   <p class="num">千图网设计交流群 : 117309918</p>
+                   <a href="#" class="qq"><i class="team_ico"></i> 加入QQ群</a>
+                 </li>
+                 <li>
+                   <p class="num">千图网设计交流群 : 117309918</p>
+                   <a href="#" class="qq"><i class="team_ico"></i> 加入QQ群</a>
+                 </li>
+               </ul>
+               <div class="come_in">
+                 <span class="owner">我是群主</span>
+                 <a href="#" class="union">申请加入联盟</a>
+                 <p class="team_in"><a href="#">QQ群联盟</a></p>
+               </div>
+              </div>
+            </div>
+          </div>
+          <p class="phone">客服电话 400-998-7011</p>
+          <span class="complaint">投诉举报</span>
+        </div>
+
+        <div class="header_user_operate">
+          <a href="#" class="qq signIn"><i class="ico"></i> 签到</a>
+          <ul class="header_user_wrap">
+            <li class="split"></li>
+            <li class="parent_li_rela top_upload_user">
+              <span class="up_txt">上传</span>
+              <div class="hover_user_operate hover_user_upload">
+                <ul>
+                  <li><a href="#"><i class="ico-1"></i>上传素材</a></li>
+                  <li><a href="#"><i class="ico-2"></i>上传原创作品</a></li>
+                </ul>
+              </div>
+            </li>
+            <li class="split"></li>
+            <li class="parent_li_rela top_message_user">
+              <span class="up_txt">消息<i class="num">1</i></span>
+              <div class="hover_user_operate hover_user_message">
+                <ul>
+                  <li>1分钟赚1000元，你来吗</li>
+                  <li>9-2通知：VIP特权增加新服务</li>
+                </ul>
+              </div>
+            </li>
+            <li class="split"></li>
+            <li class="parent_li_rela top_user_name">
+              <span class="up_txt">木乐乐<i class="vip"></i><i class="slide"></i></span>
+              <div class="hover_user_operate hover_user_name">
+                <ul>
+                  <li><a href="#"><i class="ico-1 ico"></i>用户后台</a></li>
+                  <li><a href="#"><i class="ico-2 ico"></i>个人后台</a></li>
+                  <li><a href="#"><i class="ico-3 ico"></i>我的收藏</a></li>
+                  <li><a href="#"><i class="ico-4 ico"></i>为我推荐</a></li>
+                  <li class="last"><a href="#"><i class="ico-5 ico"></i>退出</a></li>
+                </ul>
+              </div>
+            </li>
+          </ul>
+          <a href="#" class="get_vip_wrap">获取VIP</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="header_bottom" id="header_bottom">
+      <div class="w_auto">
+        <div class="logo"></div>   
+        <ul id="head_nav" class="head_nav">
+          <li class="first">
+            <a href="#">首页</a>
+          </li>
+          <li>
+            <a href="#">原创设计</a>
+            <div class="hover_nav_abs hover_origi_abs">
+              <div class="triangle"></div>
+              <div class="h_tit">
+                <h2><i></i>原创设计总数 : 815,367</h2>
+              </div>
+              <div class="all_original_design clearfix">
+                <h2 class="title"><a href="#">广告设计<i class="point_r"></i></a></h2>
+                <div class="design_type">
+                  <a href="#">创意设计</a><i class="line">|</i></a>
+                  <a href="#">原创海报</a><i class="line">|</i></a>
+                  <a href="#">原创海报</a><i class="line">|</i></a>
+                  <a href="#">原创海报</a><i class="line">|</i></a>
+                  <a href="#">原创海报</a><i class="line">|</i></a>
+                  <a href="#">原创海报</a><i class="line">|</i></a>
+                  <a href="#">原创海报</a><i class="line">|</i></a>
+                </div>
+              </div>
+             <div class="all_original_design clearfix">
+                <h2 class="title"><a href="#">广告设计<i class="point_r"></i></a></h2>
+                <div class="design_type">
+                  <a href="#">创意设计</a><i class="line">|</i></a>
+                  <a href="#">原创海报</a><i class="line">|</i></a>
+                  <a href="#">原创海报</a><i class="line">|</i></a>
+                  <a href="#">原创海报</a><i class="line">|</i></a>
+                  <a href="#">原创海报</a><i class="line">|</i></a>
+                  <a href="#">原创海报</a><i class="line">|</i></a>
+                  <a href="#">原创海报</a><i class="line">|</i></a>
+                </div>             
+              </div>
+            </div>
+          </li>
+          <li>
+            <a href="#">广告设计</a>
+            <div class="hover_nav_abs hover_adver_abs">
+              <div class="triangle"></div>
+              <div class="h_tit">
+                <h2><i></i>原创设计总数 : <span class="num">815,367</span></h2>
+              </div>
+              <ul class="adver_list_wrap clearfix">
+                <li>
+                  <a href="#">psd源文件 <span class="num">1202560</span></a><span class="line">|</span>
+                </li>
+                <li>
+                  <a href="#">矢量图 <span class="num">1202560</span></a><span class="line">|</span>
+                </li>
+                <li>
+                  <a href="#">海报 <span class="num">1202560</span></a><span class="line">|</span>
+                </li>
+                <li>
+                  <a href="#">展板/展架 <span class="num">1202560</span></a><span class="line">|</span>
+                </li>
+                <li>
+                  <a href="#">名片|卡证 <span class="num">1202560</span></a><span class="line">|</span>
+                </li>
+                <li>
+                  <a href="#">图片素材 <span class="num">1202560</span></a><span class="line">|</span>
+                </li>
+                <li>
+                  <a href="#">画册 <span class="num">1202560</span></a><span class="line">|</span>
+                </li>
+                <li>
+                  <a href="#">DM宣传单 <span class="num">1202560</span></a><span class="line">|</span>
+                </li>
+                <li>
+                  <a href="#">包装设计<span class="num">1202560</span></a><span class="line">|</span>
+                </li>
+                <li>
+                  <a href="#">标志logo设计 <span class="num">1202560</span></a><span class="line">|</span>
+                </li>
+              </ul>
+            </div>
+          </li>
+          <li>
+            <a href="#">淘宝设计</a>
+            <div class="hover_nav_abs hover_adver_abs">
+              <div class="triangle"></div>
+              <div class="h_tit">
+                <h2><i></i>淘宝设计总数 : <span class="num">815,367</span></h2>
+              </div>
+              <ul class="adver_list_wrap clearfix">
+                <li>
+                  <a href="#">淘宝海报模板 <span class="num">39940</span></a><span class="line">|</span>
+                </li>
+                <li>
+                  <a href="#">素材打包专区 <span class="num">39940</span></a><span class="line">|</span>
+                </li>
+                <li>
+                  <a href="#">淘宝节日活动促销 <span class="num">39940</span></a><span class="line">|</span>
+                </li>
+                <li>
+                  <a href="#">淘宝海报模板 <span class="num">39940</span></a><span class="line">|</span>
+                </li>
+                <li>
+                  <a href="#">淘宝手机端模板 <span class="num">39940</span></a><span class="line">|</span>
+                </li>
+                <li>
+                  <a href="#">淘宝详情页模板 <span class="num">39940</span></a><span class="line">|</span>
+                </li>
+                <li>
+                  <a href="#">热门专区 <span class="num">39940</span></a><span class="line">|</span>
+                </li>
+                <li>
+                  <a href="#">淘宝海报模板 <span class="num">39940</span></a><span class="line">|</span>
+                </li>
+                <li>
+                  <a href="#">淘宝海报模板 <span class="num">39940</span></a><span class="line">|</span>
+                </li>
+              </ul>  
+            </div>
+          </li>
+          <li>
+            <a href="#">素材分类</a>
+            <div class="hover_nav_abs hover_origi_abs hover_source_abs">
+              <div class="triangle"></div>
+              <div class="h_tit">
+                <h2><i></i>素材总数 : 815,367</h2>
+              </div>
+              <div class="all_original_design clearfix">
+                <h2 class="title"><a href="#">广告设计<i class="point_r"></i></a></h2>
+                <div class="design_type">
+                  <a href="#">原创素材</a><i class="line">|</i></a>
+                  <a href="#">有机素材</a><i class="line">|</i></a>
+                </div>
+              </div>  
+              <div class="all_original_design clearfix">
+                <h2 class="title"><a href="#">广告设计<i class="point_r"></i></a></h2>
+                <div class="design_type">
+                  <a href="#">psd源文件</a><i class="line">|</i></a>
+                  <a href="#">矢量图</a><i class="line">|</i></a>
+                  <a href="#">海报</a><i class="line">|</i></a>
+                </div>
+              </div> 
+              <div class="all_original_design clearfix">
+                <h2 class="title"><a href="#">广告设计<i class="point_r"></i></a></h2>
+                <div class="design_type">
+                  <a href="#">psd源文件</a><i class="line">|</i></a>
+                  <a href="#">矢量图</a><i class="line">|</i></a>
+                  <a href="#">海报</a><i class="line">|</i></a>
+                </div>
+              </div>
+            </div>
+          </li>
+          <li>
+            <a href="#">设计工具</a>
+            <div class="hover_nav_abs hover_list_slide_wrap">
+              <div class="triangle"></div>
+              <ul class="list_wrap">
+                <li><a href="#">UI图标库</a></li>
+                <li><a href="#">图标宝</a></li>
+                <li><a href="#">画册宝</a></li>
+                <li><a href="#">配色工具</a></li>
+                <li><a href="#">在线书法</a></li>
+                <li><a href="#">素材建议</a></li>
+              </ul>
+            </div>
+          </li>
+           <li>
+            <a href="#">活动</a>
+            <div class="hover_nav_abs hover_list_slide_wrap hover_activity_wrap">
+              <div class="triangle"></div>
+              <ul class="list_wrap">
+                <li><a href="#">原创比赛</a></li>
+                <li><a href="#">上传比赛</a></li>
+                <li><a href="#">QQ群联盟</a></li>
+                <li><a href="#">心系千图</a></li>
+                <li><a href="#">设计师排名</a></li>
+                <li><a href="#">公告</a></li>
+              </ul>
+            </div>
+          </li>
+          <li class="last_vip"><a href="#">VIP特权 <i class="ico"></i></a></li>
+        </ul>
+        <div id="fixed_form_wrap" class="fixed_form_wrap" style="display:none;">
+          <input placeholder="800万张免费设计素材任意下载" class="search" type="text">
+          <span class="btn">搜 索</span>
+        </div>
+      </div>
+    </div>
+  </header>
+  <main>
+    <div class="form_search_bg_wrap">
+      <div class="form_wrap">
+        <h2 class="tit">专注免费设计素材网站</h2>
+        <form class="clearfix" action="">
+          <div class="input_wrap">
+            <input type="text">       
+          </div>
+          <div class="search_btn">
+              <i class="search_ico"></i> 搜索
+            </div>
+        </form>
+      </div>
+    </div>
+    <div class="banner_wrap w_auto">
+      <div id="banner_wrap">
+        <a class="banner" href="javascript:void(0)"><img class="banner_img" src="images/temp/banner1.jpg" alt=""></a>
+        <a class="banner" href="javascript:void(0)"><img class="banner_img" src="images/temp/banner2.png" alt=""></a>
+        <a class="banner" href="javascript:void(0)"><img class="banner_img" src="images/temp/banner3.png" alt=""></a>
+        <a class="banner" href="javascript:void(0)"><img class="banner_img" src="images/temp/banner4.jpg" alt=""></a>
+      </div>
+      <div class="banner_btn" id="banner_btn">
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+      <div id="skip_last" class="skip last"><i></i></div>
+      <div id="skip_next" class="skip next"><i></i></div>
+    </div>
+    <div class="list_type_sec clearfix w_auto">
+      <a class="item item1" href="#">原创VIP专区</a>
+      <a class="item item2" href="#">平面/广告</a>
+      <a class="item item3" href="#">淘宝设计</a>
+      <a class="item item4" href="#">室内设计</a>
+      <a class="item item5" href="#">网页/UI设计</a>
+      <a class="item item6" href="#">影视/媒体</a>
+      <a class="item last" href="#">服装设计</a>
+    </div>
+    <div class="w_auto">
+      <div class="clearfix">
+        <div class="designer_search">
+          <div class="title">
+            <h2>19,983,088设计师都在搜索</h2>
+            <a href="#" class="more">更多</a>
+          </div>
+          <ul class="designer_searchs_list">
+            <li><a href="#">中秋</a></li>
+            <li><a href="#">背景</a></li>
+            <li><a href="#">名片</a></li>
+            <li><a href="#">banner</a></li>
+            <li><a href="#">开学</a></li>
+            <li><a href="#">主图</a></li>
+            <li><a href="#">教师节</a></li>
+            <li><a href="#">边框</a></li>
+            <li><a href="#">ppt</a></li>
+            <li><a href="#">科技</a></li>
+            <li><a href="#">展架</a></li>
+            <li><a href="#">红色背景</a></li>
+            <li><a href="#">底纹</a></li>
+            <li><a href="#">画册</a></li>
+            <li><a href="#">中国风</a></li>
+            <li><a href="#">展板</a></li>
+            <li><a href="#">蓝色背景</a></li>
+            <li><a href="#">企业文化</a></li>
+            <li><a href="#">海报背景</a></li>
+            <li><a href="#">招聘</a></li>
+            <li><a href="#">月饼</a></li>
+            <li><a href="#">创意设计</a></li>
+            <li><a href="#">欧式花纹</a></li>
+            <li><a href="#">邀请函</a></li>
+            <li><a href="#">水墨</a></li>
+            <li><a href="#">中秋</a></li>
+            <li><a href="#">背景</a></li>
+            <li><a href="#">名片</a></li>
+            <li><a href="#">banner</a></li>
+            <li><a href="#">开学</a></li>
+            <li><a href="#">中秋</a></li>
+            <li><a href="#">背景</a></li>
+            <li><a href="#">名片</a></li>
+            <li><a href="#">banner</a></li>
+            <li><a href="#">开学</a></li>
+            <li><a href="#">中秋</a></li>
+            <li><a href="#">背景</a></li>
+            <li><a href="#">名片</a></li>
+            <li><a href="#">banner</a></li>
+            <li><a href="#">开学</a></li>
+          </ul>
+        </div>
+        <div id="about_design_wrap" class="about_design_wrap">
+          <div class="about_design_talk">
+            <div class="clearfix tit_wrap">
+              <span id="tit_public" class="tit" href="#">站内公告</span>
+              <span id="tit_team" class="tit" href="#">QQ群联盟</span>
+              <span id="tit_media" class="tit" href="#">媒体报道</span>
+              <span id="tit_user" class="tit last_tit" href="#">用户评价</span>
+            </div>
+            <div id="tit_public_wrap" class="txt txt_c2">
+              <ul class="list">
+                <li class="clearfix"><a class="left" href="#">千图网拍卖活动获奖信息登记</a> <span class="right">09-01</span></li>
+                <li class="clearfix"><a class="left" href="#">抢楼活动实物奖获奖信息填写</a> <span class="right">08-30</span></li>
+              </ul>
+            </div>
+            <div id="tit_team_wrap" style="display:none" class="txt team_of_qq">
+              <ul class="list">
+                <li class="clearfix"><a class="left" href="#">千图网设计交流群 : 117309918</a> <span class="right qqTeam"><i></i> 加入qq群</span></li>
+                <li class="clearfix"><a class="left" href="#">抢楼活动实物奖获奖信息填写</a><span class="right qqTeam"><i></i> 加入qq群</span></li>
+              </ul>
+            </div>
+            <div id="tit_media_wrap" style="display:none" class="txt txt_c2">
+              <ul class="list">
+                <li class="clearfix"><a class="left" href="#">【IT之家】千图网突破一亿次下载 引发下载风暴</a> <span class="right">09-01</span></li>
+                <li class="clearfix"><a class="left" href="#">【和讯网】浅谈信息时代的千图网变革</a> <span class="right">08-30</span></li>
+              </ul>
+            </div>
+            <div id="tit_user_wrap" style="display:none" class="txt txt_c2">
+              <ul class="list">
+                <li class="clearfix"><a class="left" href="#">【心系千图】2万+用户表达了想对千图说的心里话</a></li>
+                <li class="clearfix"><a class="left" href="#">【百度口碑】网民印象好评率95%+</a></li>
+              </ul>
+            </div>
+          </div>
+          <div class="about_net_num">
+            <ul class="about_all_num_wrap">
+              <li>
+                <span class="num">设计师 : 1,999万人</span><span>占全国 : 96%</span>
+              </li>
+              <li>
+                <span  class="num">素材总数 : 1,999万人</span><span>一周新增 : 186,884张</span>
+              </li>
+              <li class="last">
+                <span  class="num">总下载数 : 1,999万人</span><span>昨日下载 : 96%</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="design_tool_wrap clearfix">
+        <ul class="design_tool_list">
+          <li>
+            <a href="#">
+              <div class="ico_wrap"><i class="ico_1"></i></div>
+              <p>开发手册</p>
+            </a>
+          </li>
+          <li>
+            <a href="#">
+              <div class="ico_wrap"><i class="ico_2"></i></div>
+              <p>UI设计图标库</p>
+            </a>
+          </li>
+          <li>
+            <a href="#">
+              <div class="ico_wrap"><i class="ico_3"></i></div>
+              <p>淘宝工具</p>
+            </a>
+          </li>
+          <li>
+            <a href="#">
+              <div class="ico_wrap"><i class="ico_4"></i></div>
+              <p>配色工具</p>
+            </a>
+          </li>
+          <li>
+            <a href="#">
+              <div class="ico_wrap"><i class="ico_5"></i></div>
+              <p>网页工具</p>
+            </a>
+          </li>
+          <li>
+            <a href="#">
+              <div class="ico_wrap"><i class="ico_6"></i></div>
+              <p>图标宝</p>
+            </a>
+          </li>
+          <li>
+            <a href="#">
+              <div class="ico_wrap"><i class="ico_7"></i></div>
+              <p>画册宝</p>
+            </a>
+          </li>
+          <li>
+            <a href="#">
+              <div class="ico_wrap"><i class="ico_8"></i></div>
+              <p>在线书法</p>
+            </a>
+          </li>
+          <li>
+            <a href="#">
+              <div class="ico_wrap"><i class="ico_9"></i></div>
+              <p>电商培训</p>
+            </a>
+          </li>
+          <li>
+            <a href="#">
+              <div class="ico_wrap"><i class="ico_10"></i></div>
+              <p>店铺装修代码</p>
+            </a>
+          </li>
+        </ul>
+        <div class="more_tool">
+          <a href="#">更多设计工具</a>
+        </div>
+      </div>
+      
+    </div>
+    <div class="img_list_slide_wrap">
+      <div class="img_list_top_tit_wrap">
+        <h2>热门专题</h2>
+        <a href="#" class="fr_txt">更多 <i></i></a>
+      </div>
+      <ul class="c_list_wrap_hot clearfix">
+        <li class="list_shadow">
+          <div class="content_wrap">
+            <a href="#"><img data_img="images/temp/subject_2.jpg" src="images/temp/lazypic.jpg" alt=""></a>
+            <p class="tit">中秋</p>
+          </div>
+        </li>
+        <li class="list_shadow">
+          <div class="content_wrap">
+            <a href="#"><img data_img="images/temp/subject_2.jpg" src="images/temp/lazypic.jpg" alt=""></a>
+            <p class="tit">中秋</p>
+          </div>
+        </li>
+        <li class="list_shadow">
+          <div class="content_wrap">
+            <a href="#"><img data_img="images/temp/subject_2.jpg" src="images/temp/lazypic.jpg" alt=""></a>
+            <p class="tit">中秋</p>
+          </div>
+        </li>
+        <li class="list_shadow">
+          <div class="content_wrap">
+            <a href="#"><img data_img="images/temp/subject_2.jpg" src="images/temp/lazypic.jpg" alt=""></a>
+            <p class="tit">中秋</p>
+          </div>
+        </li>
+        <li class="list_shadow last_one">
+          <div class="content_wrap">
+            <a href="#"><img data_img="images/temp/subject_2.jpg" src="images/temp/lazypic.jpg" alt=""></a>
+            <p class="tit">中秋</p>
+          </div>
+        </li>
+      </ul>
+    </div>
+    <div class="img_list_slide_wrap">
+      <div class="img_list_top_tit_wrap">
+        <h2>为我推荐</h2>
+        <a href="#" class="fr_txt">更多 <i></i></a>
+      </div>
+      <ul class="c_list_wrap_hot c_list_wrap_3 clearfix">
+        <li class="list_shadow">
+          <div class="content_wrap">
+            <a class="hover_abs_top hover_abs_collect" herf="#">收藏</a>
+            <a class="hover_abs_top hover_abs_dload" href="#">免费下载</a>
+            <a href="#"><img src="images/temp/lazypic.jpg" data_img="images/temp/original_1.jpg" alt=""></a>
+            <p class="tit">中秋 西湖中秋 中秋banner</p>
+            <div class="footer">
+              <div class="item collect">
+                <a href="#"><i></i> 收藏 3983</a>
+              </div>
+              <span class="split">|</span> 
+              <div class="item dload">
+                <a href="#"><i></i> 下载 3983</a>
+              </div>
+            </div>
+          </div>
+        </li>
+        <li class="list_shadow">
+          <div class="content_wrap">
+            <a class="hover_abs_top hover_abs_collect" herf="#">收藏</a>
+            <a class="hover_abs_top hover_abs_dload" href="#">免费下载</a>
+            <a href="#"><img src="images/temp/lazypic.jpg" data_img="images/temp/original_2.jpg" alt=""></a>
+            <p class="tit">中秋 西湖中秋 中秋banner</p>
+            <div class="footer">
+              <div class="item collect">
+                <a href="#"><i></i> 收藏 3983</a>
+              </div>
+              <span class="split">|</span> 
+              <div class="item dload">
+                <a href="#"><i></i> 下载 3983</a>
+              </div>
+            </div>
+          </div>
+        </li>
+        <li class="list_shadow">
+          <div class="content_wrap">
+            <a class="hover_abs_top hover_abs_collect" herf="#">收藏</a>
+            <a class="hover_abs_top hover_abs_dload" href="#">免费下载</a>
+            <a href="#"><img src="images/temp/lazypic.jpg" data_img="images/temp/original_3.jpg" alt=""></a>
+            <p class="tit">中秋 西湖中秋 中秋banner</p>
+            <div class="footer">
+              <div class="item collect">
+                <a href="#"><i></i> 收藏 3983</a>
+              </div>
+              <span class="split">|</span> 
+              <div class="item dload">
+                <a href="#"><i></i> 下载 3983</a>
+              </div>
+            </div>
+          </div>
+        </li>
+        <li class="list_shadow">
+          <div class="content_wrap">
+            <a class="hover_abs_top hover_abs_collect" herf="#">收藏</a>
+            <a class="hover_abs_top hover_abs_dload" href="#">免费下载</a>
+            <a href="#"><img src="images/temp/lazypic.jpg" data_img="images/temp/original_4.jpg" alt=""></a>
+            <p class="tit">中秋 西湖中秋 中秋banner</p>
+            <div class="footer">
+              <div class="item collect">
+                <a href="#"><i></i> 收藏 3983</a>
+              </div>
+              <span class="split">|</span> 
+              <div class="item dload">
+                <a href="#"><i></i> 下载 3983</a>
+              </div>
+            </div>
+          </div>
+        </li>
+        <li class="list_shadow">
+          <div class="content_wrap">
+            <a class="hover_abs_top hover_abs_collect" herf="#">收藏</a>
+            <a class="hover_abs_top hover_abs_dload" href="#">免费下载</a>
+            <a href="#"><img src="images/temp/lazypic.jpg" data_img="images/temp/original_5.jpg" alt=""></a>
+            <p class="tit">中秋 西湖中秋 中秋banner</p>
+            <div class="footer">
+              <div class="item collect">
+                <a href="#"><i></i> 收藏 3983</a>
+              </div>
+              <span class="split">|</span> 
+              <div class="item dload">
+                <a href="#"><i></i> 下载 3983</a>
+              </div>
+            </div>
+          </div>
+        </li>
+      </ul>
+    </div>
+    <div class="img_list_slide_wrap">
+      <div class="img_list_top_tit_wrap">
+        <h2>原创作品</h2>
+        <a href="#" class="fr_txt">更多 <i></i></a>
+      </div>
+      <ul class="c_list_wrap_hot c_list_wrap_3 clearfix">
+        <li class="list_shadow">
+          <div class="content_wrap">
+            <a class="hover_abs_top hover_abs_collect" herf="#">收藏</a>
+            <a class="hover_abs_top hover_abs_dload" href="#">免费下载</a>
+            <a href="#"><img src="images/temp/lazypic.jpg" data_img="images/temp/original_1.jpg" alt=""></a>
+            <p class="tit">中秋 西湖中秋 中秋banner</p>
+            <div class="footer">
+              <div class="item collect">
+                <a href="#"><i></i> 收藏 3983</a>
+              </div>
+              <span class="split">|</span> 
+              <div class="item dload">
+                <a href="#"><i></i> 下载 3983</a>
+              </div>
+            </div>
+          </div>
+        </li>
+        <li class="list_shadow">
+          <div class="content_wrap">
+            <a class="hover_abs_top hover_abs_collect" herf="#">收藏</a>
+            <a class="hover_abs_top hover_abs_dload" href="#">免费下载</a>
+            <a href="#"><img src="images/temp/lazypic.jpg" data_img="images/temp/original_2.jpg" alt=""></a>
+            <p class="tit">中秋 西湖中秋 中秋banner</p>
+            <div class="footer">
+              <div class="item collect">
+                <a href="#"><i></i> 收藏 3983</a>
+              </div>
+              <span class="split">|</span> 
+              <div class="item dload">
+                <a href="#"><i></i> 下载 3983</a>
+              </div>
+            </div>
+          </div>
+        </li>
+        <li class="list_shadow">
+          <div class="content_wrap">
+            <a class="hover_abs_top hover_abs_collect" herf="#">收藏</a>
+            <a class="hover_abs_top hover_abs_dload" href="#">免费下载</a>
+            <a href="#"><img src="images/temp/lazypic.jpg" data_img="images/temp/original_3.jpg" alt=""></a>
+            <p class="tit">中秋 西湖中秋 中秋banner</p>
+            <div class="footer">
+              <div class="item collect">
+                <a href="#"><i></i> 收藏 3983</a>
+              </div>
+              <span class="split">|</span> 
+              <div class="item dload">
+                <a href="#"><i></i> 下载 3983</a>
+              </div>
+            </div>
+          </div>
+        </li>
+        <li class="list_shadow">
+          <div class="content_wrap">
+            <a class="hover_abs_top hover_abs_collect" herf="#">收藏</a>
+            <a class="hover_abs_top hover_abs_dload" href="#">免费下载</a>
+            <a href="#"><img src="images/temp/lazypic.jpg" data_img="images/temp/original_4.jpg" alt=""></a>
+            <p class="tit">中秋 西湖中秋 中秋banner</p>
+            <div class="footer">
+              <div class="item collect">
+                <a href="#"><i></i> 收藏 3983</a>
+              </div>
+              <span class="split">|</span> 
+              <div class="item dload">
+                <a href="#"><i></i> 下载 3983</a>
+              </div>
+            </div>
+          </div>
+        </li>
+        <li class="list_shadow">
+          <div class="content_wrap">
+            <a class="hover_abs_top hover_abs_collect" herf="#">收藏</a>
+            <a class="hover_abs_top hover_abs_dload" href="#">免费下载</a>
+            <a href="#"><img src="images/temp/lazypic.jpg" data_img="images/temp/original_5.jpg" alt=""></a>
+            <p class="tit">中秋 西湖中秋 中秋banner</p>
+            <div class="footer">
+              <div class="item collect">
+                <a href="#"><i></i> 收藏 3983</a>
+              </div>
+              <span class="split">|</span> 
+              <div class="item dload">
+                <a href="#"><i></i> 下载 3983</a>
+              </div>
+            </div>
+          </div>
+        </li>
+      </ul>
+    </div>
+    <div class="img_list_slide_wrap">
+      <div class="img_list_top_tit_wrap">
+        <h2>热门海报</h2>
+        <a href="#" class="fr_txt">更多 <i></i></a>
+      </div>
+      <ul class="c_list_wrap_hot c_list_wrap_3 clearfix">
+        <li class="list_shadow">
+          <div class="content_wrap">
+            <a class="hover_abs_top hover_abs_collect" herf="#">收藏</a>
+            <a class="hover_abs_top hover_abs_dload" href="#">免费下载</a>
+            <a href="#"><img src="images/temp/lazypic.jpg" data_img="images/temp/original_1.jpg" alt=""></a>
+            <p class="tit">中秋 西湖中秋 中秋banner</p>
+            <div class="footer">
+              <div class="item collect">
+                <a href="#"><i></i> 收藏 3983</a>
+              </div>
+              <span class="split">|</span> 
+              <div class="item dload">
+                <a href="#"><i></i> 下载 3983</a>
+              </div>
+            </div>
+          </div>
+        </li>
+        <li class="list_shadow">
+          <div class="content_wrap">
+            <a class="hover_abs_top hover_abs_collect" herf="#">收藏</a>
+            <a class="hover_abs_top hover_abs_dload" href="#">免费下载</a>
+            <a href="#"><img src="images/temp/lazypic.jpg" data_img="images/temp/original_2.jpg" alt=""></a>
+            <p class="tit">中秋 西湖中秋 中秋banner</p>
+            <div class="footer">
+              <div class="item collect">
+                <a href="#"><i></i> 收藏 3983</a>
+              </div>
+              <span class="split">|</span> 
+              <div class="item dload">
+                <a href="#"><i></i> 下载 3983</a>
+              </div>
+            </div>
+          </div>
+        </li>
+        <li class="list_shadow">
+          <div class="content_wrap">
+            <a class="hover_abs_top hover_abs_collect" herf="#">收藏</a>
+            <a class="hover_abs_top hover_abs_dload" href="#">免费下载</a>
+            <a href="#"><img src="images/temp/lazypic.jpg" data_img="images/temp/original_3.jpg" alt=""></a>
+            <p class="tit">中秋 西湖中秋 中秋banner</p>
+            <div class="footer">
+              <div class="item collect">
+                <a href="#"><i></i> 收藏 3983</a>
+              </div>
+              <span class="split">|</span> 
+              <div class="item dload">
+                <a href="#"><i></i> 下载 3983</a>
+              </div>
+            </div>
+          </div>
+        </li>
+        <li class="list_shadow">
+          <div class="content_wrap">
+            <a class="hover_abs_top hover_abs_collect" herf="#">收藏</a>
+            <a class="hover_abs_top hover_abs_dload" href="#">免费下载</a>
+            <a href="#"><img src="images/temp/lazypic.jpg" data_img="images/temp/original_4.jpg" alt=""></a>
+            <p class="tit">中秋 西湖中秋 中秋banner</p>
+            <div class="footer">
+              <div class="item collect">
+                <a href="#"><i></i> 收藏 3983</a>
+              </div>
+              <span class="split">|</span> 
+              <div class="item dload">
+                <a href="#"><i></i> 下载 3983</a>
+              </div>
+            </div>
+          </div>
+        </li>
+        <li class="list_shadow">
+          <div class="content_wrap">
+            <a class="hover_abs_top hover_abs_collect" herf="#">收藏</a>
+            <a class="hover_abs_top hover_abs_dload" href="#">免费下载</a>
+            <a href="#"><img src="images/temp/lazypic.jpg" data_img="images/temp/original_5.jpg" alt=""></a>
+            <p class="tit">中秋 西湖中秋 中秋banner</p>
+            <div class="footer">
+              <div class="item collect">
+                <a href="#"><i></i> 收藏 3983</a>
+              </div>
+              <span class="split">|</span> 
+              <div class="item dload">
+                <a href="#"><i></i> 下载 3983</a>
+              </div>
+            </div>
+          </div>
+        </li>
+      </ul>
+    </div>
+    <div class="img_list_slide_wrap">
+      <div class="img_list_top_tit_wrap">
+        <h2>高清图片</h2>
+        <a href="#" class="fr_txt">更多 <i></i></a>
+      </div>
+      <ul class="c_list_wrap_hot c_list_wrap_3 clearfix">
+        <li class="list_shadow">
+          <div class="content_wrap">
+            <a class="hover_abs_top hover_abs_collect" herf="#">收藏</a>
+            <a class="hover_abs_top hover_abs_dload" href="#">免费下载</a>
+            <a href="#"><img src="images/temp/original_1.jpg" alt=""></a>
+            <p class="tit">中秋 西湖中秋 中秋banner</p>
+            <div class="footer">
+              <div class="item collect">
+                <a href="#"><i></i> 收藏 3983</a>
+              </div>
+              <span class="split">|</span> 
+              <div class="item dload">
+                <a href="#"><i></i> 下载 3983</a>
+              </div>
+            </div>
+          </div>
+        </li>
+        <li class="list_shadow">
+          <div class="content_wrap">
+            <a class="hover_abs_top hover_abs_collect" herf="#">收藏</a>
+            <a class="hover_abs_top hover_abs_dload" href="#">免费下载</a>
+            <a href="#"><img src="images/temp/original_2.jpg" alt=""></a>
+            <p class="tit">中秋 西湖中秋 中秋banner</p>
+            <div class="footer">
+              <div class="item collect">
+                <a href="#"><i></i> 收藏 3983</a>
+              </div>
+              <span class="split">|</span> 
+              <div class="item dload">
+                <a href="#"><i></i> 下载 3983</a>
+              </div>
+            </div>
+          </div>
+        </li>
+        <li class="list_shadow">
+          <div class="content_wrap">
+            <a class="hover_abs_top hover_abs_collect" herf="#">收藏</a>
+            <a class="hover_abs_top hover_abs_dload" href="#">免费下载</a>
+            <a href="#"><img src="images/temp/original_3.jpg" alt=""></a>
+            <p class="tit">中秋 西湖中秋 中秋banner</p>
+            <div class="footer">
+              <div class="item collect">
+                <a href="#"><i></i> 收藏 3983</a>
+              </div>
+              <span class="split">|</span> 
+              <div class="item dload">
+                <a href="#"><i></i> 下载 3983</a>
+              </div>
+            </div>
+          </div>
+        </li>
+        <li class="list_shadow">
+          <div class="content_wrap">
+            <a class="hover_abs_top hover_abs_collect" herf="#">收藏</a>
+            <a class="hover_abs_top hover_abs_dload" href="#">免费下载</a>
+            <a href="#"><img src="images/temp/original_4.jpg" alt=""></a>
+            <p class="tit">中秋 西湖中秋 中秋banner</p>
+            <div class="footer">
+              <div class="item collect">
+                <a href="#"><i></i> 收藏 3983</a>
+              </div>
+              <span class="split">|</span> 
+              <div class="item dload">
+                <a href="#"><i></i> 下载 3983</a>
+              </div>
+            </div>
+          </div>
+        </li>
+        <li class="list_shadow">
+          <div class="content_wrap">
+            <a class="hover_abs_top hover_abs_collect" herf="#">收藏</a>
+            <a class="hover_abs_top hover_abs_dload" href="#">免费下载</a>
+            <a href="#"><img src="images/temp/original_5.jpg" alt=""></a>
+            <p class="tit">中秋 西湖中秋 中秋banner</p>
+            <div class="footer">
+              <div class="item collect">
+                <a href="#"><i></i> 收藏 3983</a>
+              </div>
+              <span class="split">|</span> 
+              <div class="item dload">
+                <a href="#"><i></i> 下载 3983</a>
+              </div>
+            </div>
+          </div>
+        </li>
+      </ul>
+    </div>
+    <div class="img_list_slide_wrap">
+      <div class="img_list_top_tit_wrap">
+        <h2>促销标签</h2>
+        <a href="#" class="fr_txt">更多 <i></i></a>
+      </div>
+      <ul class="c_list_wrap_hot c_list_wrap_3 clearfix">
+        <li class="list_shadow">
+          <div class="content_wrap">
+            <a class="hover_abs_top hover_abs_collect" herf="#">收藏</a>
+            <a class="hover_abs_top hover_abs_dload" href="#">免费下载</a>
+            <a href="#"><img src="images/temp/original_1.jpg" alt=""></a>
+            <p class="tit">中秋 西湖中秋 中秋banner</p>
+            <div class="footer">
+              <div class="item collect">
+                <a href="#"><i></i> 收藏 3983</a>
+              </div>
+              <span class="split">|</span> 
+              <div class="item dload">
+                <a href="#"><i></i> 下载 3983</a>
+              </div>
+            </div>
+          </div>
+        </li>
+        <li class="list_shadow">
+          <div class="content_wrap">
+            <a class="hover_abs_top hover_abs_collect" herf="#">收藏</a>
+            <a class="hover_abs_top hover_abs_dload" href="#">免费下载</a>
+            <a href="#"><img src="images/temp/original_2.jpg" alt=""></a>
+            <p class="tit">中秋 西湖中秋 中秋banner</p>
+            <div class="footer">
+              <div class="item collect">
+                <a href="#"><i></i> 收藏 3983</a>
+              </div>
+              <span class="split">|</span> 
+              <div class="item dload">
+                <a href="#"><i></i> 下载 3983</a>
+              </div>
+            </div>
+          </div>
+        </li>
+        <li class="list_shadow">
+          <div class="content_wrap">
+            <a class="hover_abs_top hover_abs_collect" herf="#">收藏</a>
+            <a class="hover_abs_top hover_abs_dload" href="#">免费下载</a>
+            <a href="#"><img src="images/temp/original_3.jpg" alt=""></a>
+            <p class="tit">中秋 西湖中秋 中秋banner</p>
+            <div class="footer">
+              <div class="item collect">
+                <a href="#"><i></i> 收藏 3983</a>
+              </div>
+              <span class="split">|</span> 
+              <div class="item dload">
+                <a href="#"><i></i> 下载 3983</a>
+              </div>
+            </div>
+          </div>
+        </li>
+        <li class="list_shadow">
+          <div class="content_wrap">
+            <a class="hover_abs_top hover_abs_collect" herf="#">收藏</a>
+            <a class="hover_abs_top hover_abs_dload" href="#">免费下载</a>
+            <a href="#"><img src="images/temp/original_4.jpg" alt=""></a>
+            <p class="tit">中秋 西湖中秋 中秋banner</p>
+            <div class="footer">
+              <div class="item collect">
+                <a href="#"><i></i> 收藏 3983</a>
+              </div>
+              <span class="split">|</span> 
+              <div class="item dload">
+                <a href="#"><i></i> 下载 3983</a>
+              </div>
+            </div>
+          </div>
+        </li>
+        <li class="list_shadow">
+          <div class="content_wrap">
+            <a class="hover_abs_top hover_abs_collect" herf="#">收藏</a>
+            <a class="hover_abs_top hover_abs_dload" href="#">免费下载</a>
+            <a href="#"><img src="images/temp/original_5.jpg" alt=""></a>
+            <p class="tit">中秋 西湖中秋 中秋banner</p>
+            <div class="footer">
+              <div class="item collect">
+                <a href="#"><i></i> 收藏 3983</a>
+              </div>
+              <span class="split">|</span> 
+              <div class="item dload">
+                <a href="#"><i></i> 下载 3983</a>
+              </div>
+            </div>
+          </div>
+        </li>
+      </ul>
+    </div>
+    <div class="img_list_slide_wrap">
+      <div class="img_list_top_tit_wrap">
+        <h2>促销标签</h2>
+        <a href="#" class="fr_txt">更多 <i></i></a>
+      </div>
+      <ul class="c_list_wrap_hot c_list_wrap_3 clearfix">
+        <li class="list_shadow">
+          <div class="content_wrap">
+            <a class="hover_abs_top hover_abs_collect" herf="#">收藏</a>
+            <a class="hover_abs_top hover_abs_dload" href="#">免费下载</a>
+            <a href="#"><img src="images/temp/original_1.jpg" alt=""></a>
+            <p class="tit">中秋 西湖中秋 中秋banner</p>
+            <div class="footer">
+              <div class="item collect">
+                <a href="#"><i></i> 收藏 3983</a>
+              </div>
+              <span class="split">|</span> 
+              <div class="item dload">
+                <a href="#"><i></i> 下载 3983</a>
+              </div>
+            </div>
+          </div>
+        </li>
+        <li class="list_shadow">
+          <div class="content_wrap">
+            <a class="hover_abs_top hover_abs_collect" herf="#">收藏</a>
+            <a class="hover_abs_top hover_abs_dload" href="#">免费下载</a>
+            <a href="#"><img src="images/temp/original_2.jpg" alt=""></a>
+            <p class="tit">中秋 西湖中秋 中秋banner</p>
+            <div class="footer">
+              <div class="item collect">
+                <a href="#"><i></i> 收藏 3983</a>
+              </div>
+              <span class="split">|</span> 
+              <div class="item dload">
+                <a href="#"><i></i> 下载 3983</a>
+              </div>
+            </div>
+          </div>
+        </li>
+        <li class="list_shadow">
+          <div class="content_wrap">
+            <a class="hover_abs_top hover_abs_collect" herf="#">收藏</a>
+            <a class="hover_abs_top hover_abs_dload" href="#">免费下载</a>
+            <a href="#"><img src="images/temp/original_3.jpg" alt=""></a>
+            <p class="tit">中秋 西湖中秋 中秋banner</p>
+            <div class="footer">
+              <div class="item collect">
+                <a href="#"><i></i> 收藏 3983</a>
+              </div>
+              <span class="split">|</span> 
+              <div class="item dload">
+                <a href="#"><i></i> 下载 3983</a>
+              </div>
+            </div>
+          </div>
+        </li>
+        <li class="list_shadow">
+          <div class="content_wrap">
+            <a class="hover_abs_top hover_abs_collect" herf="#">收藏</a>
+            <a class="hover_abs_top hover_abs_dload" href="#">免费下载</a>
+            <a href="#"><img src="images/temp/original_4.jpg" alt=""></a>
+            <p class="tit">中秋 西湖中秋 中秋banner</p>
+            <div class="footer">
+              <div class="item collect">
+                <a href="#"><i></i> 收藏 3983</a>
+              </div>
+              <span class="split">|</span> 
+              <div class="item dload">
+                <a href="#"><i></i> 下载 3983</a>
+              </div>
+            </div>
+          </div>
+        </li>
+        <li class="list_shadow">
+          <div class="content_wrap">
+            <a class="hover_abs_top hover_abs_collect" herf="#">收藏</a>
+            <a class="hover_abs_top hover_abs_dload" href="#">免费下载</a>
+            <a href="#"><img src="images/temp/original_5.jpg" alt=""></a>
+            <p class="tit">中秋 西湖中秋 中秋banner</p>
+            <div class="footer">
+              <div class="item collect">
+                <a href="#"><i></i> 收藏 3983</a>
+              </div>
+              <span class="split">|</span> 
+              <div class="item dload">
+                <a href="#"><i></i> 下载 3983</a>
+              </div>
+            </div>
+          </div>
+        </li>
+      </ul>
+    </div>
+    <div class="img_list_slide_wrap">
+      <div class="img_list_top_tit_wrap">
+        <h2>促销标签</h2>
+        <a href="#" class="fr_txt">更多 <i></i></a>
+      </div>
+      <ul class="c_list_wrap_hot c_list_wrap_3 clearfix">
+        <li class="list_shadow">
+          <div class="content_wrap">
+            <a class="hover_abs_top hover_abs_collect" herf="#">收藏</a>
+            <a class="hover_abs_top hover_abs_dload" href="#">免费下载</a>
+            <a href="#"><img src="images/temp/original_1.jpg" alt=""></a>
+            <p class="tit">中秋 西湖中秋 中秋banner</p>
+            <div class="footer">
+              <div class="item collect">
+                <a href="#"><i></i> 收藏 3983</a>
+              </div>
+              <span class="split">|</span> 
+              <div class="item dload">
+                <a href="#"><i></i> 下载 3983</a>
+              </div>
+            </div>
+          </div>
+        </li>
+        <li class="list_shadow">
+          <div class="content_wrap">
+            <a class="hover_abs_top hover_abs_collect" herf="#">收藏</a>
+            <a class="hover_abs_top hover_abs_dload" href="#">免费下载</a>
+            <a href="#"><img src="images/temp/original_2.jpg" alt=""></a>
+            <p class="tit">中秋 西湖中秋 中秋banner</p>
+            <div class="footer">
+              <div class="item collect">
+                <a href="#"><i></i> 收藏 3983</a>
+              </div>
+              <span class="split">|</span> 
+              <div class="item dload">
+                <a href="#"><i></i> 下载 3983</a>
+              </div>
+            </div>
+          </div>
+        </li>
+        <li class="list_shadow">
+          <div class="content_wrap">
+            <a class="hover_abs_top hover_abs_collect" herf="#">收藏</a>
+            <a class="hover_abs_top hover_abs_dload" href="#">免费下载</a>
+            <a href="#"><img src="images/temp/original_3.jpg" alt=""></a>
+            <p class="tit">中秋 西湖中秋 中秋banner</p>
+            <div class="footer">
+              <div class="item collect">
+                <a href="#"><i></i> 收藏 3983</a>
+              </div>
+              <span class="split">|</span> 
+              <div class="item dload">
+                <a href="#"><i></i> 下载 3983</a>
+              </div>
+            </div>
+          </div>
+        </li>
+        <li class="list_shadow">
+          <div class="content_wrap">
+            <a class="hover_abs_top hover_abs_collect" herf="#">收藏</a>
+            <a class="hover_abs_top hover_abs_dload" href="#">免费下载</a>
+            <a href="#"><img src="images/temp/original_4.jpg" alt=""></a>
+            <p class="tit">中秋 西湖中秋 中秋banner</p>
+            <div class="footer">
+              <div class="item collect">
+                <a href="#"><i></i> 收藏 3983</a>
+              </div>
+              <span class="split">|</span> 
+              <div class="item dload">
+                <a href="#"><i></i> 下载 3983</a>
+              </div>
+            </div>
+          </div>
+        </li>
+        <li class="list_shadow">
+          <div class="content_wrap">
+            <a class="hover_abs_top hover_abs_collect" herf="#">收藏</a>
+            <a class="hover_abs_top hover_abs_dload" href="#">免费下载</a>
+            <a href="#"><img src="images/temp/original_5.jpg" alt=""></a>
+            <p class="tit">中秋 西湖中秋 中秋banner</p>
+            <div class="footer">
+              <div class="item collect">
+                <a href="#"><i></i> 收藏 3983</a>
+              </div>
+              <span class="split">|</span> 
+              <div class="item dload">
+                <a href="#"><i></i> 下载 3983</a>
+              </div>
+            </div>
+          </div>
+        </li>
+      </ul>
+    </div>
+    <div class="img_list_slide_wrap">
+      <div class="img_list_top_tit_wrap">
+        <h2>样机素材</h2>
+        <a href="#" class="fr_txt">更多 <i></i></a>
+      </div>
+      <ul class="c_list_wrap_hot c_list_wrap_3 modal_source_wrap clearfix">
+        <li class="list_shadow">
+          <div class="content_wrap">
+            <a class="hover_abs_top hover_abs_collect" herf="#">收藏</a>
+            <a class="hover_abs_top hover_abs_dload" href="#">免费下载</a>
+            <a href="#"><img src="images/temp/modal_2.jpg" alt=""></a>
+            <p class="tit">LOGO展示木文理PSD图片</p>
+            <div class="footer">
+              <div class="item scan"><i></i><a href="#">浏览 75866</a></div>
+              <span class="split">|</span> 
+              <div class="item collect">
+                <a href="#"><i></i> 收藏 3983</a>
+              </div>
+              <span class="split">|</span> 
+              <div class="item dload">
+                <a href="#"><i></i> 下载 3983</a>
+              </div>
+            </div>
+          </div>
+        </li>
+        <li class="list_shadow">
+          <div class="content_wrap">
+            <a class="hover_abs_top hover_abs_collect" herf="#">收藏</a>
+            <a class="hover_abs_top hover_abs_dload" href="#">免费下载</a>
+            <a href="#"><img src="images/temp/modal_2.jpg" alt=""></a>
+            <p class="tit">LOGO展示木文理PSD图片</p>
+            <div class="footer">
+              <div class="item scan"><i></i><a href="#">浏览 75866</a></div>
+              <span class="split">|</span> 
+              <div class="item collect">
+                <a href="#"><i></i> 收藏 3983</a>
+              </div>
+              <span class="split">|</span> 
+              <div class="item dload">
+                <a href="#"><i></i> 下载 3983</a>
+              </div>
+            </div>
+          </div>
+        </li>
+        <li class="list_shadow">
+          <div class="content_wrap">
+            <a class="hover_abs_top hover_abs_collect" herf="#">收藏</a>
+            <a class="hover_abs_top hover_abs_dload" href="#">免费下载</a>
+            <a href="#"><img src="images/temp/modal_2.jpg" alt=""></a>
+            <p class="tit">LOGO展示木文理PSD图片</p>
+            <div class="footer">
+              <div class="item scan"><i></i><a href="#">浏览 75866</a></div>
+              <span class="split">|</span> 
+              <div class="item collect">
+                <a href="#"><i></i> 收藏 3983</a>
+              </div>
+              <span class="split">|</span> 
+              <div class="item dload">
+                <a href="#"><i></i> 下载 3983</a>
+              </div>
+            </div>
+          </div>
+        </li>
+      </ul>  
+    </div>
+    <div class="img_list_slide_wrap">
+      <div class="img_list_top_tit_wrap">
+        <h2>设计师店铺</h2>
+        <a href="#" class="fr_txt">更多 <i></i></a>
+      </div>
+      <ul class="c_list_wrap_hot clearfix">
+        <li class="list_shadow">
+          <div class="content_wrap">
+            <a href="#"><img src="images/temp/store_1.jpg" alt=""></a>
+            <p class="tit">企业宣传册/画册/文化手册/旅游...</p>
+          </div>
+        </li>
+        <li class="list_shadow">
+          <div class="content_wrap">
+            <a href="#"><img src="images/temp/store_2.jpg" alt=""></a>
+            <p class="tit">企业宣传册/画册/文化手册/旅游...</p>
+          </div>
+        </li>
+        <li class="list_shadow">
+          <div class="content_wrap">
+            <a href="#"><img src="images/temp/store_3.jpg" alt=""></a>
+            <p class="tit">企业宣传册/画册/文化手册/旅游...</p>
+          </div>
+        </li>
+        <li class="list_shadow">
+          <div class="content_wrap">
+            <a href="#"><img src="images/temp/store_4.jpg" alt=""></a>
+            <p class="tit">企业宣传册/画册/文化手册/旅游...</p>
+          </div>
+        </li>
+      </ul>
+    </div>    
+  </main>
+  <footer>
+    <div class="w_auto">
+      <div class="all_cooperate">
+        <img src="images/temp/cooperate.jpg" alt="">
+      </div>
+      <div class="footer_nav">
+        <a href="#">友情连接</a>
+        <a href="#">新素材</a>
+        <a href="#">新搜索</a>
+        <a href="#">热门素材</a>
+        <a href="#">热门ppt素材</a>
+        <a href="#">热门淘宝素材</a>
+        <a href="#">热门装饰素材</a>
+        <a href="#">热门专题</a>
+        <a href="#">搜索地图</a>
+      </div>
+      <div class="footer_nav_show_wrap">
+        <div class="link">
+          <a href="#">千图样机</a>
+          <a href="#">我图网</a>
+          <a href="#">90设计</a>
+          <a href="#">摄图网</a>
+          <a href="#">微信公众平台</a>
+          <a href="#">图片之家</a>
+          <a href="#">UI图标库</a>
+          <a href="#">千图样机</a>
+          <a href="#">我图网</a>
+          <a href="#">90设计</a>
+          <a href="#">摄图网</a>
+          <a href="#">微信公众平台</a>
+          <a href="#">图片之家</a>
+          <a href="#">UI图标库</a>
+        </div>
+      </div>
+    </div>
+    <div class="footer_bottom">
+      <div class="w_auto">
+        <div class="footer_bottom_nav">
+          <a href="#">官方微博</a>
+          <a href="#">关于我们</a>
+          <a href="#">版权声明</a>
+          <a href="#">商务合作</a>
+          <a href="#">新素材</a>
+          <a href="#">图片下载</a>
+          <a href="#">素材专题</a>
+          <a href="#">千图导航</a>
+          <a href="#">企业qq交谈</a>
+          <a href="#" class="nav_qq_talk"><i></i> 企业QQ交谈</a>
+          <span class="f_phone">客服电话 : 400-998-7011</span>
+        </div>
+        <p class="txt">千图网素材为用户免费分享产生，若发现您的权利被侵害，请联系tousu@58pic.com ，我们尽快处理</p>
+        <p class="txt">Copyright © 2015<a href="#" class="c_txt">千图网</a></span>沪ICP备10011451号-6 用时：0.0094 2.089 秒 <a href="#" class="ico_addr"></a> 上海工商</p>
+      </div>
+    </div>
+  </footer>
+  <script src="js/index.js"></script>
+  <script>
+
+  </script>
+  </body>
+</html>
+</html>
