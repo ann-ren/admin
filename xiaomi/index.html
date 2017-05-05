@@ -1,0 +1,2839 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" type="text/css" href="css/reset.css">
+    <!-- <link rel="stylesheet" type="text/css" href="css/style.css"> -->
+    <script src="js/html5.js"></script>
+    <script src="js/jquery.js"></script>
+    <style type="text/css">
+      body{background-color:white;font-family: 'Microsoft YaHei', arial, 'courier new';font-size:14px;color:#666666;background-color:#f4f4f4;}
+      .w_auto{width:1226px;margin:0 auto;}
+      i{display:inline-block;vertical-align:middle;}
+      .head_top_max{background-color:#ff5a40;height:60px;}
+      .head_center_tit_wrap{display:block;}
+      .head_center_tit_wrap h2{margin-left:280px;line-height:60px;font-size:24px;color:white;}
+      .head_center_tit_wrap .down{color:#f9e222;font-weight:bold;}
+      .head_center_tit_wrap .phone_img{width:84px;height:52px;background-image:url(images/head_top_max.jpg);margin-left:27px;margin-top:2px;}
+      .head_middle_login_wrap{background-color:#333333;height:40px;font-size:12px;}
+      .head_middle_login_wrap .link_left{float:left;line-height:40px;color:#424242;}
+      .head_middle_login_wrap .link>a{color:#b0b0b0;margin-right:5px;margin-left:5px;}
+      .head_middle_login_wrap .link .first{margin-left:0;}
+      .head_middle_login_wrap .link>a:hover{color:white;}
+      .head_middle_login_wrap .link_right{float:right;line-height:40px;}
+      .head_buy_car{display:inline-block;position:relative;width:120px;height:40px;background-color:#424242;margin-left:20px;}
+      .head_buy_car .car{width:20px;height:14px;background-image:url(images/buy_car.jpg);margin-left:16px;} 
+      .head_buy_car .txt:hover{background-color:white;color:#ff6700;} 
+      .head_buy_car .txt{color:#b0b0b0;display:block;position:relative;z-index:11;}    
+      .head_middle_login_wrap .log_reg{display:inline-block;}
+      .head_buy_car:hover .hover_abs_car{display:block;}
+      .hover_abs_car{display:none;position:absolute;z-index:10;top:40px;right:0;background-color:white;width:316px;height:98px;line-height:98px;text-align:center;color:#585858;box-shadow:0 0 5px #bebebe;}
+      .head_nav_wrap{height:100px;}
+      .head_nav_wrap .logo{float:left;margin-top:22px;width:55px;height:55px;margin-right:180px;background-image:url("images/logo.jpg");}
+      .nav_type_wrap>li{float:left;}
+      .nav_type_wrap>li>a{padding:0 10px;font-size:16px;color:#333333;line-height:100px;}
+      .hover_nav_abs_full{display:none;position:absolute;width:100%;height:229px;left:0;top:200px;background-color:white;border-top:1px solid #e0e0e0;box-shadow:0 3px 5px #e6e6e6;z-index: 10;}
+      .hover_nav_abs_full .hover_nav{display:none;}
+      .nav_type_wrap>li>a:hover{color:#ff6700;}
+      .nav_hover_wrap .list_wrap{height:194px;padding-top:35px;background-color:white;}
+      .nav_hover_wrap .list{position:relative;float:left;width:204px;text-align:center;font-size:12px;}
+      .nav_hover_wrap .img_wrap{display:inline-block;margin-left:21px;margin-bottom:20px;}
+      .nav_hover_wrap .tit{color:#333333;}
+      .nav_hover_wrap .price{margin-top:9px;color:#ff6700;}
+      .nav_hover_wrap .split{position:absolute;right:0;top:0;height:101px;width:1px;background-color:#e0e0e0;}
+
+      .form_wrap{float:right;position:relative;margin-top:25px;}
+      .form_wrap .input_txt{float:left;width:223px;height:50px;padding:0 10px;border:1px solid #e0e0e0;}
+      .form_wrap .btn{float:left;width:50px;height:50px;background:url(images/search.jpg) center center no-repeat;border:1px solid #e0e0e0;border-left:none;cursor:pointer;box-sizing:content-box;}
+      .form_wrap .btn:hover{background-color:#ff6700;}
+      .form_wrap .input_link{position:absolute;top:15px;left:76px;font-size:12px;}
+      .form_wrap .input_link a{float:left;margin-right:5px;padding:5px;background-color:#eeeeee;color:#757575;}
+      .form_wrap .input_link a:hover{color:white;background-color:#ff6700;}
+      .focus_input_list{display:none;position:absolute;left:0;top:52px;border-top:none;border:1px solid #ff6700;border-top:none;width:243px;background-color:white;font-size:12px;z-index: 10;}
+      .form_wrap .input_border_c{border-color:#ff6700;}
+      .focus_input_list .link{display:block;height:30px;line-height:30px;}
+      .focus_input_list .link:hover{background-color:#fafafa;}
+      .focus_input_list .txt{float:left;padding-left:14px;color:#424242;}
+      .focus_input_list .num{float:right;padding-right:14px;color:#c2c2c2;}
+      /*main left start*/
+      .main_wrap{position:relative;}
+      .out_banner_wrap{position:relative;width:1226px;height:460px;}
+      .out_banner_wrap .banner_img{position:absolute;left:0;top:0;}
+      .out_banner_wrap .point{position:absolute;top:214px;width:16px;height:30px;height:69px;width:41px;cursor: pointer;}
+      .out_banner_wrap .point:hover{background-color:#011333;}
+      .out_banner_wrap .last{background:url(images/point_last.jpg) no-repeat center center;left:234px;border-top-right-radius: 3px;border-bottom-right-radius: 3px;}
+      .out_banner_wrap .next{right:0px;background:url(images/point_next.jpg) no-repeat center center;border-top-left-radius: 3px;border-bottom-left-radius: 3px;}
+      .out_banner_wrap .btn_wrap{position: absolute;right:35px;bottom:24px;}
+      .out_banner_wrap .btn_wrap .focus_btn{background-color:transparent;}
+      .out_banner_wrap .btn_wrap i{width:6px;height:6px;cursor:pointer;background-color:#958e82;border-radius: 100%;border-radius: 100%;border:2px solid #b6b1a7;margin-left:7px;}
+
+
+
+
+      .main_list_left{position:absolute;left:0;top:0;width:234px;height:440px;background-color:rgba(0,0,0,0.6);padding-top:20px;}
+      .main_list_left .link_wrap{height:42px;}
+      .main_list_left .link_wrap:hover{background-color:#ff6700;}
+      .main_list_left .link_wrap:hover .c_main_left_hover_wrap{display: block;}
+      .main_list_left .link_wrap>a{line-height:42px;color:white;display:block;padding-left:29px;padding-right:24px;}
+      .main_list_left .point_r{position:absolute;right:24px;top:14px;width:8px;height:12px;background-image:url(images/point_r.jpg);}
+      .c_main_left_hover_wrap{display: none;position:absolute;left:234px;top:0px;width:530px;background-color:white;border-top:1px solid #e0e0e0;box-shadow:2px 4px 5px #bebebe;}
+      .c_main_left_hover_wrap li{float:left;width:255px;padding-right:10px;height:74px;}
+      .c_main_left_hover_wrap .goods{display: block;padding:17px 0 17px 20px;line-height: 40px;color:#333333;transition: all 0.5s linear;}
+      .c_main_left_hover_wrap .goods_line{float:left;width:170px;}
+      .c_main_left_hover_wrap .goods:hover{color:#f25807;}
+      .c_main_left_hover_wrap .nav_ico{display:inline-block;width:40px;height:40px;margin-right:10px;}
+      .c_main_left_hover_wrap .buy{float:right;width:58px;height:22px;border:1px solid #ff6700;color:#ff6700;text-align: center;line-height: 22px;margin-top:28px;transition: all 0.5s linear;}
+      .c_main_left_hover_wrap .buy:hover{background-color:#f25807;color:white;}
+      .main_hover_nav_phone{width:530px;}
+      .main_hover_nav_panel{width:265px;}
+      .main_hover_nav_box{width:795px;}
+
+      .list_activity_wrap{margin-top:14px;}
+      .service_type_wrap{width:234px;float:left;}
+      .service_type_wrap>li{position:relative;float:left;width:76px;height:85px;background-color:#5f5750;text-align: center;font-size:12px;}
+      .service_type_wrap>li>a{display: block;margin:5px;padding-top:20px;color:#cdcac8;}
+      .service_type_wrap>li>a:hover{color:white;}
+      .service_type_wrap .icon{width:25px;height:25px;background-image:url(images/service_type1.jpg);}
+      .service_type_wrap .txt{margin-top:7px;}
+      .service_type_wrap .split{position:absolute;right:0;top:9px;width:1px;height:70px;background-color:#6f665e;}
+      .service_type_wrap .split_line{position:absolute;bottom:0;left:9px;width:64px;height:1px;background-color:#6f665e;}
+      .list_activity_wrap .activity{float:left;margin-left:14px;transition: all 0.2s linear;}
+      .list_activity_wrap .activity:hover{box-shadow: 0px 20px 30px #dcdcdc;}
+      .main_list_tit .tit_l{float:left;font-size:24px;color:#333333;padding-bottom:18px;}
+      .main_list_tit .tit_r{float:right;font-size:16px;}
+      .main_list_tit .link_r{color:#424242;transition: all 0.1s linear;}
+      .main_list_tit .link_switch{float:left;margin-left:30px;line-height: 26px;}
+      .main_list_tit .link_r:hover{color:#ff6700;border-bottom:2px solid #ff6700;}
+      .main_list_tit .scan_all:hover{border-bottom: none;}
+      .main_list_tit .scan_all:hover i{background-color:#ff6700;}
+      .main_list_tit .scan_all i{width:20px;height:20px;border-radius:100%;background:#b0b0b0 url(images/tit_point.jpg) center center no-repeat;}
+      .main_signal_tit{padding-top:44px;}
+      .main_list_tit .point{float:left;width:34px;height:22px;border:1px solid #e0e0e0;margin-top:6px;}
+      .main_list_tit .last{background:url(images/point_disable_l.jpg)center center no-repeat;}
+      .main_list_tit .next{border-left:none;background:url(images/point_enable_r.jpg) center center no-repeat;}
+      .main_list_tit .last_enable{background:url(images/point_enable_l.jpg)center center no-repeat;}
+      .main_list_tit .next_disable{background:url(images/point_disable_r.jpg) center center no-repeat;}
+      .main_list_wrap>li{float:left;width:234px;text-align: center;margin-left:14px;background-color: white;position:relative;height:300px;overflow: hidden;}
+      .main_list_wrap .first{margin-left:0;}
+      .main_signal_wrap{width:3000px;}
+      .main_signal_wrap .one{border-top-color: #ffac13;}
+      .main_signal_wrap .two{border-top-color: #83c44e;}
+      .main_signal_wrap .three{border-top-color: #2196f3;}
+      .main_signal_wrap .four{border-top-color: #e53935;}
+      .main_signal_wrap .five{border-top-color: #00c0a5;}
+      .main_signal_wrap .two{border-top-color: #83c44e;}
+      .main_signal_wrap .two{border-top-color: #83c44e;}
+      .main_signal_wrap .two{border-top-color: #83c44e;}
+      .main_signal_wrap>li{height:340px;background-color: #fafafa;border-top-style: solid;border-top-width: 1px;}
+      .main_signal_wrap .img_wrap{padding-top:44px;margin:0 auto 24px;}
+      .main_list_wrap .tit{line-height: 22px;color:#212121;}
+      .main_list_wrap .img_wrap{display: block;width:160px;height:160px;margin:21px auto;}
+      .main_list_wrap .info{line-height: 22px;color:#b4b4b4;font-size:12px;}
+      .main_list_tit{padding-top:40px;}
+      .main_list_wrap .price{margin-top:17px;color:#fe6709;}
+
+      .scroll_list_wrap{overflow: hidden;padding-bottom:40px;}
+      .sil_bg{background-color:#f5f5f5;padding-top:38px;padding-bottom: 60px;}
+      .main_list_wrap{position: relative;float:left;}
+      .main_list_wrap .abs_top_btn{position: absolute;left:50%;margin-left:-32px;top:0;width:64px;height:20px;text-align: center;line-height: 20px;color:white;font-size:12px;}
+      .g_abs_top_btn{background-color:#83c44e;}
+      .y_abs_top_btn{background-color:#ffac13;}
+      .main_list_wrap .img_wrap{margin-top:20px;}
+      .left_img_content{float:left;}
+      .left_img_content .anima_shadow{margin-bottom: 14px;}
+      .main_list_type_wrap{width:992px;}
+      .main_list_type_wrap>li{margin-bottom:14px;}
+      .main_list_type_wrap .tit{display: block;margin-left:10px;margin-right:10px;}
+      .anima_shadow{position: relative;display: block;top:0;transition: all 0.2s linear;}
+      .anima_shadow:hover{box-shadow: 0 15px 20px #dddddd;top:-2px;}
+      .main_list_wrap>li:hover .list_abs_comment{bottom:0;}
+      .list_abs_comment{position:absolute;bottom:-76px;left:0;padding:0 36px 0 28px;height:76px;background-color:#ff6700;font-size:12px;text-align: left;line-height: 18px;transition: all 0.2s linear;}
+      .list_abs_comment .comment{color:white;margin-top:7px;margin-bottom:8px;text-overflow: ellipsis;overflow: hidden;height:34px;}
+      .list_abs_comment .user{color:#ffb888;}
+      .last_list_two{display:block;position: relative;width:234px;height:143px;background-color:white;z-index: 10;}
+      .last_list_two .tit{padding-top:42px;margin-left:30px;}
+      .last_list_two .price{margin-top:15px;margin-left:30px;}
+      .last_list_two .img_r{position: absolute;right:20px;top:30px;}
+      .main_list_wrap .last_one{background-color: transparent;text-align: left;}
+      .last_list_two_2{margin-top:14px;z-index: 5;}
+      .last_list_two_2 .tit{font-size:18px;}
+      .last_list_two_2 .price{margin-top:0;line-height: 24px;color:#757981;}
+      .main_list_wrap .last_one{overflow: visible;}
+      .main_list_big_wrap{position: relative;}
+      .main_abs_list_wrap{position: absolute;right:0;top:0;}
+      .main_recommend_wrap{width:5000px;}
+      .main_recommend_wrap>li{height:300px;background-color:white;margin-left:14px;}
+      .main_recommend_wrap .first{margin-left:0;}
+      .main_recommend_wrap .price{margin-top:11px;margin-bottom: 12px;}
+      .main_recommend_wrap .info{color:#757575;}
+      .hot_recommend_list_wrap>li{float:left;margin-right:14px;background-color: white;}
+      .hot_recommend_list_wrap .txt_wrap{width:235px;margin:0 auto;padding-top:22px;padding-bottom: 30px;}
+      .hot_recommend_list_wrap .comment{display: block;line-height: 24px;color:#333333;height:75px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
+      .hot_recommend_list_wrap .user{font-size:12px;color:#b0b0b2;margin-top:15px;margin-bottom: 15px;}
+      .hot_recommend_list_wrap .tit{color:#333333;}
+      .hot_recommend_list_wrap .split{color:#e0e0e0;padding:0 10px;}
+      .hot_recommend_list_wrap .price{color:#fe6709;}
+      .hot_recommend_list_wrap .last{margin-right:0;}
+      .content_list_wrap>li{float:left;position: relative;margin-right:14px;width:296px;height:419px;border-top-style: solid;border-top-width: 1px;text-align: center;background-color: white;}
+      .content_list_wrap .tit{font-size:16px;margin-top:49px;}
+      .content_list_wrap .last-one{margin-right:0;}
+      .content_list_wrap .content_scroll_wrap{margin-top:25px;font-size:18px;}
+      .content_list_wrap .info{font-size: 12px;color:#b5b5b5;line-height: 18px;height:50px;margin-top:10px;}
+      .content_list_wrap .txt_tit{font-size:18px;margin-top:17px;}
+      .content_list_wrap .img_wrap{position: absolute;left:50%;margin-left:-75px;bottom:0px;}
+      .content_list_wrap .one .tit{color:#ffac13;}
+      .content_list_wrap .one{border-top-color:#ffac13;}
+      .content_list_wrap .two{border-top-color: #83c44e;}
+      .content_list_wrap .two .tit{color:#83c44e;}
+      .content_list_wrap .three{border-top-color:#e53935;}
+      .content_list_wrap .three .tit{color:#e53935;}
+      .content_list_wrap .four{border-top-color: #2196f3;}
+      .content_list_wrap .four .tit{color:#2196f3;}
+      .content_list_wrap .im{margin-top:10px;}
+      .content_list_child{position: absolute;left:0;width:295px;}
+      .content_list_child .link{display: block;margin-left:auto;margin-right: auto;}
+      .content_list_wrap .point{opacity: 0;position: absolute;top:50%;margin-top:-24px;height:48px;width:20px;transition: all 0.2s linear;}
+      .content_list_wrap>li:hover .point{opacity: 1;}
+      .content_list_wrap .last{left:0;background:#d9d9d9 url(images/point_disable_l.jpg) center center no-repeat;}
+      .content_list_wrap .next{right:0;background:#d9d9d9 url(images/point_disable_r.jpg) center center no-repeat;}
+      .content_list_wrap .btn_wrap{position: absolute;bottom:24px;left:88px;}
+      .content_list_child{position: relative;float:left;width:295px;height:280px;}
+      .content_list_wrap .btn_wrap i{width:6px;height:6px;background-color:#b0b0b0;border-radius: 100%;}
+      .content_list_wrap .btn_wrap span{float:left;width:30px;text-align: left;}
+      .content_list_wrap .btn_on i{width:6px;height:6px;border:2px solid #ff6700;background-color: transparent;}
+      .content_scroll_out_wrap{width:295px;overflow: hidden;}
+      .content_scroll_wrap{width:1500px;}
+      .content_list_wrap .btn{width:118px;height:28px;line-height: 28px;text-align: center;transition: all 0.2s linear;margin:0 auto;}
+      .content_list_wrap .one .btn{color:#ffac13;border:1px solid #ffac13;}
+      .content_list_wrap .one .btn:hover{background-color:#ffac13;color:white; }
+      .content_list_wrap .two .btn{color:#83c44e;border:1px solid #83c44e;}
+      .content_list_wrap .two .btn:hover{background-color:#83c44e;color:white; }
+      .content_list_wrap .three .btn{color:#e53935;border:1px solid #e53935;}
+      .content_list_wrap .three .btn:hover{background-color:#e53935;color:white; }
+      .content_list_wrap .four .btn{color:#2196f3;border:1px solid ##2196f3;}
+      .content_list_wrap .four .btn:hover{background-color:#2196f3;color:white; }
+      .main_video_wrap>li{float:left;margin-right:14px;width:296px;height:285px;background-color:white;text-align: center;}
+      .main_video_wrap .tit{display: inline-block;margin-top:32px;color:#333333;margin-bottom: 14px;}
+      .main_video_wrap .tit:hover{color:#ff6700;}
+      .main_video_wrap .info{color:#b4b4b4;font-size:12px;}
+      .main_video_wrap .last_one{margin-right:0;}
+      .footer_nav_wrap{background-color: white;}
+      .footer_nav_tit_wrap>li{float:left;width:243px;text-align: center;height:25px;line-height: 25px;border-right:1px solid #e0e0e0;}
+
+      .footer_nav_tit_wrap .ico{width:25px;height:25px;margin-right:5px;}
+      .footer_nav_tit_wrap .link{font-size: 16px;color:#616161;}
+      .footer_nav_tit_wrap .link:hover{color:#ff6700;}
+      .footer_nav_tit_wrap{padding-top:26px;padding-bottom:26px;border-bottom: 1px solid #e0e0e0;}
+      .footer_nav_tit_wrap .ico-1{background-image:url(images/footer_tit_1.jpg);}
+      .footer_nav_tit_wrap .ico-2{background-image:url(images/footer_tit_2.jpg);}
+      .footer_nav_tit_wrap .ico-3{background-image:url(images/footer_tit_3.jpg);}
+      .footer_nav_tit_wrap .ico-4{background-image:url(images/footer_tit_4.jpg);}
+      .footer_nav_tit_wrap .ico-5{background-image:url(images/footer_tit_5.jpg);}
+      .footer_left_link_wrap dl{float:left;width:160px;text-align: left;}
+      .footer_left_link_wrap dt{color:#424242;margin-bottom: 20px;}
+      .footer_left_link_wrap dd{line-height: 24px;}
+      .footer_left_link_wrap dd a{color:#818181;font-size:12px;}
+      .footer_left_link_wrap dd a:hover{color:#ff701f;}
+      .footer_nav_phone_wrap{padding-top:40px;height:132px;}
+      
+      .footer_phone_wrap{position: relative;float:right;padding-left:56px;padding-right:58px;text-align: center;padding-bottom: 3px;border-left:1px solid #e0e0e0;}
+      .footer_phone_wrap .num{font-size:22px;margin-bottom: 5px;color:#ff701f;}
+      .footer_phone_wrap .time{font-size:12px;color:#6a6561;line-height: 18px;}
+      .footer_phone_wrap .btn{width:118px;height:28px;line-height: 28px;color:#ff701f;border:1px solid #ff701f;margin-top:15px;display: inline-block;font-size:12px;}
+      .footer_phone_wrap .btn:hover{color:white;background-color:#ff701f;}
+      .footer_bottom_wrap{position: relative;background-color: #fafafa;height:135px;padding-top:30px;}
+      .footer_bottom_wrap .logo{float:left;width:55px;height:55px;background-image:url(images/logo.jpg);}
+      .footer_bottom_wrap .txt_wrap{float:left;margin-left:10px;line-height: 18px;font-size: 12px;}
+      .footer_bottom_wrap .link a{color:#818181;}
+      .footer_bottom_wrap .txt{color:#b0b0b6;}
+      .footer_bottom_wrap .txt a{color:#b0b0b6;}
+      .footer_bottom_wrap a:hover{color:#ff6700;}
+      .footer_ensure_wrap{float:right;}
+      .footer_ensure_wrap .ensure{float:left;margin-left:15px;}
+      .footer_bottom_wrap .slogan{position: absolute;width:269px;height:18px;background-image: url(images/temp/footer_slogan.jpg);left:50%;margin-left:-135px;top:118px;}
+    </style>
+  </head>
+  <body style="background-color:white;">
+
+  <header>
+      <div class="head_top_max">
+          <a href="javascript:void(0)" class="w_auto head_center_tit_wrap">
+               <h2>小米Max 商城专享优惠 <span class="down">直降200 再送3重好礼</span><i class="phone_img"></i></h2> 
+          </a>  
+      </div>
+      <div class="head_middle_login_wrap">
+            <div class="w_auto">
+                 <div class="link_left link">
+                     <a class="first" href="#">小米商城</a> |
+                     <a href="#">MUI</a> |
+                     <a href="#">米聊</a>
+                     <a href="#">游戏</a> 
+                     <a href="#">多看阅读</a>    
+                     <a href="#">云服务</a>  
+                     <a href="#">金融</a>
+                     <a href="#">小米网移动版</a>
+                     <a href="#">问题反馈</a>
+                     <a href="#">Select Region</a>
+                 </div> 
+                 <div class="link_right link">
+                       <a class="log_reg" href="#">登录</a> |
+                       <a class="log_reg" href="#">注册</a> |
+                       <a href="#">消息通知</a>
+                       <div class="head_buy_car">
+                             <a class="txt" href="#"><i class="car"></i> 购物车（0）</a>
+                             <div class="hover_abs_car">
+                                   <p>购物车中还没有商品，赶紧选购吧！</p>
+                             </div>
+                       </div>
+                 </div>
+            </div>
+      </div>
+      <div id="hover_nav_abs_full" class="hover_nav_abs_full">
+        <div class="w_auto nav_hover_wrap" id="in">
+           <div class="phone hover_nav">
+             <ul class="list_wrap">
+                <li class="list">   
+                    <div class="split"></div>     
+                    <div>
+                      <a class="img_wrap" href="#"><img src="images/temp/hover_phone_1.jpg" alt=""></a>
+                    </div>
+                    <a class="tit" href="#">小米Max</a>
+                    <p class="price">1299元起</p>
+                </li>
+                <li class="list">   
+                    <div class="split"></div>     
+                    <div>
+                      <a class="img_wrap" href="#"><img src="images/temp/hover_phone_2.jpg" alt=""></a>
+                    </div>
+                    <a class="tit" href="#">小米手机5</a>
+                    <p class="price">1299元起</p>
+                </li>
+              </ul>
+           </div>
+           <div class="red_phone hover_nav">
+             <ul class="list_wrap">
+                <li class="list">   
+                    <div class="split"></div>     
+                    <div>
+                      <a class="img_wrap" href="#"><img src="images/temp/hover_red_phone_1.jpg" alt=""></a>
+                    </div>
+                    <a class="tit" href="#">小米Max</a>
+                    <p class="price">1299元起</p>
+                </li>
+                <li class="list">   
+                    <div class="split"></div>     
+                    <div>
+                      <a class="img_wrap" href="#"><img src="images/temp/hover_red_phone_2.jpg" alt=""></a>
+                    </div>
+                    <a class="tit" href="#">小米手机5</a>
+                    <p class="price">1299元起</p>
+                </li>
+                <li class="list">   
+                    <div class="split"></div>     
+                    <div>
+                      <a class="img_wrap" href="#"><img src="images/temp/hover_red_phone_3.jpg" alt=""></a>
+                    </div>
+                    <a class="tit" href="#">小米手机5</a>
+                    <p class="price">1299元起</p>
+                </li>
+                <li class="list">   
+                    <div class="split"></div>     
+                    <div>
+                      <a class="img_wrap" href="#"><img src="images/temp/hover_red_phone_4.jpg" alt=""></a>
+                    </div>
+                    <a class="tit" href="#">小米手机5</a>
+                    <p class="price">1299元起</p>
+                </li>
+                <li class="list">   
+                    <div class="split"></div>     
+                    <div>
+                      <a class="img_wrap" href="#"><img src="images/temp/hover_red_phone_5.jpg" alt=""></a>
+                    </div>
+                    <a class="tit" href="#">小米手机5</a>
+                    <p class="price">1299元起</p>
+                </li>
+                 <li class="list">   
+                    <div class="split"></div>     
+                    <div>
+                      <a class="img_wrap" href="#"><img src="images/temp/hover_red_phone_6.jpg" alt=""></a>
+                    </div>
+                    <a class="tit" href="#">小米手机5</a>
+                    <p class="price">1299元起</p>
+                </li>
+              </ul>
+           </div>
+           <div class="panel hover_nav">
+             <ul class="list_wrap">
+                <li class="list">   
+                    <div class="split"></div>     
+                    <div>
+                      <a class="img_wrap" href="#"><img src="images/temp/hover_panel_1.jpg" alt=""></a>
+                    </div>
+                    <a class="tit" href="#">小米Max</a>
+                    <p class="price">1299元起</p>
+                </li>
+                <li class="list">   
+                    <div class="split"></div>     
+                    <div>
+                      <a class="img_wrap" href="#"><img src="images/temp/hover_panel_2.jpg" alt=""></a>
+                    </div>
+                    <a class="tit" href="#">小米手机5</a>
+                    <p class="price">1299元起</p>
+                </li>
+                <li class="list">   
+                    <div class="split"></div>     
+                    <div>
+                      <a class="img_wrap" href="#"><img src="images/temp/hover_panel_3.jpg" alt=""></a>
+                    </div>
+                    <a class="tit" href="#">小米手机5</a>
+                    <p class="price">1299元起</p>
+                </li>
+                <li class="list">   
+                    <div class="split"></div>     
+                    <div>
+                      <a class="img_wrap" href="#"><img src="images/temp/hover_panel_4.jpg" alt=""></a>
+                    </div>
+                    <a class="tit" href="#">小米手机5</a>
+                    <p class="price">1299元起</p>
+                </li>
+                <li class="list">   
+                    <div class="split"></div>     
+                    <div>
+                      <a class="img_wrap" href="#"><img src="images/temp/hover_panel_5.jpg" alt=""></a>
+                    </div>
+                    <a class="tit" href="#">小米手机5</a>
+                    <p class="price">1299元起</p>
+                </li>            
+              </ul>
+           </div>
+           <div class="tv hover_nav">
+             <ul class="list_wrap">
+                <li class="list">   
+                    <div class="split"></div>     
+                    <div>
+                      <a class="img_wrap" href="#"><img src="images/temp/hover_tv_1.jpg" alt=""></a>
+                    </div>
+                    <a class="tit" href="#">小米Max</a>
+                    <p class="price">1299元起</p>
+                </li>
+                <li class="list">   
+                    <div class="split"></div>     
+                    <div>
+                      <a class="img_wrap" href="#"><img src="images/temp/hover_tv_2.jpg" alt=""></a>
+                    </div>
+                    <a class="tit" href="#">小米手机5</a>
+                    <p class="price">1299元起</p>
+                </li>
+                <li class="list">   
+                    <div class="split"></div>     
+                    <div>
+                      <a class="img_wrap" href="#"><img src="images/temp/hover_tv_3.jpg" alt=""></a>
+                    </div>
+                    <a class="tit" href="#">小米手机5</a>
+                    <p class="price">1299元起</p>
+                </li>
+                <li class="list">   
+                    <div class="split"></div>     
+                    <div>
+                      <a class="img_wrap" href="#"><img src="images/temp/hover_tv_4.jpg" alt=""></a>
+                    </div>
+                    <a class="tit" href="#">小米手机5</a>
+                    <p class="price">1299元起</p>
+                </li>
+                <li class="list">   
+                    <div class="split"></div>     
+                    <div>
+                      <a class="img_wrap" href="#"><img src="images/temp/hover_tv_5.jpg" alt=""></a>
+                    </div>
+                    <a class="tit" href="#">小米手机5</a>
+                    <p class="price">1299元起</p>
+                </li>            
+              </ul>
+           </div>
+           <div class="box hover_nav">
+             <ul class="list_wrap">
+                <li class="list">   
+                    <div class="split"></div>     
+                    <div>
+                      <a class="img_wrap" href="#"><img src="images/temp/hover_box_1.jpg" alt=""></a>
+                    </div>
+                    <a class="tit" href="#">小米Max</a>
+                    <p class="price">1299元起</p>
+                </li>
+                <li class="list">   
+                    <div class="split"></div>     
+                    <div>
+                      <a class="img_wrap" href="#"><img src="images/temp/hover_box_2.jpg" alt=""></a>
+                    </div>
+                    <a class="tit" href="#">小米手机5</a>
+                    <p class="price">1299元起</p>
+                </li>
+                <li class="list">   
+                    <div class="split"></div>     
+                    <div>
+                      <a class="img_wrap" href="#"><img src="images/temp/hover_box_3.jpg" alt=""></a>
+                    </div>
+                    <a class="tit" href="#">小米手机5</a>
+                    <p class="price">1299元起</p>
+                </li>
+                <li class="list">   
+                    <div class="split"></div>     
+                    <div>
+                      <a class="img_wrap" href="#"><img src="images/temp/hover_box_4.jpg" alt=""></a>
+                    </div>
+                    <a class="tit" href="#">小米手机5</a>
+                    <p class="price">1299元起</p>
+                </li>
+                <li class="list">   
+                    <div class="split"></div>     
+                    <div>
+                      <a class="img_wrap" href="#"><img src="images/temp/hover_box_5.jpg" alt=""></a>
+                    </div>
+                    <a class="tit" href="#">小米手机5</a>
+                    <p class="price">1299元起</p>
+                </li>            
+              </ul>
+           </div>
+           <div class="router hover_nav">
+             <ul class="list_wrap">
+                <li class="list">   
+                    <div class="split"></div>     
+                    <div>
+                      <a class="img_wrap" href="#"><img src="images/temp/hover_router_1.jpg" alt=""></a>
+                    </div>
+                    <a class="tit" href="#">小米Max</a>
+                    <p class="price">1299元起</p>
+                </li>
+                <li class="list">   
+                    <div class="split"></div>     
+                    <div>
+                      <a class="img_wrap" href="#"><img src="images/temp/hover_router_2.jpg" alt=""></a>
+                    </div>
+                    <a class="tit" href="#">小米手机5</a>
+                    <p class="price">1299元起</p>
+                </li>
+                <li class="list">   
+                    <div class="split"></div>     
+                    <div>
+                      <a class="img_wrap" href="#"><img src="images/temp/hover_router_3.jpg" alt=""></a>
+                    </div>
+                    <a class="tit" href="#">小米手机5</a>
+                    <p class="price">1299元起</p>
+                </li>
+                <li class="list">   
+                    <div class="split"></div>     
+                    <div>
+                      <a class="img_wrap" href="#"><img src="images/temp/hover_router_4.jpg" alt=""></a>
+                    </div>
+                    <a class="tit" href="#">小米手机5</a>
+                    <p class="price">1299元起</p>
+                </li>
+                <li class="list">   
+                    <div class="split"></div>     
+                    <div>
+                      <a class="img_wrap" href="#"><img src="images/temp/hover_router_5.jpg" alt=""></a>
+                    </div>
+                    <a class="tit" href="#">小米手机5</a>
+                    <p class="price">1299元起</p>
+                </li>            
+              </ul>
+           </div>
+           <div class="hard hover_nav">
+             <ul class="list_wrap">
+                <li class="list">   
+                    <div class="split"></div>     
+                    <div>
+                      <a class="img_wrap" href="#"><img src="images/temp/hover_hard_1.jpg" alt=""></a>
+                    </div>
+                    <a class="tit" href="#">小米Max</a>
+                    <p class="price">1299元起</p>
+                </li>
+                <li class="list">   
+                    <div class="split"></div>     
+                    <div>
+                      <a class="img_wrap" href="#"><img src="images/temp/hover_hard_2.jpg" alt=""></a>
+                    </div>
+                    <a class="tit" href="#">小米手机5</a>
+                    <p class="price">1299元起</p>
+                </li>
+                <li class="list">   
+                    <div class="split"></div>     
+                    <div>
+                      <a class="img_wrap" href="#"><img src="images/temp/hover_hard_3.jpg" alt=""></a>
+                    </div>
+                    <a class="tit" href="#">小米手机5</a>
+                    <p class="price">1299元起</p>
+                </li>
+                <li class="list">   
+                    <div class="split"></div>     
+                    <div>
+                      <a class="img_wrap" href="#"><img src="images/temp/hover_hard_4.jpg" alt=""></a>
+                    </div>
+                    <a class="tit" href="#">小米手机5</a>
+                    <p class="price">1299元起</p>
+                </li>
+                <li class="list">   
+                    <div class="split"></div>     
+                    <div>
+                      <a class="img_wrap" href="#"><img src="images/temp/hover_hard_5.jpg" alt=""></a>
+                    </div>
+                    <a class="tit" href="#">小米手机5</a>
+                    <p class="price">1299元起</p>
+                </li>            
+              </ul>
+           </div>
+        </div>
+      </div>
+      <div class="w_auto clearfix head_nav_wrap">
+        <a class="logo" href="#"></a>
+        <ul id="nav_type_wrap" class="nav_type_wrap">
+          <li data_name="phone"><a href="#">小米手机</a></li>
+          <li data_name="red_phone"><a href="#">红米</a></li>
+          <li data_name="panel"><a href="#">平板.笔记本</a></li>
+          <li data_name="tv"><a href="#">电视</a></li>
+          <li data_name="box"><a href="#">盒子 · 影音</a></li>
+          <li data_name="router"><a href="#">路由器</a></li>
+          <li data_name="hard"><a href="#">智能硬件</a></li>
+          <li><a href="#">服务</a></li>
+          <li><a href="#">社区</a></li>
+        </ul>
+        <div class="form_wrap clearfix">
+          <input id="search_input" class="input_txt" type="text">
+          <input type="submit" value="" class="btn">
+          <div class="input_link">
+            <a href="#">红米Note4</a>
+            <a href="#">小米笔记本Air</a></div>
+          <div class="focus_input_list">
+            <ul>
+              <li><a class="link" href="#">
+                <span class="txt">小米手机5</span>
+                <span class="num">约有11件</span>
+              </a></li>
+              <li><a class="link" href="#">
+                <span class="txt">空气净化器</span>
+                <span class="num">约有11件</span>
+              </a></li>
+              <li><a class="link" href="#">
+                <span class="txt">活塞耳机</span>
+                <span class="num">约有11件</span>
+              </a></li>
+              <li><a class="link" href="#">
+                <span class="txt">小米路由器</span>
+                <span class="num">约有11件</span>
+              </a></li>
+              <li><a class="link" href="#">
+                <span class="txt">移动电源</span>
+                <span class="num">约有11件</span>
+              </a></li>
+              <li><a class="link" href="#">
+                <span class="txt">运动相机</span>
+                <span class="num">约有11件</span>
+              </a></li>
+              <li><a class="link" href="#">
+                <span class="txt">摄像机</span>
+                <span class="num">约有11件</span>
+              </a></li>
+              <li><a class="link" href="#">
+                <span class="txt">小米体重秤</span>
+                <span class="num">约有11件</span>
+              </a></li>
+              <li><a class="link" href="#">
+                <span class="txt">小米插线板</span>
+                <span class="num">约有11件</span>
+              </a></li>
+              <li><a class="link" href="#">
+                <span class="txt">配件优惠套装</span>
+                <span class="num">约有11件</span>
+              </a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+     
+  </header>    
+  <main class="main_wrap">
+    <div id="out_banner_wrap" class="out_banner_wrap w_auto">
+      <div>
+        <a class="banner_img" href="#"><img src="images/temp/banner1.jpg" alt=""></a>
+        <a class="banner_img" href="#"><img src="images/temp/banner2.jpg" alt=""></a>
+        <a style="display:none;" class="banner_img" href="#"><img src="images/temp/banner3.jpg" alt=""></a>
+      </div>
+      <div>
+        <span id="last" class="last point"></span>
+        <span id="next" class="next point"></span>
+      </div>
+      <div id="banner_btn" class="btn_wrap">
+        <i></i><i></i><i></i>
+      </div>
+      <div class="main_list_left">  
+        <ul> 
+          <li class="link_wrap">
+            <a href="#">手机 电话卡</a>
+            <i class="point_r"></i>
+            <div class="c_main_left_hover_wrap main_hover_nav_phone">
+              <ul>
+                <li>
+                  <a class="goods goods_line" href="#"><i class="nav_ico"><img src="images/temp/list_phone_1.jpg" alt=""></i> 小米手机5</a>
+                  <a class="buy" href="#">选购</a>                
+                </li>
+                <li>
+                  <a class="goods goods_line" href="#"><i class="nav_ico"><img src="images/temp/list_phone_1.jpg" alt=""></i> 小米手机5</a>
+                  <a class="buy" href="#">选购</a>                
+                </li>
+              </ul>
+            </div>
+          </li>
+          <li class="link_wrap">
+            <a href="#">笔记本 平板</a>
+            <i class="point_r"></i>
+            <div class="c_main_left_hover_wrap main_hover_nav_panel">
+              <ul>
+                <li>
+                  <a class="goods goods_line" href="#"><i class="nav_ico"><img src="images/temp/list_phone_1.jpg" alt=""></i> 小米笔记本Air</a>
+                  <a class="buy" href="#">选购</a>                
+                </li>
+                <li>
+                  <a class="goods goods_line" href="#"><i class="nav_ico"><img src="images/temp/list_phone_1.jpg" alt=""></i>小米平板2</a>
+                  <a class="buy" href="#">选购</a>                
+                </li>
+                <li>
+                  <a class="goods goods_line" href="#"><i class="nav_ico"><img src="images/temp/list_phone_1.jpg" alt=""></i>USB-C转接器</a>                              
+                </li>
+              </ul>
+            </div>    
+          </li>
+          <li class="link_wrap">
+            <a href="#">电视 盒子</a>
+            <i class="point_r"></i>
+            <div class="c_main_left_hover_wrap main_hover_nav_box">
+              <ul>
+                <li>
+                  <a class="goods" href="#"><i class="nav_ico"><img src="images/temp/list_phone_1.jpg" alt=""></i> 小米电视 43英寸</a>              
+                </li>
+                <li>
+                  <a class="goods" href="#"><i class="nav_ico"><img src="images/temp/list_phone_1.jpg" alt=""></i> 小米电视主机</a>              
+                </li>
+                <li>
+                  <a class="goods" href="#"><i class="nav_ico"><img src="images/temp/list_phone_1.jpg" alt=""></i> 小米电视主机</a>              
+                </li>
+                <li>
+                  <a class="goods" href="#"><i class="nav_ico"><img src="images/temp/list_phone_1.jpg" alt=""></i> 小米电视主机</a>              
+                </li>
+              </ul>
+            </div>    
+          </li>
+          <li class="link_wrap">
+            <a href="#">路由器 智能硬件</a>
+            <i class="point_r"></i>
+            <div class="c_main_left_hover_wrap main_hover_nav_box">
+              <ul>
+                <li>
+                  <a class="goods" href="#"><i class="nav_ico"><img src="images/temp/list_phone_1.jpg" alt=""></i> 小米电视 43英寸</a>              
+                </li>
+                <li>
+                  <a class="goods" href="#"><i class="nav_ico"><img src="images/temp/list_phone_1.jpg" alt=""></i> 小米电视主机</a>              
+                </li>
+                <li>
+                  <a class="goods" href="#"><i class="nav_ico"><img src="images/temp/list_phone_1.jpg" alt=""></i> 小米电视主机</a>              
+                </li>
+                <li>
+                  <a class="goods" href="#"><i class="nav_ico"><img src="images/temp/list_phone_1.jpg" alt=""></i> 小米电视主机</a>              
+                </li>
+              </ul>
+            </div>    
+          </li>
+          <li class="link_wrap">
+            <a href="#">移动电源 电池 插线板</a>
+            <i class="point_r"></i>
+            <div class="c_main_left_hover_wrap main_hover_nav_box">
+              <ul>
+                <li>
+                  <a class="goods" href="#"><i class="nav_ico"><img src="images/temp/list_phone_1.jpg" alt=""></i> 小米电视 43英寸</a>              
+                </li>
+                <li>
+                  <a class="goods" href="#"><i class="nav_ico"><img src="images/temp/list_phone_1.jpg" alt=""></i> 小米电视主机</a>              
+                </li>
+                <li>
+                  <a class="goods" href="#"><i class="nav_ico"><img src="images/temp/list_phone_1.jpg" alt=""></i> 小米电视主机</a>              
+                </li>
+                <li>
+                  <a class="goods" href="#"><i class="nav_ico"><img src="images/temp/list_phone_1.jpg" alt=""></i> 小米电视主机</a>              
+                </li>
+              </ul>
+            </div>    
+          </li>
+          <li class="link_wrap">
+            <a href="#">耳机音响</a>
+            <i class="point_r"></i>
+            <div class="c_main_left_hover_wrap main_hover_nav_box">
+              <ul>
+                <li>
+                  <a class="goods" href="#"><i class="nav_ico"><img src="images/temp/list_phone_1.jpg" alt=""></i> 小米电视 43英寸</a>              
+                </li>
+                <li>
+                  <a class="goods" href="#"><i class="nav_ico"><img src="images/temp/list_phone_1.jpg" alt=""></i> 小米电视主机</a>              
+                </li>
+                <li>
+                  <a class="goods" href="#"><i class="nav_ico"><img src="images/temp/list_phone_1.jpg" alt=""></i> 小米电视主机</a>              
+                </li>
+                <li>
+                  <a class="goods" href="#"><i class="nav_ico"><img src="images/temp/list_phone_1.jpg" alt=""></i> 小米电视主机</a>              
+                </li>
+              </ul>
+            </div>    
+          </li>
+          <li class="link_wrap">
+            <a href="#">保护套 贴膜</a>
+            <i class="point_r"></i>
+            <div class="c_main_left_hover_wrap main_hover_nav_box">
+              <ul>
+                <li>
+                  <a class="goods" href="#"><i class="nav_ico"><img src="images/temp/list_phone_1.jpg" alt=""></i> 小米电视 43英寸</a>              
+                </li>
+                <li>
+                  <a class="goods" href="#"><i class="nav_ico"><img src="images/temp/list_phone_1.jpg" alt=""></i> 小米电视主机</a>              
+                </li>
+                <li>
+                  <a class="goods" href="#"><i class="nav_ico"><img src="images/temp/list_phone_1.jpg" alt=""></i> 小米电视主机</a>              
+                </li>
+                <li>
+                  <a class="goods" href="#"><i class="nav_ico"><img src="images/temp/list_phone_1.jpg" alt=""></i> 小米电视主机</a>              
+                </li>
+              </ul>
+            </div>    
+          </li>
+          <li class="link_wrap">
+            <a href="#">线材 支架 存储卡</a>
+            <i class="point_r"></i>
+            <div class="c_main_left_hover_wrap main_hover_nav_box">
+              <ul>
+                <li>
+                  <a class="goods" href="#"><i class="nav_ico"><img src="images/temp/list_phone_1.jpg" alt=""></i> 小米电视 43英寸</a>              
+                </li>
+                <li>
+                  <a class="goods" href="#"><i class="nav_ico"><img src="images/temp/list_phone_1.jpg" alt=""></i> 小米电视主机</a>              
+                </li>
+                <li>
+                  <a class="goods" href="#"><i class="nav_ico"><img src="images/temp/list_phone_1.jpg" alt=""></i> 小米电视主机</a>              
+                </li>
+                <li>
+                  <a class="goods" href="#"><i class="nav_ico"><img src="images/temp/list_phone_1.jpg" alt=""></i> 小米电视主机</a>              
+                </li>
+              </ul>
+            </div>    
+          </li>
+          <li class="link_wrap">
+            <a href="#">箱包 服饰</a>
+            <i class="point_r"></i>
+            <div class="c_main_left_hover_wrap main_hover_nav_box">
+              <ul>
+                <li>
+                  <a class="goods" href="#"><i class="nav_ico"><img src="images/temp/list_phone_1.jpg" alt=""></i> 小米电视 43英寸</a>              
+                </li>
+                <li>
+                  <a class="goods" href="#"><i class="nav_ico"><img src="images/temp/list_phone_1.jpg" alt=""></i> 小米电视主机</a>              
+                </li>
+                <li>
+                  <a class="goods" href="#"><i class="nav_ico"><img src="images/temp/list_phone_1.jpg" alt=""></i> 小米电视主机</a>              
+                </li>
+                <li>
+                  <a class="goods" href="#"><i class="nav_ico"><img src="images/temp/list_phone_1.jpg" alt=""></i> 小米电视主机</a>              
+                </li>
+              </ul>
+            </div>    
+          </li>
+          <li class="link_wrap">
+            <a href="#">米兔 生活周边</a>
+            <i class="point_r"></i>
+            <div class="c_main_left_hover_wrap main_hover_nav_box">
+              <ul>
+                <li>
+                  <a class="goods" href="#"><i class="nav_ico"><img src="images/temp/list_phone_1.jpg" alt=""></i> 小米电视 43英寸</a>              
+                </li>
+                <li>
+                  <a class="goods" href="#"><i class="nav_ico"><img src="images/temp/list_phone_1.jpg" alt=""></i> 小米电视主机</a>              
+                </li>
+                <li>
+                  <a class="goods" href="#"><i class="nav_ico"><img src="images/temp/list_phone_1.jpg" alt=""></i> 小米电视主机</a>              
+                </li>
+                <li>
+                  <a class="goods" href="#"><i class="nav_ico"><img src="images/temp/list_phone_1.jpg" alt=""></i> 小米电视主机</a>              
+                </li>
+              </ul>
+            </div>    
+          </li>
+        </ul>
+      </div>
+    </div>
+    
+    <div class="list_activity_wrap clearfix w_auto">
+      <ul class="service_type_wrap">
+        <li>
+          <a href="#">
+            <i class="icon"></i>
+            <p class="txt">选购手机</p>
+          </a>
+          <span class="split"></span>
+          <span class="split_line"></span>
+        </li>
+        <li>
+          <a href="#">
+            <i class="icon"></i>
+            <p class="txt">选购手机</p>
+          </a>
+          <span class="split"></span>
+          <span class="split_line"></span>
+        </li>
+        <li>
+          <a href="#">
+            <i class="icon"></i>
+            <p class="txt">选购手机</p>
+          </a>
+          <span class="split"></span>
+          <span class="split_line"></span>
+        </li>
+        <li>
+          <a href="#">
+            <i class="icon"></i>
+            <p class="txt">选购手机</p>
+          </a>
+          <span class="split"></span>
+        </li>
+        <li>
+          <a href="#">
+            <i class="icon"></i>
+            <p class="txt">选购手机</p>
+          </a>
+          <span class="split"></span>
+        </li>
+        <li>
+          <a href="#">
+            <i class="icon"></i>
+            <p class="txt">选购手机</p>
+          </a>
+          <span class="split"></span>
+        </li>
+      </ul>
+      <a href="#" class="activity">
+        <img src="images/temp/activity1.jpg" alt="">
+      </a>
+      <a href="#" class="activity">
+        <img src="images/temp/activity2.jpg" alt="">
+      </a>
+      <a href="#" class="activity">
+        <img src="images/temp/activity3.jpg" alt="">
+      </a>
+    </div>
+    <div class="main_list_tit main_signal_tit clearfix w_auto"> 
+      <h2 class="tit_l">小米明星单品</h2>
+      <div class="tit_r">
+        <i id="lastPoint" class="last point"></i>
+        <i id="nextPoint" class="next point"></i>
+      </div>
+    </div> 
+    <div id="scroll_list_wrap" class="scroll_list_wrap w_auto">
+      <ul class="main_list_wrap main_signal_wrap clearfix">
+        <li class="one">
+          <a class="img_wrap" href="#"><img src="images/temp/single_product6.jpg" alt=""></a>
+          <a class="tit" href="#">小米电视3S 48英寸</a>
+          <p class="info">原装液晶屏,金属机身</p>
+          <p class="price">1999元</p>
+        </li>
+        <li class="two">
+          <a class="img_wrap" href="#"><img src="images/temp/single_product7.jpg" alt=""></a>
+          <a class="tit" href="#">小米电视3S 48英寸</a>
+          <p class="info">原装液晶屏,金属机身</p>
+          <p class="price">1999元</p>
+        </li>
+        <li class="three">
+          <a class="img_wrap" href="#"><img src="images/temp/single_product8.jpg" alt=""></a>
+          <a class="tit" href="#">小米电视3S 48英寸</a>
+          <p class="info">原装液晶屏,金属机身</p>
+          <p class="price">1999元</p>
+        </li>
+        <li class="four">
+          <a class="img_wrap" href="#"><img src="images/temp/single_product9.jpg" alt=""></a>
+          <a class="tit" href="#">小米电视3S 48英寸</a>
+          <p class="info">原装液晶屏,金属机身</p>
+          <p class="price">1999元</p>
+        </li>
+        <li class="five">
+          <a class="img_wrap" href="#"><img src="images/temp/single_product10.jpg" alt=""></a>
+          <a class="tit" href="#">小米电视3S 48英寸</a>
+          <p class="info">原装液晶屏,金属机身</p>
+          <p class="price">1999元</p>
+        </li>
+
+        <li class="first one">
+          <a class="img_wrap" href="#"><img src="images/temp/single_product1.jpg" alt=""></a>
+          <a class="tit" href="#">小米电视3S 48英寸</a>
+          <p class="info">原装液晶屏,金属机身</p>
+          <p class="price">1999元</p>
+        </li>
+        <li class="two">
+          <a class="img_wrap" href="#"><img src="images/temp/single_product2.jpg" alt=""></a>
+          <a class="tit" href="#">小米电视3S 48英寸</a>
+          <p class="info">原装液晶屏,金属机身</p>
+          <p class="price">1999元</p>
+        </li>
+        <li class="three">
+          <a class="img_wrap" href="#"><img src="images/temp/single_product3.jpg" alt=""></a>
+          <a class="tit" href="#">小米电视3S 48英寸</a>
+          <p class="info">原装液晶屏,金属机身</p>
+          <p class="price">1999元</p>
+        </li>
+        <li class="four">
+          <a class="img_wrap" href="#"><img src="images/temp/single_product4.jpg" alt=""></a>
+          <a class="tit" href="#">小米电视3S 48英寸</a>
+          <p class="info">原装液晶屏,金属机身</p>
+          <p class="price">1999元</p>
+        </li>
+        <li class="five">
+          <a class="img_wrap" href="#"><img src="images/temp/single_product5.jpg" alt=""></a>
+          <a class="tit" href="#">小米电视3S 48英寸</a>
+          <p class="info">原装液晶屏,金属机身</p>
+          <p class="price">1999元</p>
+        </li>
+      </ul>
+    </div>
+    <div class="sil_bg">
+      <div class="w_auto">
+        <div class="main_list_tit clearfix"> 
+          <h2 class="tit_l">智能硬件</h2>
+          <div class="tit_r">
+            <a class="scan_all link_r" href="#">查看全部 <i></i></a>
+          </div>
+        </div>
+        <div class="clearfix">
+          <div class="left_img_content">
+            <a class="anima_shadow" href="#"><img src="images/temp/hard_left.jpg" alt=""></a>
+          </div>
+          <ul class="main_list_wrap main_list_type_wrap clearfix">
+            <li class="anima_shadow">
+              <span class="abs_top_btn y_abs_top_btn">免邮费</span>
+              <a class="img_wrap" href="#"><img src="images/temp/main_hard_1.jpg" alt=""></a>
+              <a href="#" class="tit">小米路由器</a>
+              <p class="info">四天线设计，更安全更稳定</p>
+              <p class="price">149</p>
+            </li>
+            <li class="anima_shadow">
+              <span class="abs_top_btn g_abs_top_btn">新品</span>
+              <a class="img_wrap" href="#"><img src="images/temp/main_hard_2.jpg" alt=""></a>
+              <a href="#" class="tit">小米路由器</a>
+              <p class="info">四天线设计，更安全更稳定</p>
+              <p class="price">149</p>
+            </li>
+            <li class="anima_shadow">
+              <span class="abs_top_btn g_abs_top_btn">新品</span>
+              <a class="img_wrap" href="#"><img src="images/temp/main_hard_3.jpg" alt=""></a>
+              <a href="#" class="tit">小米路由器</a>
+              <p class="info">四天线设计，更安全更稳定</p>
+              <p class="price">149</p>
+            </li>
+            <li class="anima_shadow">
+              <a class="img_wrap" href="#"><img src="images/temp/main_hard_4.jpg" alt=""></a>
+              <a href="#" class="tit">小米路由器</a>
+              <p class="info">四天线设计，更安全更稳定</p>
+              <p class="price">149</p>
+            </li>
+            <li class="anima_shadow">
+              <span class="abs_top_btn g_abs_top_btn">新品</span>
+              <a class="img_wrap" href="#"><img src="images/temp/main_hard_5.jpg" alt=""></a>
+              <a href="#" class="tit">小米路由器</a>
+              <p class="info">四天线设计，更安全更稳定</p>
+              <p class="price">149</p>
+            </li>
+            <li class="anima_shadow">
+              
+              <a class="img_wrap" href="#"><img src="images/temp/main_hard_6.jpg" alt=""></a>
+              <a href="#" class="tit">小米路由器</a>
+              <p class="info">四天线设计，更安全更稳定</p>
+              <p class="price">149</p>
+            </li>
+            <li class="anima_shadow">
+              <span class="abs_top_btn g_abs_top_btn">新品</span>
+              <a class="img_wrap" href="#"><img src="images/temp/main_hard_7.jpg" alt=""></a>
+              <a href="#" class="tit">小米路由器</a>
+              <p class="info">四天线设计，更安全更稳定</p>
+              <p class="price">149</p>
+            </li>
+            <li class="anima_shadow">
+              
+              <a class="img_wrap" href="#"><img src="images/temp/main_hard_8.jpg" alt=""></a>
+              <a href="#" class="tit">小米路由器</a>
+              <p class="info">四天线设计，更安全更稳定</p>
+              <p class="price">149</p>
+            </li>
+          </ul>
+        </div>
+        <div class="main_list_tit clearfix"> 
+          <h2 class="tit_l">配件</h2>
+          <div class="tit_r switch_tit">
+            <a data-switch="part_hot" class="link_r link_switch" href="javascript:void(0)">热门</a>
+            <a data-switch="part_voice" class="link_r link_switch" href="javascript:void(0)">耳机音箱</a>
+            <a  data-switch="part_elec" class="link_r link_switch" href="javascript:void(0)">电源</a>
+            <a data-switch="part_card" class="link_r link_switch" href="javascript:void(0)">电池存储卡</a>
+          </div>
+        </div>
+        <div class="clearfix main_list_big_wrap">
+          <div class="left_img_content">
+            <a class="anima_shadow" href="#"><img src="images/temp/match_left_1.jpg" alt=""></a>
+            <a class="anima_shadow" href="#"><img src="images/temp/match_left_2.jpg" alt=""></a>
+          </div>
+          <ul id="part_hot" class="main_list_wrap main_list_type_wrap main_abs_list_wrap clearfix">
+            <li class="anima_shadow">
+              <span class="abs_top_btn y_abs_top_btn">免邮费</span>
+              <a class="img_wrap" href="#"><img src="images/temp/hot_match_1.jpg" alt=""></a>
+              <a href="#" class="tit">小米路由器</a>
+              <p class="info">四天线设计，更安全更稳定</p>
+              <p class="price">149</p>
+              <a href="#" class="list_abs_comment">
+                <p class="comment">之前都不知道，还以为是18650电芯的。拿到手一看这是个竟然不是的</p>
+                <span class="user">来自yhhhde的评价</span>
+              </a>
+            </li>
+            <li class="anima_shadow">
+              <span class="abs_top_btn y_abs_top_btn">免邮费</span>
+              <a class="img_wrap" href="#"><img src="images/temp/hot_match_2.jpg" alt=""></a>
+              <a href="#" class="tit">小米路由器</a>
+              <p class="info">四天线设计，更安全更稳定</p>
+              <p class="price">149</p>
+              <a href="#" class="list_abs_comment">
+                <p class="comment">之前都不知道，还以为是18650电芯的。拿到手一看这是个竟然不是的</p>
+                <span class="user">来自yhhhde的评价</span>
+              </a>
+            </li>
+            <li class="anima_shadow">
+              <span class="abs_top_btn y_abs_top_btn">免邮费</span>
+              <a class="img_wrap" href="#"><img src="images/temp/hot_match_3.jpg" alt=""></a>
+              <a href="#" class="tit">小米路由器</a>
+              <p class="info">四天线设计，更安全更稳定</p>
+              <p class="price">149</p>
+              <a href="#" class="list_abs_comment">
+                <p class="comment">之前都不知道，还以为是18650电芯的。拿到手一看这是个竟然不是的</p>
+                <span class="user">来自yhhhde的评价</span>
+              </a>
+            </li>
+            <li class="anima_shadow">
+              <span class="abs_top_btn y_abs_top_btn">免邮费</span>
+              <a class="img_wrap" href="#"><img src="images/temp/hot_match_4.jpg" alt=""></a>
+              <a href="#" class="tit">小米路由器</a>
+              <p class="info">四天线设计，更安全更稳定</p>
+              <p class="price">149</p>
+              <a href="#" class="list_abs_comment">
+                <p class="comment">之前都不知道，还以为是18650电芯的。拿到手一看这是个竟然不是的</p>
+                <span class="user">来自yhhhde的评价</span>
+              </a>
+            </li>
+            <li class="anima_shadow">
+              <span class="abs_top_btn y_abs_top_btn">免邮费</span>
+              <a class="img_wrap" href="#"><img src="images/temp/hot_match_5.jpg" alt=""></a>
+              <a href="#" class="tit">小米路由器</a>
+              <p class="info">四天线设计，更安全更稳定</p>
+              <p class="price">149</p>
+              <a href="#" class="list_abs_comment">
+                <p class="comment">之前都不知道，还以为是18650电芯的。拿到手一看这是个竟然不是的</p>
+                <span class="user">来自yhhhde的评价</span>
+              </a>
+            </li>
+            <li class="anima_shadow">
+              <span class="abs_top_btn y_abs_top_btn">免邮费</span>
+              <a class="img_wrap" href="#"><img src="images/temp/hot_match_6.jpg" alt=""></a>
+              <a href="#" class="tit">小米路由器</a>
+              <p class="info">四天线设计，更安全更稳定</p>
+              <p class="price">149</p>
+              <a href="#" class="list_abs_comment">
+                <p class="comment">之前都不知道，还以为是18650电芯的。拿到手一看这是个竟然不是的</p>
+                <span class="user">来自yhhhde的评价</span>
+              </a>
+            </li>
+            <li class="anima_shadow">
+              <span class="abs_top_btn y_abs_top_btn">免邮费</span>
+              <a class="img_wrap" href="#"><img src="images/temp/hot_match_8.jpg" alt=""></a>
+              <a href="#" class="tit">小米路由器</a>
+              <p class="info">四天线设计，更安全更稳定</p>
+              <p class="price">149</p>
+              <a href="#" class="list_abs_comment">
+                <p class="comment">之前都不知道，还以为是18650电芯的。拿到手一看这是个竟然不是的</p>
+                <span class="user">来自yhhhde的评价</span>
+              </a>
+            </li>
+            <li class="last_one">
+              <a class="anima_shadow last_list_two" href="#" class="">
+                <p class="tit">平板2保护套</p>
+                <p class="price">69元</p>
+                <i class="img_r"><img src="images/temp/hot_match_last_1.jpg" alt=""></i>
+              </a>  
+              <a href="#" class="anima_shadow last_list_two last_list_two_2">
+                <p class="tit">浏览更多</p>
+                <p class="price">保护套</p>
+                <i class="img_r"><img src="images/temp/last_scan_more.jpg" alt=""></i>
+              </a>       
+            </li>
+          </ul>  
+          <ul style="display:none;" id="part_voice" class="main_list_wrap main_abs_list_wrap main_list_type_wrap clearfix">
+            <li class="anima_shadow">
+              <span class="abs_top_btn y_abs_top_btn">免邮费</span>
+              <a class="img_wrap" href="#"><img src="images/temp/match_voice_1.jpg" alt=""></a>
+              <a href="#" class="tit">小米路由器</a>
+              <p class="info">四天线设计，更安全更稳定</p>
+              <p class="price">149</p>
+              <a href="#" class="list_abs_comment">
+                <p class="comment">之前都不知道，还以为是18650电芯的。拿到手一看这是个竟然不是的</p>
+                <span class="user">来自yhhhde的评价</span>
+              </a>
+            </li>
+            <li class="anima_shadow">
+              <span class="abs_top_btn y_abs_top_btn">免邮费</span>
+              <a class="img_wrap" href="#"><img src="images/temp/match_voice_2.jpg" alt=""></a>
+              <a href="#" class="tit">小米路由器</a>
+              <p class="info">四天线设计，更安全更稳定</p>
+              <p class="price">149</p>
+              <a href="#" class="list_abs_comment">
+                <p class="comment">之前都不知道，还以为是18650电芯的。拿到手一看这是个竟然不是的</p>
+                <span class="user">来自yhhhde的评价</span>
+              </a>
+            </li>
+            <li class="anima_shadow">
+              <span class="abs_top_btn y_abs_top_btn">免邮费</span>
+              <a class="img_wrap" href="#"><img src="images/temp/match_voice_3.jpg" alt=""></a>
+              <a href="#" class="tit">小米路由器</a>
+              <p class="info">四天线设计，更安全更稳定</p>
+              <p class="price">149</p>
+              <a href="#" class="list_abs_comment">
+                <p class="comment">之前都不知道，还以为是18650电芯的。拿到手一看这是个竟然不是的</p>
+                <span class="user">来自yhhhde的评价</span>
+              </a>
+            </li>
+            <li class="anima_shadow">
+              <span class="abs_top_btn y_abs_top_btn">免邮费</span>
+              <a class="img_wrap" href="#"><img src="images/temp/hmatch_voice_3.jpg" alt=""></a>
+              <a href="#" class="tit">小米路由器</a>
+              <p class="info">四天线设计，更安全更稳定</p>
+              <p class="price">149</p>
+              <a href="#" class="list_abs_comment">
+                <p class="comment">之前都不知道，还以为是18650电芯的。拿到手一看这是个竟然不是的</p>
+                <span class="user">来自yhhhde的评价</span>
+              </a>
+            </li>
+            <li class="anima_shadow">
+              <span class="abs_top_btn y_abs_top_btn">免邮费</span>
+              <a class="img_wrap" href="#"><img src="images/temp/match_voice_4.jpg" alt=""></a>
+              <a href="#" class="tit">小米路由器</a>
+              <p class="info">四天线设计，更安全更稳定</p>
+              <p class="price">149</p>
+              <a href="#" class="list_abs_comment">
+                <p class="comment">之前都不知道，还以为是18650电芯的。拿到手一看这是个竟然不是的</p>
+                <span class="user">来自yhhhde的评价</span>
+              </a>
+            </li>
+            <li class="anima_shadow">
+              <span class="abs_top_btn y_abs_top_btn">免邮费</span>
+              <a class="img_wrap" href="#"><img src="images/temp/match_voice_5.jpg" alt=""></a>
+              <a href="#" class="tit">小米路由器</a>
+              <p class="info">四天线设计，更安全更稳定</p>
+              <p class="price">149</p>
+              <a href="#" class="list_abs_comment">
+                <p class="comment">之前都不知道，还以为是18650电芯的。拿到手一看这是个竟然不是的</p>
+                <span class="user">来自yhhhde的评价</span>
+              </a>
+            </li>
+            <li class="anima_shadow">
+              <span class="abs_top_btn y_abs_top_btn">免邮费</span>
+              <a class="img_wrap" href="#"><img src="images/temp/match_voice_6.jpg" alt=""></a>
+              <a href="#" class="tit">小米路由器</a>
+              <p class="info">四天线设计，更安全更稳定</p>
+              <p class="price">149</p>
+              <a href="#" class="list_abs_comment">
+                <p class="comment">之前都不知道，还以为是18650电芯的。拿到手一看这是个竟然不是的</p>
+                <span class="user">来自yhhhde的评价</span>
+              </a>
+            </li>
+            <li class="last_one">
+              <a class="anima_shadow last_list_two" href="#" class="">
+                <p class="tit">平板2保护套</p>
+                <p class="price">69元</p>
+                <i class="img_r"><img src="images/temp/match_voice_7.jpg" alt=""></i>
+              </a>  
+              <a href="#" class="anima_shadow last_list_two last_list_two_2">
+                <p class="tit">浏览更多</p>
+                <p class="price">保护套</p>
+                <i class="img_r"><img src="images/temp/match_voice_8.jpg" alt=""></i>
+              </a>       
+            </li>
+          </ul> 
+          <ul style="display:none;" id="part_elec" class="main_list_wrap  main_abs_list_wrap main_list_type_wrap clearfix">
+            <li class="anima_shadow">
+              <span class="abs_top_btn y_abs_top_btn">免邮费</span>
+              <a class="img_wrap" href="#"><img src="images/temp/match_elec_1.jpg" alt=""></a>
+              <a href="#" class="tit">小米路由器</a>
+              <p class="info">四天线设计，更安全更稳定</p>
+              <p class="price">149</p>
+              <a href="#" class="list_abs_comment">
+                <p class="comment">之前都不知道，还以为是18650电芯的。拿到手一看这是个竟然不是的</p>
+                <span class="user">来自yhhhde的评价</span>
+              </a>
+            </li>
+            <li class="anima_shadow">
+              <span class="abs_top_btn y_abs_top_btn">免邮费</span>
+              <a class="img_wrap" href="#"><img src="images/temp/match_elec_2.jpg" alt=""></a>
+              <a href="#" class="tit">小米路由器</a>
+              <p class="info">四天线设计，更安全更稳定</p>
+              <p class="price">149</p>
+              <a href="#" class="list_abs_comment">
+                <p class="comment">之前都不知道，还以为是18650电芯的。拿到手一看这是个竟然不是的</p>
+                <span class="user">来自yhhhde的评价</span>
+              </a>
+            </li>
+            <li class="anima_shadow">
+              <span class="abs_top_btn y_abs_top_btn">免邮费</span>
+              <a class="img_wrap" href="#"><img src="images/temp/match_elec_3.jpg" alt=""></a>
+              <a href="#" class="tit">小米路由器</a>
+              <p class="info">四天线设计，更安全更稳定</p>
+              <p class="price">149</p>
+              <a href="#" class="list_abs_comment">
+                <p class="comment">之前都不知道，还以为是18650电芯的。拿到手一看这是个竟然不是的</p>
+                <span class="user">来自yhhhde的评价</span>
+              </a>
+            </li>
+            <li class="anima_shadow">
+              <span class="abs_top_btn y_abs_top_btn">免邮费</span>
+              <a class="img_wrap" href="#"><img src="images/temp/match_elec_4.jpg" alt=""></a>
+              <a href="#" class="tit">小米路由器</a>
+              <p class="info">四天线设计，更安全更稳定</p>
+              <p class="price">149</p>
+              <a href="#" class="list_abs_comment">
+                <p class="comment">之前都不知道，还以为是18650电芯的。拿到手一看这是个竟然不是的</p>
+                <span class="user">来自yhhhde的评价</span>
+              </a>
+            </li>
+            <li class="anima_shadow">
+              <span class="abs_top_btn y_abs_top_btn">免邮费</span>
+              <a class="img_wrap" href="#"><img src="images/temp/match_elec_5.jpg" alt=""></a>
+              <a href="#" class="tit">小米路由器</a>
+              <p class="info">四天线设计，更安全更稳定</p>
+              <p class="price">149</p>
+              <a href="#" class="list_abs_comment">
+                <p class="comment">之前都不知道，还以为是18650电芯的。拿到手一看这是个竟然不是的</p>
+                <span class="user">来自yhhhde的评价</span>
+              </a>
+            </li>
+            <li class="anima_shadow">
+              <span class="abs_top_btn y_abs_top_btn">免邮费</span>
+              <a class="img_wrap" href="#"><img src="images/temp/match_elec_6.jpg" alt=""></a>
+              <a href="#" class="tit">小米路由器</a>
+              <p class="info">四天线设计，更安全更稳定</p>
+              <p class="price">149</p>
+              <a href="#" class="list_abs_comment">
+                <p class="comment">之前都不知道，还以为是18650电芯的。拿到手一看这是个竟然不是的</p>
+                <span class="user">来自yhhhde的评价</span>
+              </a>
+            </li>
+            <li class="anima_shadow">
+              <span class="abs_top_btn y_abs_top_btn">免邮费</span>
+              <a class="img_wrap" href="#"><img src="images/temp/match_elec_7.jpg" alt=""></a>
+              <a href="#" class="tit">小米路由器</a>
+              <p class="info">四天线设计，更安全更稳定</p>
+              <p class="price">149</p>
+              <a href="#" class="list_abs_comment">
+                <p class="comment">之前都不知道，还以为是18650电芯的。拿到手一看这是个竟然不是的</p>
+                <span class="user">来自yhhhde的评价</span>
+              </a>
+            </li>
+            <li class="last_one">
+              <a class="anima_shadow last_list_two" href="#" class="">
+                <p class="tit">平板2保护套</p>
+                <p class="price">69元</p>
+                <i class="img_r"><img src="images/temp/match_elec_8.jpg" alt=""></i>
+              </a>  
+              <a href="#" class="anima_shadow last_list_two last_list_two_2">
+                <p class="tit">浏览更多</p>
+                <p class="price">保护套</p>
+                <i class="img_r"><img src="images/temp/match_elec_9.jpg" alt=""></i>
+              </a>       
+            </li>
+          </ul> 
+          <ul  style="display:none;" id="part_card" class="main_list_wrap main_abs_list_wrap main_list_type_wrap clearfix">
+            <li class="anima_shadow">
+              <span class="abs_top_btn y_abs_top_btn">免邮费</span>
+              <a class="img_wrap" href="#"><img src="images/temp/hot_match_1.jpg" alt=""></a>
+              <a href="#" class="tit">小米路由器</a>
+              <p class="info">四天线设计，更安全更稳定</p>
+              <p class="price">149</p>
+              <a href="#" class="list_abs_comment">
+                <p class="comment">之前都不知道，还以为是18650电芯的。拿到手一看这是个竟然不是的</p>
+                <span class="user">来自yhhhde的评价</span>
+              </a>
+            </li>
+            <li class="anima_shadow">
+              <span class="abs_top_btn y_abs_top_btn">免邮费</span>
+              <a class="img_wrap" href="#"><img src="images/temp/hot_match_2.jpg" alt=""></a>
+              <a href="#" class="tit">小米路由器</a>
+              <p class="info">四天线设计，更安全更稳定</p>
+              <p class="price">149</p>
+              <a href="#" class="list_abs_comment">
+                <p class="comment">之前都不知道，还以为是18650电芯的。拿到手一看这是个竟然不是的</p>
+                <span class="user">来自yhhhde的评价</span>
+              </a>
+            </li>
+            <li class="anima_shadow">
+              <span class="abs_top_btn y_abs_top_btn">免邮费</span>
+              <a class="img_wrap" href="#"><img src="images/temp/hot_match_3.jpg" alt=""></a>
+              <a href="#" class="tit">小米路由器</a>
+              <p class="info">四天线设计，更安全更稳定</p>
+              <p class="price">149</p>
+              <a href="#" class="list_abs_comment">
+                <p class="comment">之前都不知道，还以为是18650电芯的。拿到手一看这是个竟然不是的</p>
+                <span class="user">来自yhhhde的评价</span>
+              </a>
+            </li>
+            <li class="anima_shadow">
+              <span class="abs_top_btn y_abs_top_btn">免邮费</span>
+              <a class="img_wrap" href="#"><img src="images/temp/hot_match_4.jpg" alt=""></a>
+              <a href="#" class="tit">小米路由器</a>
+              <p class="info">四天线设计，更安全更稳定</p>
+              <p class="price">149</p>
+              <a href="#" class="list_abs_comment">
+                <p class="comment">之前都不知道，还以为是18650电芯的。拿到手一看这是个竟然不是的</p>
+                <span class="user">来自yhhhde的评价</span>
+              </a>
+            </li>
+            <li class="anima_shadow">
+              <span class="abs_top_btn y_abs_top_btn">免邮费</span>
+              <a class="img_wrap" href="#"><img src="images/temp/hot_match_5.jpg" alt=""></a>
+              <a href="#" class="tit">小米路由器</a>
+              <p class="info">四天线设计，更安全更稳定</p>
+              <p class="price">149</p>
+              <a href="#" class="list_abs_comment">
+                <p class="comment">之前都不知道，还以为是18650电芯的。拿到手一看这是个竟然不是的</p>
+                <span class="user">来自yhhhde的评价</span>
+              </a>
+            </li>
+            <li class="anima_shadow">
+              <span class="abs_top_btn y_abs_top_btn">免邮费</span>
+              <a class="img_wrap" href="#"><img src="images/temp/hot_match_6.jpg" alt=""></a>
+              <a href="#" class="tit">小米路由器</a>
+              <p class="info">四天线设计，更安全更稳定</p>
+              <p class="price">149</p>
+              <a href="#" class="list_abs_comment">
+                <p class="comment">之前都不知道，还以为是18650电芯的。拿到手一看这是个竟然不是的</p>
+                <span class="user">来自yhhhde的评价</span>
+              </a>
+            </li>
+            <li class="anima_shadow">
+              <span class="abs_top_btn y_abs_top_btn">免邮费</span>
+              <a class="img_wrap" href="#"><img src="images/temp/hot_match_8.jpg" alt=""></a>
+              <a href="#" class="tit">小米路由器</a>
+              <p class="info">四天线设计，更安全更稳定</p>
+              <p class="price">149</p>
+              <a href="#" class="list_abs_comment">
+                <p class="comment">之前都不知道，还以为是18650电芯的。拿到手一看这是个竟然不是的</p>
+                <span class="user">来自yhhhde的评价</span>
+              </a>
+            </li>
+            <li class="last_one">
+              <a class="anima_shadow last_list_two" href="#" class="">
+                <p class="tit">平板2保护套</p>
+                <p class="price">69元</p>
+                <i class="img_r"><img src="images/temp/hot_match_last_1.jpg" alt=""></i>
+              </a>  
+              <a href="#" class="anima_shadow last_list_two last_list_two_2">
+                <p class="tit">浏览更多</p>
+                <p class="price">保护套</p>
+                <i class="img_r"><img src="images/temp/last_scan_more.jpg" alt=""></i>
+              </a>       
+            </li>
+          </ul> 
+        </div>
+        <div class="main_list_tit clearfix"> 
+          <h2 class="tit_l">配件</h2>
+          <div class="tit_r switch_tit">
+            <a data-switch="part_hot" class="link_r link_switch" href="javascript:void(0)">热门</a>
+            <a data-switch="part_voice" class="link_r link_switch" href="javascript:void(0)">保护套</a>
+            <a  data-switch="part_elec" class="link_r link_switch" href="javascript:void(0)">贴膜</a>
+            <a data-switch="part_card" class="link_r link_switch" href="javascript:void(0)">其它配件</a>
+          </div>
+        </div>
+        <div class="clearfix main_list_big_wrap">
+          <div class="left_img_content">
+            <a class="anima_shadow" href="#"><img src="images/temp/match_left_1.jpg" alt=""></a>
+            <a class="anima_shadow" href="#"><img src="images/temp/match_left_2.jpg" alt=""></a>
+          </div>
+          <ul id="part_hot" class="main_list_wrap main_list_type_wrap main_abs_list_wrap clearfix">
+            <li class="anima_shadow">
+              <span class="abs_top_btn y_abs_top_btn">免邮费</span>
+              <a class="img_wrap" href="#"><img src="images/temp/hot_match_1.jpg" alt=""></a>
+              <a href="#" class="tit">小米路由器</a>
+              <p class="info">四天线设计，更安全更稳定</p>
+              <p class="price">149</p>
+              <a href="#" class="list_abs_comment">
+                <p class="comment">之前都不知道，还以为是18650电芯的。拿到手一看这是个竟然不是的</p>
+                <span class="user">来自yhhhde的评价</span>
+              </a>
+            </li>
+            <li class="anima_shadow">
+              <span class="abs_top_btn y_abs_top_btn">免邮费</span>
+              <a class="img_wrap" href="#"><img src="images/temp/hot_match_2.jpg" alt=""></a>
+              <a href="#" class="tit">小米路由器</a>
+              <p class="info">四天线设计，更安全更稳定</p>
+              <p class="price">149</p>
+              <a href="#" class="list_abs_comment">
+                <p class="comment">之前都不知道，还以为是18650电芯的。拿到手一看这是个竟然不是的</p>
+                <span class="user">来自yhhhde的评价</span>
+              </a>
+            </li>
+            <li class="anima_shadow">
+              <span class="abs_top_btn y_abs_top_btn">免邮费</span>
+              <a class="img_wrap" href="#"><img src="images/temp/hot_match_3.jpg" alt=""></a>
+              <a href="#" class="tit">小米路由器</a>
+              <p class="info">四天线设计，更安全更稳定</p>
+              <p class="price">149</p>
+              <a href="#" class="list_abs_comment">
+                <p class="comment">之前都不知道，还以为是18650电芯的。拿到手一看这是个竟然不是的</p>
+                <span class="user">来自yhhhde的评价</span>
+              </a>
+            </li>
+            <li class="anima_shadow">
+              <span class="abs_top_btn y_abs_top_btn">免邮费</span>
+              <a class="img_wrap" href="#"><img src="images/temp/hot_match_4.jpg" alt=""></a>
+              <a href="#" class="tit">小米路由器</a>
+              <p class="info">四天线设计，更安全更稳定</p>
+              <p class="price">149</p>
+              <a href="#" class="list_abs_comment">
+                <p class="comment">之前都不知道，还以为是18650电芯的。拿到手一看这是个竟然不是的</p>
+                <span class="user">来自yhhhde的评价</span>
+              </a>
+            </li>
+            <li class="anima_shadow">
+              <span class="abs_top_btn y_abs_top_btn">免邮费</span>
+              <a class="img_wrap" href="#"><img src="images/temp/hot_match_5.jpg" alt=""></a>
+              <a href="#" class="tit">小米路由器</a>
+              <p class="info">四天线设计，更安全更稳定</p>
+              <p class="price">149</p>
+              <a href="#" class="list_abs_comment">
+                <p class="comment">之前都不知道，还以为是18650电芯的。拿到手一看这是个竟然不是的</p>
+                <span class="user">来自yhhhde的评价</span>
+              </a>
+            </li>
+            <li class="anima_shadow">
+              <span class="abs_top_btn y_abs_top_btn">免邮费</span>
+              <a class="img_wrap" href="#"><img src="images/temp/hot_match_6.jpg" alt=""></a>
+              <a href="#" class="tit">小米路由器</a>
+              <p class="info">四天线设计，更安全更稳定</p>
+              <p class="price">149</p>
+              <a href="#" class="list_abs_comment">
+                <p class="comment">之前都不知道，还以为是18650电芯的。拿到手一看这是个竟然不是的</p>
+                <span class="user">来自yhhhde的评价</span>
+              </a>
+            </li>
+            <li class="anima_shadow">
+              <span class="abs_top_btn y_abs_top_btn">免邮费</span>
+              <a class="img_wrap" href="#"><img src="images/temp/hot_match_8.jpg" alt=""></a>
+              <a href="#" class="tit">小米路由器</a>
+              <p class="info">四天线设计，更安全更稳定</p>
+              <p class="price">149</p>
+              <a href="#" class="list_abs_comment">
+                <p class="comment">之前都不知道，还以为是18650电芯的。拿到手一看这是个竟然不是的</p>
+                <span class="user">来自yhhhde的评价</span>
+              </a>
+            </li>
+            <li class="last_one">
+              <a class="anima_shadow last_list_two" href="#" class="">
+                <p class="tit">平板2保护套</p>
+                <p class="price">69元</p>
+                <i class="img_r"><img src="images/temp/hot_match_last_1.jpg" alt=""></i>
+              </a>  
+              <a href="#" class="anima_shadow last_list_two last_list_two_2">
+                <p class="tit">浏览更多</p>
+                <p class="price">保护套</p>
+                <i class="img_r"><img src="images/temp/last_scan_more.jpg" alt=""></i>
+              </a>       
+            </li>
+          </ul>  
+          <ul style="display:none;" id="part_voice" class="main_list_wrap main_abs_list_wrap main_list_type_wrap clearfix">
+            <li class="anima_shadow">
+              <span class="abs_top_btn y_abs_top_btn">免邮费</span>
+              <a class="img_wrap" href="#"><img src="images/temp/match_voice_1.jpg" alt=""></a>
+              <a href="#" class="tit">小米路由器</a>
+              <p class="info">四天线设计，更安全更稳定</p>
+              <p class="price">149</p>
+              <a href="#" class="list_abs_comment">
+                <p class="comment">之前都不知道，还以为是18650电芯的。拿到手一看这是个竟然不是的</p>
+                <span class="user">来自yhhhde的评价</span>
+              </a>
+            </li>
+            <li class="anima_shadow">
+              <span class="abs_top_btn y_abs_top_btn">免邮费</span>
+              <a class="img_wrap" href="#"><img src="images/temp/match_voice_2.jpg" alt=""></a>
+              <a href="#" class="tit">小米路由器</a>
+              <p class="info">四天线设计，更安全更稳定</p>
+              <p class="price">149</p>
+              <a href="#" class="list_abs_comment">
+                <p class="comment">之前都不知道，还以为是18650电芯的。拿到手一看这是个竟然不是的</p>
+                <span class="user">来自yhhhde的评价</span>
+              </a>
+            </li>
+            <li class="anima_shadow">
+              <span class="abs_top_btn y_abs_top_btn">免邮费</span>
+              <a class="img_wrap" href="#"><img src="images/temp/match_voice_3.jpg" alt=""></a>
+              <a href="#" class="tit">小米路由器</a>
+              <p class="info">四天线设计，更安全更稳定</p>
+              <p class="price">149</p>
+              <a href="#" class="list_abs_comment">
+                <p class="comment">之前都不知道，还以为是18650电芯的。拿到手一看这是个竟然不是的</p>
+                <span class="user">来自yhhhde的评价</span>
+              </a>
+            </li>
+            <li class="anima_shadow">
+              <span class="abs_top_btn y_abs_top_btn">免邮费</span>
+              <a class="img_wrap" href="#"><img src="images/temp/hmatch_voice_3.jpg" alt=""></a>
+              <a href="#" class="tit">小米路由器</a>
+              <p class="info">四天线设计，更安全更稳定</p>
+              <p class="price">149</p>
+              <a href="#" class="list_abs_comment">
+                <p class="comment">之前都不知道，还以为是18650电芯的。拿到手一看这是个竟然不是的</p>
+                <span class="user">来自yhhhde的评价</span>
+              </a>
+            </li>
+            <li class="anima_shadow">
+              <span class="abs_top_btn y_abs_top_btn">免邮费</span>
+              <a class="img_wrap" href="#"><img src="images/temp/match_voice_4.jpg" alt=""></a>
+              <a href="#" class="tit">小米路由器</a>
+              <p class="info">四天线设计，更安全更稳定</p>
+              <p class="price">149</p>
+              <a href="#" class="list_abs_comment">
+                <p class="comment">之前都不知道，还以为是18650电芯的。拿到手一看这是个竟然不是的</p>
+                <span class="user">来自yhhhde的评价</span>
+              </a>
+            </li>
+            <li class="anima_shadow">
+              <span class="abs_top_btn y_abs_top_btn">免邮费</span>
+              <a class="img_wrap" href="#"><img src="images/temp/match_voice_5.jpg" alt=""></a>
+              <a href="#" class="tit">小米路由器</a>
+              <p class="info">四天线设计，更安全更稳定</p>
+              <p class="price">149</p>
+              <a href="#" class="list_abs_comment">
+                <p class="comment">之前都不知道，还以为是18650电芯的。拿到手一看这是个竟然不是的</p>
+                <span class="user">来自yhhhde的评价</span>
+              </a>
+            </li>
+            <li class="anima_shadow">
+              <span class="abs_top_btn y_abs_top_btn">免邮费</span>
+              <a class="img_wrap" href="#"><img src="images/temp/match_voice_6.jpg" alt=""></a>
+              <a href="#" class="tit">小米路由器</a>
+              <p class="info">四天线设计，更安全更稳定</p>
+              <p class="price">149</p>
+              <a href="#" class="list_abs_comment">
+                <p class="comment">之前都不知道，还以为是18650电芯的。拿到手一看这是个竟然不是的</p>
+                <span class="user">来自yhhhde的评价</span>
+              </a>
+            </li>
+            <li class="last_one">
+              <a class="anima_shadow last_list_two" href="#" class="">
+                <p class="tit">平板2保护套</p>
+                <p class="price">69元</p>
+                <i class="img_r"><img src="images/temp/match_voice_7.jpg" alt=""></i>
+              </a>  
+              <a href="#" class="anima_shadow last_list_two last_list_two_2">
+                <p class="tit">浏览更多</p>
+                <p class="price">保护套</p>
+                <i class="img_r"><img src="images/temp/match_voice_8.jpg" alt=""></i>
+              </a>       
+            </li>
+          </ul> 
+          <ul style="display:none;" id="part_elec" class="main_list_wrap  main_abs_list_wrap main_list_type_wrap clearfix">
+            <li class="anima_shadow">
+              <span class="abs_top_btn y_abs_top_btn">免邮费</span>
+              <a class="img_wrap" href="#"><img src="images/temp/match_elec_1.jpg" alt=""></a>
+              <a href="#" class="tit">小米路由器</a>
+              <p class="info">四天线设计，更安全更稳定</p>
+              <p class="price">149</p>
+              <a href="#" class="list_abs_comment">
+                <p class="comment">之前都不知道，还以为是18650电芯的。拿到手一看这是个竟然不是的</p>
+                <span class="user">来自yhhhde的评价</span>
+              </a>
+            </li>
+            <li class="anima_shadow">
+              <span class="abs_top_btn y_abs_top_btn">免邮费</span>
+              <a class="img_wrap" href="#"><img src="images/temp/match_elec_2.jpg" alt=""></a>
+              <a href="#" class="tit">小米路由器</a>
+              <p class="info">四天线设计，更安全更稳定</p>
+              <p class="price">149</p>
+              <a href="#" class="list_abs_comment">
+                <p class="comment">之前都不知道，还以为是18650电芯的。拿到手一看这是个竟然不是的</p>
+                <span class="user">来自yhhhde的评价</span>
+              </a>
+            </li>
+            <li class="anima_shadow">
+              <span class="abs_top_btn y_abs_top_btn">免邮费</span>
+              <a class="img_wrap" href="#"><img src="images/temp/match_elec_3.jpg" alt=""></a>
+              <a href="#" class="tit">小米路由器</a>
+              <p class="info">四天线设计，更安全更稳定</p>
+              <p class="price">149</p>
+              <a href="#" class="list_abs_comment">
+                <p class="comment">之前都不知道，还以为是18650电芯的。拿到手一看这是个竟然不是的</p>
+                <span class="user">来自yhhhde的评价</span>
+              </a>
+            </li>
+            <li class="anima_shadow">
+              <span class="abs_top_btn y_abs_top_btn">免邮费</span>
+              <a class="img_wrap" href="#"><img src="images/temp/match_elec_4.jpg" alt=""></a>
+              <a href="#" class="tit">小米路由器</a>
+              <p class="info">四天线设计，更安全更稳定</p>
+              <p class="price">149</p>
+              <a href="#" class="list_abs_comment">
+                <p class="comment">之前都不知道，还以为是18650电芯的。拿到手一看这是个竟然不是的</p>
+                <span class="user">来自yhhhde的评价</span>
+              </a>
+            </li>
+            <li class="anima_shadow">
+              <span class="abs_top_btn y_abs_top_btn">免邮费</span>
+              <a class="img_wrap" href="#"><img src="images/temp/match_elec_5.jpg" alt=""></a>
+              <a href="#" class="tit">小米路由器</a>
+              <p class="info">四天线设计，更安全更稳定</p>
+              <p class="price">149</p>
+              <a href="#" class="list_abs_comment">
+                <p class="comment">之前都不知道，还以为是18650电芯的。拿到手一看这是个竟然不是的</p>
+                <span class="user">来自yhhhde的评价</span>
+              </a>
+            </li>
+            <li class="anima_shadow">
+              <span class="abs_top_btn y_abs_top_btn">免邮费</span>
+              <a class="img_wrap" href="#"><img src="images/temp/match_elec_6.jpg" alt=""></a>
+              <a href="#" class="tit">小米路由器</a>
+              <p class="info">四天线设计，更安全更稳定</p>
+              <p class="price">149</p>
+              <a href="#" class="list_abs_comment">
+                <p class="comment">之前都不知道，还以为是18650电芯的。拿到手一看这是个竟然不是的</p>
+                <span class="user">来自yhhhde的评价</span>
+              </a>
+            </li>
+            <li class="anima_shadow">
+              <span class="abs_top_btn y_abs_top_btn">免邮费</span>
+              <a class="img_wrap" href="#"><img src="images/temp/match_elec_7.jpg" alt=""></a>
+              <a href="#" class="tit">小米路由器</a>
+              <p class="info">四天线设计，更安全更稳定</p>
+              <p class="price">149</p>
+              <a href="#" class="list_abs_comment">
+                <p class="comment">之前都不知道，还以为是18650电芯的。拿到手一看这是个竟然不是的</p>
+                <span class="user">来自yhhhde的评价</span>
+              </a>
+            </li>
+            <li class="last_one">
+              <a class="anima_shadow last_list_two" href="#" class="">
+                <p class="tit">平板2保护套</p>
+                <p class="price">69元</p>
+                <i class="img_r"><img src="images/temp/match_elec_8.jpg" alt=""></i>
+              </a>  
+              <a href="#" class="anima_shadow last_list_two last_list_two_2">
+                <p class="tit">浏览更多</p>
+                <p class="price">保护套</p>
+                <i class="img_r"><img src="images/temp/match_elec_9.jpg" alt=""></i>
+              </a>       
+            </li>
+          </ul> 
+          <ul  style="display:none;" id="part_card" class="main_list_wrap main_abs_list_wrap main_list_type_wrap clearfix">
+            <li class="anima_shadow">
+              <span class="abs_top_btn y_abs_top_btn">免邮费</span>
+              <a class="img_wrap" href="#"><img src="images/temp/hot_match_1.jpg" alt=""></a>
+              <a href="#" class="tit">小米路由器</a>
+              <p class="info">四天线设计，更安全更稳定</p>
+              <p class="price">149</p>
+              <a href="#" class="list_abs_comment">
+                <p class="comment">之前都不知道，还以为是18650电芯的。拿到手一看这是个竟然不是的</p>
+                <span class="user">来自yhhhde的评价</span>
+              </a>
+            </li>
+            <li class="anima_shadow">
+              <span class="abs_top_btn y_abs_top_btn">免邮费</span>
+              <a class="img_wrap" href="#"><img src="images/temp/hot_match_2.jpg" alt=""></a>
+              <a href="#" class="tit">小米路由器</a>
+              <p class="info">四天线设计，更安全更稳定</p>
+              <p class="price">149</p>
+              <a href="#" class="list_abs_comment">
+                <p class="comment">之前都不知道，还以为是18650电芯的。拿到手一看这是个竟然不是的</p>
+                <span class="user">来自yhhhde的评价</span>
+              </a>
+            </li>
+            <li class="anima_shadow">
+              <span class="abs_top_btn y_abs_top_btn">免邮费</span>
+              <a class="img_wrap" href="#"><img src="images/temp/hot_match_3.jpg" alt=""></a>
+              <a href="#" class="tit">小米路由器</a>
+              <p class="info">四天线设计，更安全更稳定</p>
+              <p class="price">149</p>
+              <a href="#" class="list_abs_comment">
+                <p class="comment">之前都不知道，还以为是18650电芯的。拿到手一看这是个竟然不是的</p>
+                <span class="user">来自yhhhde的评价</span>
+              </a>
+            </li>
+            <li class="anima_shadow">
+              <span class="abs_top_btn y_abs_top_btn">免邮费</span>
+              <a class="img_wrap" href="#"><img src="images/temp/hot_match_4.jpg" alt=""></a>
+              <a href="#" class="tit">小米路由器</a>
+              <p class="info">四天线设计，更安全更稳定</p>
+              <p class="price">149</p>
+              <a href="#" class="list_abs_comment">
+                <p class="comment">之前都不知道，还以为是18650电芯的。拿到手一看这是个竟然不是的</p>
+                <span class="user">来自yhhhde的评价</span>
+              </a>
+            </li>
+            <li class="anima_shadow">
+              <span class="abs_top_btn y_abs_top_btn">免邮费</span>
+              <a class="img_wrap" href="#"><img src="images/temp/hot_match_5.jpg" alt=""></a>
+              <a href="#" class="tit">小米路由器</a>
+              <p class="info">四天线设计，更安全更稳定</p>
+              <p class="price">149</p>
+              <a href="#" class="list_abs_comment">
+                <p class="comment">之前都不知道，还以为是18650电芯的。拿到手一看这是个竟然不是的</p>
+                <span class="user">来自yhhhde的评价</span>
+              </a>
+            </li>
+            <li class="anima_shadow">
+              <span class="abs_top_btn y_abs_top_btn">免邮费</span>
+              <a class="img_wrap" href="#"><img src="images/temp/hot_match_6.jpg" alt=""></a>
+              <a href="#" class="tit">小米路由器</a>
+              <p class="info">四天线设计，更安全更稳定</p>
+              <p class="price">149</p>
+              <a href="#" class="list_abs_comment">
+                <p class="comment">之前都不知道，还以为是18650电芯的。拿到手一看这是个竟然不是的</p>
+                <span class="user">来自yhhhde的评价</span>
+              </a>
+            </li>
+            <li class="anima_shadow">
+              <span class="abs_top_btn y_abs_top_btn">免邮费</span>
+              <a class="img_wrap" href="#"><img src="images/temp/hot_match_8.jpg" alt=""></a>
+              <a href="#" class="tit">小米路由器</a>
+              <p class="info">四天线设计，更安全更稳定</p>
+              <p class="price">149</p>
+              <a href="#" class="list_abs_comment">
+                <p class="comment">之前都不知道，还以为是18650电芯的。拿到手一看这是个竟然不是的</p>
+                <span class="user">来自yhhhde的评价</span>
+              </a>
+            </li>
+            <li class="last_one">
+              <a class="anima_shadow last_list_two" href="#" class="">
+                <p class="tit">平板2保护套</p>
+                <p class="price">69元</p>
+                <i class="img_r"><img src="images/temp/hot_match_last_1.jpg" alt=""></i>
+              </a>  
+              <a href="#" class="anima_shadow last_list_two last_list_two_2">
+                <p class="tit">浏览更多</p>
+                <p class="price">保护套</p>
+                <i class="img_r"><img src="images/temp/last_scan_more.jpg" alt=""></i>
+              </a>       
+            </li>
+          </ul> 
+        </div>
+        <div class="main_list_tit clearfix"> 
+          <h2 class="tit_l">周边</h2>
+          <div class="tit_r switch_tit">
+            <a data-switch="part_hot" class="link_r link_switch" href="javascript:void(0)">热门</a>
+            <a data-switch="part_voice" class="link_r link_switch" href="javascript:void(0)">服装</a>
+            <a  data-switch="part_elec" class="link_r link_switch" href="javascript:void(0)">米兔</a>
+            <a data-switch="part_card" class="link_r link_switch" href="javascript:void(0)">生活周边</a>
+            <a data-switch="part_card" class="link_r link_switch" href="javascript:void(0)">箱包</a>
+          </div>
+        </div>
+        <div class="clearfix main_list_big_wrap">
+          <div class="left_img_content">
+            <a class="anima_shadow" href="#"><img src="images/temp/match_left_1.jpg" alt=""></a>
+            <a class="anima_shadow" href="#"><img src="images/temp/match_left_2.jpg" alt=""></a>
+          </div>
+          <ul id="part_hot" class="main_list_wrap main_list_type_wrap main_abs_list_wrap clearfix">
+            <li class="anima_shadow">
+              <span class="abs_top_btn y_abs_top_btn">免邮费</span>
+              <a class="img_wrap" href="#"><img src="images/temp/hot_match_1.jpg" alt=""></a>
+              <a href="#" class="tit">小米路由器</a>
+              <p class="info">四天线设计，更安全更稳定</p>
+              <p class="price">149</p>
+              <a href="#" class="list_abs_comment">
+                <p class="comment">之前都不知道，还以为是18650电芯的。拿到手一看这是个竟然不是的</p>
+                <span class="user">来自yhhhde的评价</span>
+              </a>
+            </li>
+            <li class="anima_shadow">
+              <span class="abs_top_btn y_abs_top_btn">免邮费</span>
+              <a class="img_wrap" href="#"><img src="images/temp/hot_match_2.jpg" alt=""></a>
+              <a href="#" class="tit">小米路由器</a>
+              <p class="info">四天线设计，更安全更稳定</p>
+              <p class="price">149</p>
+              <a href="#" class="list_abs_comment">
+                <p class="comment">之前都不知道，还以为是18650电芯的。拿到手一看这是个竟然不是的</p>
+                <span class="user">来自yhhhde的评价</span>
+              </a>
+            </li>
+            <li class="anima_shadow">
+              <span class="abs_top_btn y_abs_top_btn">免邮费</span>
+              <a class="img_wrap" href="#"><img src="images/temp/hot_match_3.jpg" alt=""></a>
+              <a href="#" class="tit">小米路由器</a>
+              <p class="info">四天线设计，更安全更稳定</p>
+              <p class="price">149</p>
+              <a href="#" class="list_abs_comment">
+                <p class="comment">之前都不知道，还以为是18650电芯的。拿到手一看这是个竟然不是的</p>
+                <span class="user">来自yhhhde的评价</span>
+              </a>
+            </li>
+            <li class="anima_shadow">
+              <span class="abs_top_btn y_abs_top_btn">免邮费</span>
+              <a class="img_wrap" href="#"><img src="images/temp/hot_match_4.jpg" alt=""></a>
+              <a href="#" class="tit">小米路由器</a>
+              <p class="info">四天线设计，更安全更稳定</p>
+              <p class="price">149</p>
+              <a href="#" class="list_abs_comment">
+                <p class="comment">之前都不知道，还以为是18650电芯的。拿到手一看这是个竟然不是的</p>
+                <span class="user">来自yhhhde的评价</span>
+              </a>
+            </li>
+            <li class="anima_shadow">
+              <span class="abs_top_btn y_abs_top_btn">免邮费</span>
+              <a class="img_wrap" href="#"><img src="images/temp/hot_match_5.jpg" alt=""></a>
+              <a href="#" class="tit">小米路由器</a>
+              <p class="info">四天线设计，更安全更稳定</p>
+              <p class="price">149</p>
+              <a href="#" class="list_abs_comment">
+                <p class="comment">之前都不知道，还以为是18650电芯的。拿到手一看这是个竟然不是的</p>
+                <span class="user">来自yhhhde的评价</span>
+              </a>
+            </li>
+            <li class="anima_shadow">
+              <span class="abs_top_btn y_abs_top_btn">免邮费</span>
+              <a class="img_wrap" href="#"><img src="images/temp/hot_match_6.jpg" alt=""></a>
+              <a href="#" class="tit">小米路由器</a>
+              <p class="info">四天线设计，更安全更稳定</p>
+              <p class="price">149</p>
+              <a href="#" class="list_abs_comment">
+                <p class="comment">之前都不知道，还以为是18650电芯的。拿到手一看这是个竟然不是的</p>
+                <span class="user">来自yhhhde的评价</span>
+              </a>
+            </li>
+            <li class="anima_shadow">
+              <span class="abs_top_btn y_abs_top_btn">免邮费</span>
+              <a class="img_wrap" href="#"><img src="images/temp/hot_match_8.jpg" alt=""></a>
+              <a href="#" class="tit">小米路由器</a>
+              <p class="info">四天线设计，更安全更稳定</p>
+              <p class="price">149</p>
+              <a href="#" class="list_abs_comment">
+                <p class="comment">之前都不知道，还以为是18650电芯的。拿到手一看这是个竟然不是的</p>
+                <span class="user">来自yhhhde的评价</span>
+              </a>
+            </li>
+            <li class="last_one">
+              <a class="anima_shadow last_list_two" href="#" class="">
+                <p class="tit">平板2保护套</p>
+                <p class="price">69元</p>
+                <i class="img_r"><img src="images/temp/hot_match_last_1.jpg" alt=""></i>
+              </a>  
+              <a href="#" class="anima_shadow last_list_two last_list_two_2">
+                <p class="tit">浏览更多</p>
+                <p class="price">保护套</p>
+                <i class="img_r"><img src="images/temp/last_scan_more.jpg" alt=""></i>
+              </a>       
+            </li>
+          </ul>  
+          <ul style="display:none;" id="part_voice" class="main_list_wrap main_abs_list_wrap main_list_type_wrap clearfix">
+            <li class="anima_shadow">
+              <span class="abs_top_btn y_abs_top_btn">免邮费</span>
+              <a class="img_wrap" href="#"><img src="images/temp/match_voice_1.jpg" alt=""></a>
+              <a href="#" class="tit">小米路由器</a>
+              <p class="info">四天线设计，更安全更稳定</p>
+              <p class="price">149</p>
+              <a href="#" class="list_abs_comment">
+                <p class="comment">之前都不知道，还以为是18650电芯的。拿到手一看这是个竟然不是的</p>
+                <span class="user">来自yhhhde的评价</span>
+              </a>
+            </li>
+            <li class="anima_shadow">
+              <span class="abs_top_btn y_abs_top_btn">免邮费</span>
+              <a class="img_wrap" href="#"><img src="images/temp/match_voice_2.jpg" alt=""></a>
+              <a href="#" class="tit">小米路由器</a>
+              <p class="info">四天线设计，更安全更稳定</p>
+              <p class="price">149</p>
+              <a href="#" class="list_abs_comment">
+                <p class="comment">之前都不知道，还以为是18650电芯的。拿到手一看这是个竟然不是的</p>
+                <span class="user">来自yhhhde的评价</span>
+              </a>
+            </li>
+            <li class="anima_shadow">
+              <span class="abs_top_btn y_abs_top_btn">免邮费</span>
+              <a class="img_wrap" href="#"><img src="images/temp/match_voice_3.jpg" alt=""></a>
+              <a href="#" class="tit">小米路由器</a>
+              <p class="info">四天线设计，更安全更稳定</p>
+              <p class="price">149</p>
+              <a href="#" class="list_abs_comment">
+                <p class="comment">之前都不知道，还以为是18650电芯的。拿到手一看这是个竟然不是的</p>
+                <span class="user">来自yhhhde的评价</span>
+              </a>
+            </li>
+            <li class="anima_shadow">
+              <span class="abs_top_btn y_abs_top_btn">免邮费</span>
+              <a class="img_wrap" href="#"><img src="images/temp/hmatch_voice_3.jpg" alt=""></a>
+              <a href="#" class="tit">小米路由器</a>
+              <p class="info">四天线设计，更安全更稳定</p>
+              <p class="price">149</p>
+              <a href="#" class="list_abs_comment">
+                <p class="comment">之前都不知道，还以为是18650电芯的。拿到手一看这是个竟然不是的</p>
+                <span class="user">来自yhhhde的评价</span>
+              </a>
+            </li>
+            <li class="anima_shadow">
+              <span class="abs_top_btn y_abs_top_btn">免邮费</span>
+              <a class="img_wrap" href="#"><img src="images/temp/match_voice_4.jpg" alt=""></a>
+              <a href="#" class="tit">小米路由器</a>
+              <p class="info">四天线设计，更安全更稳定</p>
+              <p class="price">149</p>
+              <a href="#" class="list_abs_comment">
+                <p class="comment">之前都不知道，还以为是18650电芯的。拿到手一看这是个竟然不是的</p>
+                <span class="user">来自yhhhde的评价</span>
+              </a>
+            </li>
+            <li class="anima_shadow">
+              <span class="abs_top_btn y_abs_top_btn">免邮费</span>
+              <a class="img_wrap" href="#"><img src="images/temp/match_voice_5.jpg" alt=""></a>
+              <a href="#" class="tit">小米路由器</a>
+              <p class="info">四天线设计，更安全更稳定</p>
+              <p class="price">149</p>
+              <a href="#" class="list_abs_comment">
+                <p class="comment">之前都不知道，还以为是18650电芯的。拿到手一看这是个竟然不是的</p>
+                <span class="user">来自yhhhde的评价</span>
+              </a>
+            </li>
+            <li class="anima_shadow">
+              <span class="abs_top_btn y_abs_top_btn">免邮费</span>
+              <a class="img_wrap" href="#"><img src="images/temp/match_voice_6.jpg" alt=""></a>
+              <a href="#" class="tit">小米路由器</a>
+              <p class="info">四天线设计，更安全更稳定</p>
+              <p class="price">149</p>
+              <a href="#" class="list_abs_comment">
+                <p class="comment">之前都不知道，还以为是18650电芯的。拿到手一看这是个竟然不是的</p>
+                <span class="user">来自yhhhde的评价</span>
+              </a>
+            </li>
+            <li class="last_one">
+              <a class="anima_shadow last_list_two" href="#" class="">
+                <p class="tit">平板2保护套</p>
+                <p class="price">69元</p>
+                <i class="img_r"><img src="images/temp/match_voice_7.jpg" alt=""></i>
+              </a>  
+              <a href="#" class="anima_shadow last_list_two last_list_two_2">
+                <p class="tit">浏览更多</p>
+                <p class="price">保护套</p>
+                <i class="img_r"><img src="images/temp/match_voice_8.jpg" alt=""></i>
+              </a>       
+            </li>
+          </ul> 
+          <ul style="display:none;" id="part_elec" class="main_list_wrap  main_abs_list_wrap main_list_type_wrap clearfix">
+            <li class="anima_shadow">
+              <span class="abs_top_btn y_abs_top_btn">免邮费</span>
+              <a class="img_wrap" href="#"><img src="images/temp/match_elec_1.jpg" alt=""></a>
+              <a href="#" class="tit">小米路由器</a>
+              <p class="info">四天线设计，更安全更稳定</p>
+              <p class="price">149</p>
+              <a href="#" class="list_abs_comment">
+                <p class="comment">之前都不知道，还以为是18650电芯的。拿到手一看这是个竟然不是的</p>
+                <span class="user">来自yhhhde的评价</span>
+              </a>
+            </li>
+            <li class="anima_shadow">
+              <span class="abs_top_btn y_abs_top_btn">免邮费</span>
+              <a class="img_wrap" href="#"><img src="images/temp/match_elec_2.jpg" alt=""></a>
+              <a href="#" class="tit">小米路由器</a>
+              <p class="info">四天线设计，更安全更稳定</p>
+              <p class="price">149</p>
+              <a href="#" class="list_abs_comment">
+                <p class="comment">之前都不知道，还以为是18650电芯的。拿到手一看这是个竟然不是的</p>
+                <span class="user">来自yhhhde的评价</span>
+              </a>
+            </li>
+            <li class="anima_shadow">
+              <span class="abs_top_btn y_abs_top_btn">免邮费</span>
+              <a class="img_wrap" href="#"><img src="images/temp/match_elec_3.jpg" alt=""></a>
+              <a href="#" class="tit">小米路由器</a>
+              <p class="info">四天线设计，更安全更稳定</p>
+              <p class="price">149</p>
+              <a href="#" class="list_abs_comment">
+                <p class="comment">之前都不知道，还以为是18650电芯的。拿到手一看这是个竟然不是的</p>
+                <span class="user">来自yhhhde的评价</span>
+              </a>
+            </li>
+            <li class="anima_shadow">
+              <span class="abs_top_btn y_abs_top_btn">免邮费</span>
+              <a class="img_wrap" href="#"><img src="images/temp/match_elec_4.jpg" alt=""></a>
+              <a href="#" class="tit">小米路由器</a>
+              <p class="info">四天线设计，更安全更稳定</p>
+              <p class="price">149</p>
+              <a href="#" class="list_abs_comment">
+                <p class="comment">之前都不知道，还以为是18650电芯的。拿到手一看这是个竟然不是的</p>
+                <span class="user">来自yhhhde的评价</span>
+              </a>
+            </li>
+            <li class="anima_shadow">
+              <span class="abs_top_btn y_abs_top_btn">免邮费</span>
+              <a class="img_wrap" href="#"><img src="images/temp/match_elec_5.jpg" alt=""></a>
+              <a href="#" class="tit">小米路由器</a>
+              <p class="info">四天线设计，更安全更稳定</p>
+              <p class="price">149</p>
+              <a href="#" class="list_abs_comment">
+                <p class="comment">之前都不知道，还以为是18650电芯的。拿到手一看这是个竟然不是的</p>
+                <span class="user">来自yhhhde的评价</span>
+              </a>
+            </li>
+            <li class="anima_shadow">
+              <span class="abs_top_btn y_abs_top_btn">免邮费</span>
+              <a class="img_wrap" href="#"><img src="images/temp/match_elec_6.jpg" alt=""></a>
+              <a href="#" class="tit">小米路由器</a>
+              <p class="info">四天线设计，更安全更稳定</p>
+              <p class="price">149</p>
+              <a href="#" class="list_abs_comment">
+                <p class="comment">之前都不知道，还以为是18650电芯的。拿到手一看这是个竟然不是的</p>
+                <span class="user">来自yhhhde的评价</span>
+              </a>
+            </li>
+            <li class="anima_shadow">
+              <span class="abs_top_btn y_abs_top_btn">免邮费</span>
+              <a class="img_wrap" href="#"><img src="images/temp/match_elec_7.jpg" alt=""></a>
+              <a href="#" class="tit">小米路由器</a>
+              <p class="info">四天线设计，更安全更稳定</p>
+              <p class="price">149</p>
+              <a href="#" class="list_abs_comment">
+                <p class="comment">之前都不知道，还以为是18650电芯的。拿到手一看这是个竟然不是的</p>
+                <span class="user">来自yhhhde的评价</span>
+              </a>
+            </li>
+            <li class="last_one">
+              <a class="anima_shadow last_list_two" href="#" class="">
+                <p class="tit">平板2保护套</p>
+                <p class="price">69元</p>
+                <i class="img_r"><img src="images/temp/match_elec_8.jpg" alt=""></i>
+              </a>  
+              <a href="#" class="anima_shadow last_list_two last_list_two_2">
+                <p class="tit">浏览更多</p>
+                <p class="price">保护套</p>
+                <i class="img_r"><img src="images/temp/match_elec_9.jpg" alt=""></i>
+              </a>       
+            </li>
+          </ul> 
+          <ul  style="display:none;" id="part_card" class="main_list_wrap main_abs_list_wrap main_list_type_wrap clearfix">
+            <li class="anima_shadow">
+              <span class="abs_top_btn y_abs_top_btn">免邮费</span>
+              <a class="img_wrap" href="#"><img src="images/temp/hot_match_1.jpg" alt=""></a>
+              <a href="#" class="tit">小米路由器</a>
+              <p class="info">四天线设计，更安全更稳定</p>
+              <p class="price">149</p>
+              <a href="#" class="list_abs_comment">
+                <p class="comment">之前都不知道，还以为是18650电芯的。拿到手一看这是个竟然不是的</p>
+                <span class="user">来自yhhhde的评价</span>
+              </a>
+            </li>
+            <li class="anima_shadow">
+              <span class="abs_top_btn y_abs_top_btn">免邮费</span>
+              <a class="img_wrap" href="#"><img src="images/temp/hot_match_2.jpg" alt=""></a>
+              <a href="#" class="tit">小米路由器</a>
+              <p class="info">四天线设计，更安全更稳定</p>
+              <p class="price">149</p>
+              <a href="#" class="list_abs_comment">
+                <p class="comment">之前都不知道，还以为是18650电芯的。拿到手一看这是个竟然不是的</p>
+                <span class="user">来自yhhhde的评价</span>
+              </a>
+            </li>
+            <li class="anima_shadow">
+              <span class="abs_top_btn y_abs_top_btn">免邮费</span>
+              <a class="img_wrap" href="#"><img src="images/temp/hot_match_3.jpg" alt=""></a>
+              <a href="#" class="tit">小米路由器</a>
+              <p class="info">四天线设计，更安全更稳定</p>
+              <p class="price">149</p>
+              <a href="#" class="list_abs_comment">
+                <p class="comment">之前都不知道，还以为是18650电芯的。拿到手一看这是个竟然不是的</p>
+                <span class="user">来自yhhhde的评价</span>
+              </a>
+            </li>
+            <li class="anima_shadow">
+              <span class="abs_top_btn y_abs_top_btn">免邮费</span>
+              <a class="img_wrap" href="#"><img src="images/temp/hot_match_4.jpg" alt=""></a>
+              <a href="#" class="tit">小米路由器</a>
+              <p class="info">四天线设计，更安全更稳定</p>
+              <p class="price">149</p>
+              <a href="#" class="list_abs_comment">
+                <p class="comment">之前都不知道，还以为是18650电芯的。拿到手一看这是个竟然不是的</p>
+                <span class="user">来自yhhhde的评价</span>
+              </a>
+            </li>
+            <li class="anima_shadow">
+              <span class="abs_top_btn y_abs_top_btn">免邮费</span>
+              <a class="img_wrap" href="#"><img src="images/temp/hot_match_5.jpg" alt=""></a>
+              <a href="#" class="tit">小米路由器</a>
+              <p class="info">四天线设计，更安全更稳定</p>
+              <p class="price">149</p>
+              <a href="#" class="list_abs_comment">
+                <p class="comment">之前都不知道，还以为是18650电芯的。拿到手一看这是个竟然不是的</p>
+                <span class="user">来自yhhhde的评价</span>
+              </a>
+            </li>
+            <li class="anima_shadow">
+              <span class="abs_top_btn y_abs_top_btn">免邮费</span>
+              <a class="img_wrap" href="#"><img src="images/temp/hot_match_6.jpg" alt=""></a>
+              <a href="#" class="tit">小米路由器</a>
+              <p class="info">四天线设计，更安全更稳定</p>
+              <p class="price">149</p>
+              <a href="#" class="list_abs_comment">
+                <p class="comment">之前都不知道，还以为是18650电芯的。拿到手一看这是个竟然不是的</p>
+                <span class="user">来自yhhhde的评价</span>
+              </a>
+            </li>
+            <li class="anima_shadow">
+              <span class="abs_top_btn y_abs_top_btn">免邮费</span>
+              <a class="img_wrap" href="#"><img src="images/temp/hot_match_8.jpg" alt=""></a>
+              <a href="#" class="tit">小米路由器</a>
+              <p class="info">四天线设计，更安全更稳定</p>
+              <p class="price">149</p>
+              <a href="#" class="list_abs_comment">
+                <p class="comment">之前都不知道，还以为是18650电芯的。拿到手一看这是个竟然不是的</p>
+                <span class="user">来自yhhhde的评价</span>
+              </a>
+            </li>
+            <li class="last_one">
+              <a class="anima_shadow last_list_two" href="#" class="">
+                <p class="tit">平板2保护套</p>
+                <p class="price">69元</p>
+                <i class="img_r"><img src="images/temp/hot_match_last_1.jpg" alt=""></i>
+              </a>  
+              <a href="#" class="anima_shadow last_list_two last_list_two_2">
+                <p class="tit">浏览更多</p>
+                <p class="price">保护套</p>
+                <i class="img_r"><img src="images/temp/last_scan_more.jpg" alt=""></i>
+              </a>       
+            </li>
+          </ul> 
+        </div>
+        <div class="main_list_tit main_signal_tit clearfix w_auto"> 
+          <h2 class="tit_l">小米明星单品</h2>
+          <div class="tit_r">
+            <i id="lastPoint" class="last point"></i>
+            <i id="nextPoint" class="next point"></i>
+          </div>
+        </div>
+        <div id="scroll_recommend_wrap" class="scroll_list_wrap w_auto">
+          <ul class="main_list_wrap main_recommend_wrap clearfix">
+            <li class="first">
+              <a class="img_wrap" href="#"><img src="images/temp/recommend_list_1.jpg" alt=""></a>
+              <a class="tit" href="#">小米电视3S 48英寸</a>
+              <p class="price">39元</p>
+              <p class="info">1.4万人好评</p>            
+            </li>
+            <li>
+              <a class="img_wrap" href="#"><img src="images/temp/recommend_list_2.jpg" alt=""></a>
+              <a class="tit" href="#">小米电视3S 48英寸</a>
+              <p class="price">39元</p>
+              <p class="info">1.4万人好评</p>            
+            </li>
+            <li>
+              <a class="img_wrap" href="#"><img src="images/temp/recommend_list_3.jpg" alt=""></a>
+              <a class="tit" href="#">小米电视3S 48英寸</a>
+              <p class="price">39元</p>
+              <p class="info">1.4万人好评</p>            
+            </li>
+            <li>
+              <a class="img_wrap" href="#"><img src="images/temp/recommend_list_4.jpg" alt=""></a>
+              <a class="tit" href="#">小米电视3S 48英寸</a>
+              <p class="price">39元</p>
+              <p class="info">1.4万人好评</p>            
+            </li>
+            <li>
+              <a class="img_wrap" href="#"><img src="images/temp/recommend_list_5.jpg" alt=""></a>
+              <a class="tit" href="#">小米电视3S 48英寸</a>
+              <p class="price">39元</p>
+              <p class="info">1.4万人好评</p>            
+            </li>
+            <li>
+              <a class="img_wrap" href="#"><img src="images/temp/recommend_list_6.jpg" alt=""></a>
+              <a class="tit" href="#">小米电视3S 48英寸</a>
+              <p class="price">39元</p>
+              <p class="info">1.4万人好评</p>            
+            </li>
+            <li>
+              <a class="img_wrap" href="#"><img src="images/temp/recommend_list_7.jpg" alt=""></a>
+              <a class="tit" href="#">小米电视3S 48英寸</a>
+              <p class="price">39元</p>
+              <p class="info">1.4万人好评</p>            
+            </li>
+            <li>
+              <a class="img_wrap" href="#"><img src="images/temp/recommend_list_8.jpg" alt=""></a>
+              <a class="tit" href="#">小米电视3S 48英寸</a>
+              <p class="price">39元</p>
+              <p class="info">1.4万人好评</p>            
+            </li>
+            <li>
+              <a class="img_wrap" href="#"><img src="images/temp/recommend_list_9.jpg" alt=""></a>
+              <a class="tit" href="#">小米电视3S 48英寸</a>
+              <p class="price">39元</p>
+              <p class="info">1.4万人好评</p>            
+            </li>
+            <li>
+              <a class="img_wrap" href="#"><img src="images/temp/recommend_list_1.jpg" alt=""></a>
+              <a class="tit" href="#">小米电视3S 48英寸</a>
+              <p class="price">39元</p>
+              <p class="info">1.4万人好评</p>            
+            </li>
+            <li>
+              <a class="img_wrap" href="#"><img src="images/temp/recommend_list_2.jpg" alt=""></a>
+              <a class="tit" href="#">小米电视3S 48英寸</a>
+              <p class="price">39元</p>
+              <p class="info">1.4万人好评</p>            
+            </li>
+            <li>
+              <a class="img_wrap" href="#"><img src="images/temp/recommend_list_3.jpg" alt=""></a>
+              <a class="tit" href="#">小米电视3S 48英寸</a>
+              <p class="price">39元</p>
+              <p class="info">1.4万人好评</p>            
+            </li>
+            <li>
+              <a class="img_wrap" href="#"><img src="images/temp/recommend_list_4.jpg" alt=""></a>
+              <a class="tit" href="#">小米电视3S 48英寸</a>
+              <p class="price">39元</p>
+              <p class="info">1.4万人好评</p>            
+            </li>
+            <li>
+              <a class="img_wrap" href="#"><img src="images/temp/recommend_list_5.jpg" alt=""></a>
+              <a class="tit" href="#">小米电视3S 48英寸</a>
+              <p class="price">39元</p>
+              <p class="info">1.4万人好评</p>            
+            </li>
+            <li>
+              <a class="img_wrap" href="#"><img src="images/temp/recommend_list_6.jpg" alt=""></a>
+              <a class="tit" href="#">小米电视3S 48英寸</a>
+              <p class="price">39元</p>
+              <p class="info">1.4万人好评</p>            
+            </li>
+          </ul>
+        </div>  
+        <div class="main_list_tit clearfix"> 
+          <h2 class="tit_l">热评产品</h2>
+        </div>  
+        <ul class="hot_recommend_list_wrap clearfix">
+          <li class="anima_shadow">
+            <div>
+              <img src="images/temp/hot_review_1.jpg" alt="">
+            </div>
+            <div class="txt_wrap">
+              <a href="#" class="comment">洁净渴能白净水，净水喝的放心，超高性价比，科技乐趣......</a>
+              <p class="user">来自于linhai哥哥的评价</p>
+              <div>
+                <a class="tit" href="#">小米净水器</a><split class="split">|</split><span class="price">299元</span>
+              </div>
+            </div>
+          </li>
+          <li class="anima_shadow">
+            <div>
+              <img src="images/temp/hot_review_2.jpg" alt="">
+            </div>
+            <div class="txt_wrap">
+              <a href="#" class="comment">洁净渴能白净水，净水喝的放心，超高性价比，科技乐趣......</a>
+              <p class="user">来自于linhai哥哥的评价</p>
+              <div>
+                <a class="tit" href="#">小米净水器</a><split class="split">|</split><span class="price">299元</span>
+              </div>
+            </div>
+          </li>
+          <li class="anima_shadow">
+            <div>
+              <img src="images/temp/hot_review_3.jpg" alt="">
+            </div>
+            <div class="txt_wrap">
+              <a href="#" class="comment">包装很让人感动，式样也很可爱，做出的饭全家人都爱吃，超爱五星！手机控制还是不太熟练，最主要是没有连接</a>
+              <p class="user">来自于linhai哥哥的评价</p>
+              <div>
+                <a class="tit" href="#">小米净水器</a><split class="split">|</split><span class="price">299元</span>
+              </div>
+            </div>
+          </li>
+          <li class="last anima_shadow">
+            <div>
+              <img src="images/temp/hot_review_4.jpg" alt="">
+            </div>
+            <div class="txt_wrap">
+              <a href="#" class="comment">洁净渴能白净水，净水喝的放心，超高性价比，科技乐趣......</a>
+              <p class="user">来自于linhai哥哥的评价</p>
+              <div>
+                <a class="tit" href="#">小米净水器</a><split class="split">|</split><span class="price">299元</span>
+              </div>
+            </div>
+          </li>
+        </ul>
+        <div class="main_list_tit clearfix"> 
+          <h2 class="tit_l">内容</h2>
+        </div> 
+        <ul class="content_list_wrap clearfix">
+          <li class="one">
+            <h2 class="tit tit_y">图书</h2>
+            <div class="content_scroll_out_wrap">
+              <div class="content_scroll_wrap">
+                <div class="content_list_child">
+                  <a class="link" href="#">
+                    <h3 class="txt_tit">哈利.波特与魔法石</h3>
+                    <p class="info">哈利波特来了！</p>
+                    <!-- <p class="im">限时优惠</p> -->
+                    <div class="img_wrap"><img src="images/temp/content_img_1.jpg" alt=""></div>
+                  </a>
+                </div>
+                <div class="content_list_child">
+                  <a class="link" href="#">
+                    <h3 class="txt_tit">特价专区</h3>
+                    <p class="info">精选畅销好书，特价促销，天天更新，天天特价！</p>
+                    <p class="im">限时优惠</p>
+                    <div class="img_wrap"><img src="images/temp/content_img_2.jpg" alt=""></div>
+                  </a>
+                </div>
+                <div class="content_list_child">
+                  <a class="link" href="#">
+                    <h3 class="txt_tit">杂志专区</h3>
+                    <p class="info">纸媒杂志＋互联网杂志，你想看的这都有！</p>
+                    <p class="im">同步新刊上线</p>
+                    <div class="img_wrap"><img src="images/temp/content_img_3.jpg" alt=""></div>
+                  </a>
+                </div>
+                <div class="content_list_child">
+                  <a class="link" href="#">
+                    
+                    <p class="info">哈利波特来了！</p>
+                    <div class="btn">前往多看阅读</div>
+                    <!-- <p class="im">限时优惠</p> -->
+                    <div class="img_wrap"><img src="images/temp/content_img_4.jpg" alt=""></div>
+                  </a>
+                </div>
+              </div>
+            </div>            
+            <i class="point last"></i>
+            <i class="point next"></i>
+            <div class="btn_wrap">
+              <span class="btn_on"><i></i></span>
+              <span><i></i></span>
+              <span><i></i></span>
+              <span><i></i></span>
+            </div>
+          </li>
+          <li class="two">
+            <h2 class="tit tit_y">图书</h2>
+            <div class="content_scroll_out_wrap">
+              <div class="content_scroll_wrap">
+                <div class="content_list_child">
+                  <a class="link" href="#">
+                    <h3 class="txt_tit">哈利.波特与魔法石</h3>
+                    <p class="info">哈利波特来了！</p>
+                    <!-- <p class="im">限时优惠</p> -->
+                    <div class="img_wrap"><img src="images/temp/content_img_1.jpg" alt=""></div>
+                  </a>
+                </div>
+                <div class="content_list_child">
+                  <a class="link" href="#">
+                    <h3 class="txt_tit">特价专区</h3>
+                    <p class="info">精选畅销好书，特价促销，天天更新，天天特价！</p>
+                    <p class="im">限时优惠</p>
+                    <div class="img_wrap"><img src="images/temp/content_img_2.jpg" alt=""></div>
+                  </a>
+                </div>
+                <div class="content_list_child">
+                  <a class="link" href="#">
+                    <h3 class="txt_tit">杂志专区</h3>
+                    <p class="info">纸媒杂志＋互联网杂志，你想看的这都有！</p>
+                    <p class="im">同步新刊上线</p>
+                    <div class="img_wrap"><img src="images/temp/content_img_3.jpg" alt=""></div>
+                  </a>
+                </div>
+                <div class="content_list_child">
+                  <a class="link" href="#">
+                    
+                    <p class="info">哈利波特来了！</p>
+                    <div class="btn">前往多看阅读</div>
+                    <!-- <p class="im">限时优惠</p> -->
+                    <div class="img_wrap"><img src="images/temp/content_img_4.jpg" alt=""></div>
+                  </a>
+                </div>
+              </div>
+            </div>            
+            <i class="point last"></i>
+            <i class="point next"></i>
+            <div class="btn_wrap">
+              <span class="btn_on"><i></i></span>
+              <span><i></i></span>
+              <span><i></i></span>
+              <span><i></i></span>
+            </div>
+          </li>
+          <li class="three">
+            <h2 class="tit tit_y">图书</h2>
+            <div class="content_scroll_out_wrap">
+              <div class="content_scroll_wrap">
+                <div class="content_list_child">
+                  <a class="link" href="#">
+                    <h3 class="txt_tit">哈利.波特与魔法石</h3>
+                    <p class="info">哈利波特来了！</p>
+                    <!-- <p class="im">限时优惠</p> -->
+                    <div class="img_wrap"><img src="images/temp/content_img_1.jpg" alt=""></div>
+                  </a>
+                </div>
+                <div class="content_list_child">
+                  <a class="link" href="#">
+                    <h3 class="txt_tit">特价专区</h3>
+                    <p class="info">精选畅销好书，特价促销，天天更新，天天特价！</p>
+                    <p class="im">限时优惠</p>
+                    <div class="img_wrap"><img src="images/temp/content_img_2.jpg" alt=""></div>
+                  </a>
+                </div>
+                <div class="content_list_child">
+                  <a class="link" href="#">
+                    <h3 class="txt_tit">杂志专区</h3>
+                    <p class="info">纸媒杂志＋互联网杂志，你想看的这都有！</p>
+                    <p class="im">同步新刊上线</p>
+                    <div class="img_wrap"><img src="images/temp/content_img_3.jpg" alt=""></div>
+                  </a>
+                </div>
+                <div class="content_list_child">
+                  <a class="link" href="#">
+                    
+                    <p class="info">哈利波特来了！</p>
+                    <div class="btn">前往多看阅读</div>
+                    <!-- <p class="im">限时优惠</p> -->
+                    <div class="img_wrap"><img src="images/temp/content_img_4.jpg" alt=""></div>
+                  </a>
+                </div>
+              </div>
+            </div>            
+            <i class="point last"></i>
+            <i class="point next"></i>
+            <div class="btn_wrap">
+              <span class="btn_on"><i></i></span>
+              <span><i></i></span>
+              <span><i></i></span>
+              <span><i></i></span>
+            </div>
+          </li>
+          <li class="four last-one">
+            <h2 class="tit tit_y">图书</h2>
+            <div class="content_scroll_out_wrap">
+              <div class="content_scroll_wrap">
+                <div class="content_list_child">
+                  <a class="link" href="#">
+                    <h3 class="txt_tit">哈利.波特与魔法石</h3>
+                    <p class="info">哈利波特来了！</p>
+                    <!-- <p class="im">限时优惠</p> -->
+                    <div class="img_wrap"><img src="images/temp/content_img_1.jpg" alt=""></div>
+                  </a>
+                </div>
+                <div class="content_list_child">
+                  <a class="link" href="#">
+                    <h3 class="txt_tit">特价专区</h3>
+                    <p class="info">精选畅销好书，特价促销，天天更新，天天特价！</p>
+                    <p class="im">限时优惠</p>
+                    <div class="img_wrap"><img src="images/temp/content_img_2.jpg" alt=""></div>
+                  </a>
+                </div>
+                <div class="content_list_child">
+                  <a class="link" href="#">
+                    <h3 class="txt_tit">杂志专区</h3>
+                    <p class="info">纸媒杂志＋互联网杂志，你想看的这都有！</p>
+                    <p class="im">同步新刊上线</p>
+                    <div class="img_wrap"><img src="images/temp/content_img_3.jpg" alt=""></div>
+                  </a>
+                </div>
+                <div class="content_list_child">
+                  <a class="link" href="#">
+                    
+                    <p class="info">哈利波特来了！</p>
+                    <div class="btn">前往多看阅读</div>
+                    <!-- <p class="im">限时优惠</p> -->
+                    <div class="img_wrap"><img src="images/temp/content_img_4.jpg" alt=""></div>
+                  </a>
+                </div>
+              </div>
+            </div>            
+            <i class="point last"></i>
+            <i class="point next"></i>
+            <div class="btn_wrap">
+              <span class="btn_on"><i></i></span>
+              <span><i></i></span>
+              <span><i></i></span>
+              <span><i></i></span>
+            </div>
+          </li>
+        </ul>
+        <div class="main_list_tit clearfix"> 
+          <h2 class="tit_l">视频</h2>
+          <div class="tit_r">
+            <a class="scan_all link_r" href="#">查看全部 <i></i></a>
+          </div>
+        </div>
+        <ul class="main_video_wrap clearfix">
+          <li class="anima_shadow">
+            <a class="img_wrap" href="#"><img src="images/temp/video1.jpg" alt=""></a>
+            <a class="tit" href="#">红米年度品牌视频</a>
+            <p class="info">一亿人喜爱你，是一种责任</p>
+          </li>
+          <li class="anima_shadow">
+            <a class="img_wrap" href="#"><img src="images/temp/video2.jpg" alt=""></a>
+            <a class="tit" href="#">红米年度品牌视频</a>
+            <p class="info">一亿人喜爱你，是一种责任</p>
+          </li>
+          <li class="anima_shadow">
+            <a class="img_wrap" href="#"><img src="images/temp/video3.jpg" alt=""></a>
+            <a class="tit" href="#">红米年度品牌视频</a>
+            <p class="info">一亿人喜爱你，是一种责任</p>
+          </li>
+          <li class="last_one anima_shadow">
+            <a class="img_wrap" href="#"><img src="images/temp/video4.jpg" alt=""></a>
+            <a class="tit" href="#">红米年度品牌视频</a>
+            <p class="info">一亿人喜爱你，是一种责任</p>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer_nav_wrap">
+      <div class="w_auto">
+        <ul class="footer_nav_tit_wrap clearfix">
+          <li>
+            <a class="link" href="#">
+              <i class="ico ico-1"></i>1小时快修服务
+            </a>
+          </li>
+          <li>
+            <a class="link" href="#">
+              <i class="ico ico-2"></i>7天无理由退货
+            </a>
+          </li>
+          <li>
+            <a class="link" href="#">
+              <i class="ico ico-3"></i>15天免费换货
+            </a>
+          </li>
+          <li>
+            <a class="link" href="#">
+              <i class="ico ico-4"></i>满150元包邮
+            </a>
+          </li>
+          <li>
+            <a class="link" href="#">
+              <i class="ico ico-5"></i>150余家售后网点
+            </a>
+          </li>
+        </ul>
+        <div class="clearfix footer_nav_phone_wrap">
+          <div class="footer_left_link_wrap">
+            <dl>
+              <dt>帮助中心</dt>
+              <dd><a href="#">账户管理</a></dd>
+              <dd><a href="#">购物指南</a></dd>
+              <dd><a href="#">订单操作</a></dd>
+            </dl>
+            <dl>
+              <dt>服务支持</dt>
+              <dd><a href="#">售后政策</a></dd>
+              <dd><a href="#">自助服务</a></dd>
+              <dd><a href="#">相关下载</a></dd>
+            </dl>
+            <dl>
+              <dt>线下门店</dt>
+              <dd><a href="#">小米之家</a></dd>
+              <dd><a href="#">服务网点</a></dd>
+              <dd><a href="#">零售网点</a></dd>
+            </dl>
+            <dl>
+              <dt>关于小米</dt>
+              <dd><a href="#">了解小米</a></dd>
+              <dd><a href="#">加入小米</a></dd>
+              <dd><a href="#">联系我们</a></dd>
+            </dl>
+            <dl>
+              <dt>关注我们</dt>
+              <dd><a href="#">新浪微博</a></dd>
+              <dd><a href="#">小米部落</a></dd>
+              <dd><a href="#">官方微信</a></dd>
+            </dl>
+            <dl>
+              <dt>特色服务</dt>
+              <dd><a href="#">F码通道</a></dd>
+              <dd><a href="#">小米移动</a></dd>
+              <dd><a href="#">防伪查询</a></dd>
+            </dl>
+          </div>
+          <div class="footer_phone_wrap">
+            <h3 class="num">400-100-5678</h3>
+            <p class="time">周一至周日 8:00-18:00<br>(仅收市话费)</p>
+            <div class="btn">24小时在线客服</div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="footer_bottom_wrap">
+      <div class="w_auto">
+        <div class="clearfix">
+          <i class="logo"></i>
+          <div class="txt_wrap">
+            <div class="link">
+              <a href="#">小米商城</a> |
+              <a href="#">MUI</a> |
+              <a href="#">米聊</a> |
+              <a href="#">多看书城</a> |
+              <a href="#">小米路由器</a> |
+              <a href="#">视频电话</a> |
+              <a href="#">小米后院</a> |
+              <a href="#">小米天猫店</a> |
+              <a href="#">小米淘宝直营店</a> |
+              <a href="#">小米网盟</a> |
+              <a href="#">问题反馈</a> |
+              <a href="#">Select Region</a> |
+            </div>
+            <p class="txt">@<a href="#">mi.com</a>京ICP证110507号 京ICP备10046444号<a href="#">京公网安备11010802020134</a>
+            <a href="#">京网文[2014]0059-0009号</a></p>
+            <p class="txt">违法和不良信息举报电话：185-0130-1238，本网站所列数据，除特殊说明，所有数据均出自我司实验室测试</p>
+          </div>
+          <div class="footer_ensure_wrap">
+            <a href="#"><img class="ensure" src="images/temp/footer_info1.jpg" alt=""></a>
+            <a href="#"><img class="ensure" src="images/temp/footer_info2.jpg" alt=""></a>
+            <a href="#"><img class="ensure" src="images/temp/footer_info3.jpg" alt=""></a>
+            <a href="#"><img class="ensure" src="images/temp/footer_info4.jpg" alt=""></a>
+          </div>
+        </div>
+        <i class="slogan"></i>
+      </div>
+    </div>
+  </main>
+  <script src="js/index.js"></script>
+<script src="js/scroll.js"></script>
+<script>
+  (function(){
+
+    var timer1,timer2;
+    $("#nav_type_wrap>li").mouseenter(function(){
+      clearTimeout(timer2);
+      clearTimeout(timer1);
+      var className=$(this).attr("data_name");
+      $("#hover_nav_abs_full").slideDown("fast");
+      $("#hover_nav_abs_full").find("."+className).show().siblings(".hover_nav").hide();
+    }).mouseleave(function(){   
+      timer1=setTimeout(function(){        
+          $("#hover_nav_abs_full").slideUp("fast");       
+      },200)
+    })
+    $("#hover_nav_abs_full").mouseenter(function(){   
+      clearTimeout(timer1);
+      $(this).slideDown("fast");
+    }).mouseleave(function(){     
+      timer2=setTimeout(function(){
+          $("#hover_nav_abs_full").slideUp("fast");
+      },200)
+    })
+
+//focus
+    $("#search_input").focus(function(){
+      $(this).addClass("input_border_c");
+      $(".form_wrap .btn").addClass("input_border_c");
+      $(".focus_input_list").show();
+      $(".input_link").fadeOut();
+    }).blur(function(){
+      $(this).removeClass("input_border_c");
+      $(".form_wrap .btn").removeClass("input_border_c");
+      $(".focus_input_list").hide();
+      $(".input_link").fadeIn();
+    })
+
+//banner 
+    // (function(){
+      var curIndex=0;
+      function bannerChange(index){
+        $("#out_banner_wrap .banner_img").eq(index).fadeIn().siblings().fadeOut();
+        $("#banner_btn i").eq(index).addClass("focus_btn").siblings().removeClass("focus_btn")
+      }
+      $("#banner_btn i").click(function(){
+        var index=$(this).index();
+        curIndex=index;
+        bannerChange(curIndex)       
+      })
+      $("#last").click(function(){
+        curIndex=curIndex-1==-1?$("#out_banner_wrap .banner_img").length-1:curIndex-1;
+        console.log(curIndex);
+        bannerChange(curIndex) ;
+      })
+      $("#next").click(function(){
+        curIndex=curIndex+1==$("#out_banner_wrap .banner_img").length?0:curIndex+1;
+        bannerChange(curIndex) 
+      })
+    //scroll
+    var isRight=true,scrollTimer;
+    function scroll_r(callback){
+      $("#scroll_list_wrap").animate({"scrollLeft":1226},function(){
+        isRight=false;
+        callback&&callback();
+      });
+      $("#nextPoint").addClass("next_disable");
+      $("#lastPoint").addClass("last_enable");
+    }   
+    function scroll_l(callback){
+      $("#scroll_list_wrap").animate({"scrollLeft":0},function(){
+        isRight=true;
+        callback&&callback();
+      });
+      $("#nextPoint").removeClass("next_disable");
+      $("#lastPoint").removeClass("last_enable");
+    } 
+    $("#lastPoint").click(function(){
+      if(!$(this).hasClass("last_enable")){
+        return false;
+      };
+      clearTimeout(scrollTimer);
+      scroll_l(function(){
+        timerScroll()
+      });
+    }) 
+     $("#nextPoint").click(function(){
+      if($(this).hasClass("next_disable")){
+        return false;
+      }
+      clearTimeout(scrollTimer);
+      scroll_r(function(){
+        timerScroll()
+      });
+    })
+    function timerScroll(){
+      scrollTimer=setTimeout(function(){
+        if(isRight){
+          scroll_r();
+        }else{
+          scroll_l();
+        }
+        timerScroll();
+      },3000)
+    }
+    // timerScroll();
+
+    //title switch
+    $(".switch_tit .link_r").mouseover(function(){
+        var idname=$(this).attr("data-switch");
+        $("#"+idname).fadeIn().siblings(".main_abs_list_wrap").fadeOut();
+    })
+
+    //content scroll
+    $(".content_scroll_out_wrap").scroll_turn({
+      last:".last",
+      next:".next",
+      lastCallback:function(index){
+        
+      },
+      nextCallback:function(index){
+        
+      },
+      maxWidth:1180,
+      childList:".btn_wrap span",
+      indexCallback:function(that){
+        that.addClass("btn_on").siblings().removeClass("btn_on");
+      }
+    })
+    
+
+    var oo={
+      a:1
+    };
+    var d=clone(oo.a);
+    console.log(d)
+  })();
+  </script>
+  </body>
+</html>
+</html>

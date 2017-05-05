@@ -1,0 +1,7 @@
+.hot_recommend_list_wrap>li{float:left;margin-right:14px;}
+.hot_recommend_list_wrap .txt_wrap{width:235px;margin:0 auto;padding-top:22px;padding-bottom: 30px;background-color: white;}
+.hot_recommend_list_wrap .comment{display: block;line-height: 24px;color:#333333;height:75px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
+.hot_recommend_list_wrap .user{font-size:12px;color:#b0b0b2;margin-top:15px;margin-bottom: 10px;}
+.hot_recommend_list_wrap .tit{color:#333333;}
+.hot_recommend_list_wrap .split{color:#e0e0e0;padding:0 5px;}
+.hot_recommend_list_wrap .price{color:#fe6709;}
