@@ -1,0 +1,12 @@
+abbr,address,article,aside,audio,b,blockquote,body,body div,caption,cite,code,dd,del,dfn,dl,dt,em,fieldset,figure,footer,form,h1,h2,h3,h4,h5,h6,header,hgroup,html,i,iframe,img,ins,kbd,label,legend,li,mark,menu,nav,object,ol,p,pre,q,samp,section,small,span,strong,sub,sup,table,tbody,td,textarea,tfoot,th,thead,time,tr,ul,var,video{margin:0;padding:0;outline:0;font-size:100%;vertical-align:baseline;background:0 0;line-height:inherit}
+ol,ul{list-style:none}
+button,input,select,textarea{padding:0;margin:0;outline:0;*vertical-align:middle}
+textarea{resize:none}
+a{text-decoration:none;*vertical-align:middle;_height:1px}
+table{border-collapse:collapse;border-spacing:0;width:100%}
+img,td,th{vertical-align:middle}
+address,em,i{font-style:normal}
+fieldset,img{border:0}
+legend{display:none}
+h1,h2,h3,h4,h5,h6{font-weight:400}
+article,aside,audio,canvas,details,fieldset,figcaption,figure,footer,header,hgroup,main,menu,nav,section,summary,video{display:block}

@@ -1,0 +1,11 @@
+.selectbox-1{width:100px;font-size:12px;font-family:Microsoft YaHei;color:#333;border:1px solid #d8d8d8;padding:0 5px;padding:4px 5px\0}
+@media \0 screen{.selectbox-1{padding:3px 5px}}
+.textbox-1,.textbox-2{border:1px solid #d8d8d8;font:12px/18px Microsoft YaHei;padding:0 5px;color:#333}
+.textbox-1{width:330px;height:24px}
+.textbox-2{width:220px;height:34px}
+*html{zoom:'expression(function(ele){ele.style.zoom="1";document.execCommand("BackgroundImageCache",false,true);}(this))'}
+.selectbox-1{:[;margin-top:2px}
+.selectbox-1,.selectbox-2{height:auto}
+.textbox-1,.textbox-2{line-height:0}
+.textbox-1{*line-height:24px}
+.textbox-2{*line-height:34px}
