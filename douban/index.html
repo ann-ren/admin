@@ -1,0 +1,745 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" type="text/css" href="css/reset.css">
+    <!-- <link rel="stylesheet" type="text/css" href="css/style.css"> -->
+    <script src="script/html5.js"></script>
+    <style type="text/css">
+      body{background-color:white;font-family: 'Microsoft YaHei', arial, 'courier new';font-size:14px;}
+      .header{background-color:#545652;}
+      .header a{color:#d5d5d5;font-size:12px;}
+      
+      .head_nav_left{float:left;}
+      .head_nav_left a{float:left;line-height:28px;padding:0 12px;}
+      .head_right{float:right;margin-right:12px;}
+      .login_ul>li{float:left;}
+      .login_ul>li>a{display:block;line-height:28px;padding:0 12px;}
+      .download{position:relative;}            
+      .downLoad_hover{display:none;position:absolute;top:28px;left:-71px;width:250px;font-size:12px;text-align:center;padding-top:63px;height:432px;background-color:white;}
+      .download:hover .downLoad_hover{display:block;}
+      .downLoad_hover .tit span{display:inline-block;width:102px;height:102px;background-image:url(images/douban.jpg);}
+      .downLoad_hover .tit p{font-size:12px;color:#666666;margin-top:10px;}
+      .downLoad_hover .code{margin-top:33px;}
+      .downLoad_hover .code span{display:inline-block;margin-bottom:15px;width:162px;height:158px;background-image:url(images/code_2.jpg);}
+      .downLoad_hover .code a{color:#3377aa;}
+
+      .head_search_wrap{width:950px;margin:0 auto;padding:19px 0 22px 200px;}
+      .head_search_wrap .logo{float:left;margin-top:2px;width:119px;height:27px;background-image:url(images/logo.jpg);margin-right:42px;}  
+      .form_wrap{float:left;}  
+      .form_wrap input{float:left;border:none;border-radius: 3px 0px 0px 3px;width:430px;padding:0 20px 0 10px;height:30px;box-shadow:0 2px 5px grey;}
+      .form_wrap .search{float:left;width:36px;height:32px;background:#9c9b91 url(images/search.jpg) center center no-repeat;}
+      .scan_type{height:38px;width:950px;margin:0 auto;line-height:38px;padding-left:200px;}
+      .scan_type li{margin-right:34px;float:left;}
+      .scan_type a{color:#666666;}
+      .scan_type .buy i{display:inline-block;vertical-align:middle;width:20px;height:14px;background-image:url(images/buy_car.jpg);}
+      .head_bottom_wrap{background-color:#f6f6f1;}
+      .head_bottom_wrap .line{border-bottom:1px solid #e9e9e2;}
+
+      .main_wrap{width:940px;margin:0 auto;}
+      .main_left{float:left;width:590px;padding-right:50px;}
+      .main_top_tit{font-size:20px;margin-top:40px;margin-bottom:20px;}
+      .thing_info{float:left;line-height:20px;}
+      .img_thing{float:left;padding-right:12px;}
+      .thing_info .info{float:left;font-size:12px;}
+      .thing_info .info h3{display:inline-block;color:#666666;}
+      .thing_info .info span{color:#111111;}
+      .thing_info .info .author{color:#3377aa;}
+      .score_get{float:right;font-size:12px;padding-left:15px;border-left:1px solid #eaeaea;}
+      .score_get .tit{color:#9b9b9b;margin-bottom:10px;}
+      .score_wrap h4{float:left;font-size:30px;color:black;margin-right:15px;}
+      .score_wrap .xing{float:left;}
+      .score_xing i{display:inline-block;width:15px;height:15px;background-image:url(images/y_xing.jpg);}
+      .score_wrap .xing .num{margin-top:5px;}
+      .score_get .chart{margin-top:17px;color:#9b9b9b;line-height:16px;}
+      .score_get .chart h5{width:28px;display:inline-block;}
+      .score_get .chart i{display:inline-block;width:20px;height:10px;background-color:#ffd596;}
+      .about_comment .read{float:left;}
+      .about_comment .read a{float:left;width:47px;height:20px;text-align:center;border-radius:3px;line-height:20px;color:#111111;background-color:#ffeada;border:1px solid #d5bcaa;border-radius:3px;margin-right:10px;}
+      .about_comment .comment{float:left;} 
+      .about_comment .comment i{display:inline-block;width:15px;height:15px;background-image:url(images/g_xing.jpg);}
+      .write_nav_wrap{padding-top:5px;}
+      .write_nav_wrap .link{float:left;margin-top:10px;font-size:12px;color:#3377aa;margin-right:15px;}
+      .write_nav_wrap .write i{display:inline-block;width:10px;height:10px;background-image:url(images/write.jpg);}
+      .write_nav_wrap h3{float:right;width:40px;height:20px;line-height:20px;background-color:#f2f8f2;border:1px solid #e3f1ed;border-radius:3px;font-size:14px;text-align:center;font-weight:normal;}
+      .write_nav_wrap h3 a{color:#4f946e;}
+      .commen_content_tit{font-size:16px;color:#007722;padding-bottom:5px;}
+      .content_info{margin-top:44px;}
+      .content_info p{font-size:14px;line-height:24px;text-indent:20px;color:#111111;}
+      .content_index p{text-indent:0;}
+      .content_info .slide{color:#3377aa;margin-left:24px;}
+      .content_info .advice{text-align:right;height:12px;margin-top:5px;}
+      .content_info .advice a{display:none;}
+      .content_info .advice:hover a{display:block;color:#bbbbbb;}
+      .tags_wrap{margin-top:30px;width:540px;}
+      .tags_wrap .link a{float:left;padding:0 12px;height:22px;line-height:22px;color:#3377aa;background-color:#f5f5f5;margin-right:12px;margin-bottom:5px;}
+      .also_like_book_wrap{margin-top:25px;margin-bottom:44px;}
+      .also_like_book_wrap .support{margin:5px 0 19px;}
+      .also_like_book_wrap .book_list li{float:left;text-align:center;width:84px;margin-right:40px;}
+      .also_like_book_wrap .tit  a{color:#3377aa;line-height:24px;}
+      .also_like_book_wrap .book_list .price{color:#111111;}
+      .all_comments{float:left;}
+      .all_comments .num{color:#666666;font-size:12px;}
+      .change_hot_new{margin-top:18px;padding-bottom:9px;border-bottom:1px dashed #dddddd;}
+      a{color:#3377aa;}
+      .letMe{padding:0 7px;height:20px;line-height:20px;border:1px solid #ffa4a4;background-color:#ffdddd;color:#ff7676;border-radius:3px;float:right;}
+      .short_comment li{padding:15px 0;border-bottom:1px dashed #dddddd;}
+      .short_comment .value{float:right;}
+      .short_comment .comment{line-height:20px;color:#111111;font-size:14px;padding-right:45px;}
+      .short_comment .top-line{padding-bottom:3px;}
+      .book_comment_wrap{margin-top:46px;}
+      .book_comment_wrap .wrap{position:relative;height:36px;line-height:36px;}
+      .book_comment_wrap .line{position:absolute;bottom:0;left:0;width:100%;height:1px;z-index:-1;background-color:#cccccc;}
+      .book_comment_wrap .nav_ul>li{float:left;margin-right:14px;margin-top:9px;}
+      .book_comment_wrap .nav_ul>li>a{color:#666666;display:block;line-height:26px;}
+      .book_comment_wrap .nav_ul>li>a:hover{border-bottom:2px solid #336699;color:#336699;}
+      .book_comment{padding-bottom:22px;}
+      .comment_list .img_wrap{float:left;}
+      .comment_list .author_info{margin-left:60px;}
+      .comment_list{margin-top:20px;}
+      .comment_list .tit{position:relative;padding-left:5px;margin-bottom:7px;height:25px;line-height:25px;background-color:#f6f6f1;font-size:16px;}
+      .comment_list .tit h5 a{color:#3377aa;}
+      .comment_list .slide{position:absolute;line-height:18px;border:1px solid #daddd8;background-color:white;right:20px;top:5px;width:34px;height:14px;text-align:center;}
+      .comment_list .slide i{display:inline-block;border:5px solid transparent;border-top-color:#a4a3a4;}
+      .comment_list>li{padding-bottom:22px;}
+      .comment_list .txt{line-height:24px;margin-top:15px;margin-bottom:20px;}
+      .comment_list .time_wrap{color:#666666;font-size:12px;}
+      .Tribune_wrap .comment li{line-height:24px;font-size:12px;border-bottom:1px dashed #dddddd;color:#666666;}
+      .Tribune_wrap .commen_content_tit{padding-bottom:10px;border-bottom:1px dashed #dddddd;}
+      .Tribune_wrap .comment li>div{float:left;}
+      .Tribune_wrap .comment .txt{width:214px;}
+      .Tribune_wrap .comment .from{width:194px;}
+      .Tribune_wrap .comment .response{width:65px;}
+
+      .main_right{float:right;width:298px;}
+      .talk_tit{margin-top:83px;margin-bottom:12px;}
+      .download_byCode{margin-bottom:32px;}
+      .download_byCode img{float:left;margin-right:12px;}
+      .download_byCode p{padding-top:12px;line-height:20px;}
+      .commen_getBook_from{padding:0 9px;width:290px;background-color:#f6f6f1;font-size:12px;}
+      .commen_getBook_from .tit{color:#007722;font-size:16px;line-height:40px;}
+
+      .getBook_from{margin-top:27px;}
+      .buy_from_list>li{border-bottom:1px dashed #dddddd;height:28px;padding-top:4px;}
+      .buy_from_list .last-one{border-bottom:1px solid #dddddd;}
+      .buy_from_list>li>a{display:block;height:24px;line-height:24px;color:white;border-radius:3px;}
+      .buy_from_list>li>a:hover{background-color:#f7b779;}
+      .buy_from_list>li>a:hover .cut{display:inline;}
+      .buy_from_list>li>a:hover .buy{display:block;}
+      .buy_from_list .net{float:left;width:91px;padding-left:5px;}
+      .buy_from_list .buy{float:right;display:none;margin-right:10px;margin-top:6px;width:20px;height:14px;background-image:url(images/buy_car.jpg);}
+      .buy_from_list .price{float:left;}
+      .buy_from_list .price .cut{display:none;}
+      .buy_from_list .scan{margin-left:53px;float:left;}
+      .getBook_from .footer{height:39px;}
+      .getBook_from .buys{float:right;line-height:39px;}
+      .getBook_from .add_buy{float:left;border:1px solid #d5bcaa;color:#111111;margin-top:8px;}
+      .borrow_from_wrap {margin-top:20px;}
+      .borrow_from_wrap .libr{padding-bottom:5px;margin-top:5px;border-bottom:1px dashed #d5bcaa;padding-bottom:10px;}
+      .borrow_from_wrap .libr li{line-height:28px;}
+      .borrow_from_wrap .footer{height:32px;line-height:32px;}
+      .borrow_from_wrap .find{float:left;}
+      .borrow_from_wrap .libriary{float:right;}
+        
+      .recomment_tit{float:none;margin-top:23px;margin-bottom:15px;}
+      .recomment_list li{line-height:27px;border-bottom:1px dashed #dddddd;}
+      .read-book_-wrap{margin-top:40px;}
+      .read-book-list{line-height:20px;font-size:12px;}
+      .read-book-list li{padding-top:10px;padding-bottom:10px;border-bottom:1px dashed #dddddd;}
+      .read-book-list li img{float:left;padding-right:10px;}
+      .read-book-list .txt{margin-left:68px;}
+      .num-read-wrap{margin-top:10px;}
+      .num-read-wrap li{line-height:18px;}
+    </style>
+  </head>
+  <body style="background-color:white;">
+    <header class="header">
+      <div class="clearfix">
+        <div class="head_nav_left">
+          <a href="#">豆瓣</a>
+          <a href="#">读书</a>
+          <a href="#">电影</a>
+          <a href="#">音乐</a>
+          <a href="#">同城</a>
+          <a href="#">小组</a>
+          <a href="#">阅读</a>
+          <a href="#">FM</a>
+          <a href="#">东西</a>
+          <a href="#">市集</a>
+          <a href="#">更多</a>
+        </div>
+        <div class="head_right">
+          <ul class="login_ul">
+            <li class="download">
+              <a href="#">下载豆瓣客户端</a>
+              <div class="downLoad_hover">
+                <div class='tit'>
+                  <span></span>
+                  <p>我们的精神角落</p>
+                </div>           
+                <div class="code">
+                  <span></span> 
+                  <p>
+                    <a href="#">iPhone</a> ·
+                    <a href="#">Android</a> ·
+                  </p>              
+                </div>              
+              </div>
+            </li>
+            <li><a href="#">登录</a></li>
+            <li><a href="#">注册</a></li>
+          </ul>        
+        </div>
+      </div>
+      <div class="head_bottom_wrap">
+        <div class="line">
+          <div class="head_search_wrap clearfix">
+            <a href="#" class="logo"></a>
+            <div class="form_wrap">
+              <input type="text">
+              <i class="search"></i>
+            </div>
+          </div> 
+        </div>
+        <ul class="scan_type">
+          <li>
+            <a href="#">分类浏览</a>
+          </li>
+          <li class="buy"><i></i> <a href="#">购书单</a></li>
+          <li><a href="#">电子图书</a></li>
+          <li><a href="#">纸书</a></li>
+        </ul>
+      </div>
+    </header>
+
+    <main class="main_wrap">
+      <div class="main_left">
+        <h2 class="main_top_tit">全球最值得模仿的500个网站</h2>
+        <div class="clearfix">
+          <div class="thing_info">
+            <img class="img_thing" src="images/book.jpg" alt="">
+            <div class="info">
+              <p><h3>作者:</h3> <span class="author">朱印宏</span></p>
+              <p><h3>出版社:</h3> <span>兵器工业</span></p>
+              <p><h3>出版年:</h3> <span>2011-7</span></p>
+              <p><h3>页数:</h3> <span>282</span></p>
+              <p><h3>定价:</h3> <span>39.80元</span></p>
+              <p><h3>ISBN:</h3> <span>97878022486171</span></p>
+            </div>
+          </div>
+          <div class="score_get">
+            <h3 class="tit">豆瓣评分</h3>
+            <div class="score_wrap clearfix">
+              <h4>5.9</h4>
+              <div class="xing score_xing clearfix">
+                <span><i></i><i></i><i></i></span>
+                <p class="num">14人评价</p>
+              </div>
+              
+            </div>
+            <ul class="chart">
+              <li>
+                <h5>5星</h5><i></i> <span>0.0</span>%
+              </li>
+              <li>
+                <h5>4星</h5><i></i> <span>0.0</span>%
+              </li>
+              <li>
+                <h5>3星</h5><i></i> <span>9.0</span>%
+              </li>
+              <li>
+                <h5>2星</h5><i></i> <span>5.0</span>%
+              </li>
+              <li>
+                <h5>1星</h5><i></i> <span>10.0</span>%
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="about_comment clearfix">
+          <div class="read">
+            <a href="#">想读</a>
+            <a href="#">在读</a>
+            <a href="#">读过</a>
+          </div>
+          <div class="comment">
+            <span>评价:</span>
+            <span class="xing">
+              <i></i><i></i><i></i><i></i><i></i><span class="txt"></span>
+            </span>
+          </div>
+        </div>
+        <div class="write_nav_wrap clearfix">
+          <a href="#" class="link write"><i></i> 写笔记</a>
+          <a href="#" class="link write"><i></i> 写书评</a>
+          <a href="#" class="link"><i>$</i>加入购书单</a>
+          <a href="#" class="link"><i></i>分享到</a>
+          <h3><a href="#">推荐</a></h3>
+        </div>
+        <article class="content_info">
+          <h2 class="commen_content_tit">内容简介······</h2>
+          <p>《复制互联网:全球最值得模仿的500个网站》》分类收集了国内外500个创意网站，介绍全球最新型的互联网创业模式，为读者开启互联网致富的新思路。全书包括19章，分别展示了搜索引擎、SNS、Twitter、3D及虚拟化、手机应用、地图服务、电子商务、网店等模式网站，收集了国内新型创业和服务网站、实用工具、休闲旅游类型网站，并就Web2.0、女性化、生活化、实用性等方面的创意进行分类筛选，以及创新工场乳化项目及相关网站。</p>
+          <p>全书网站分类齐全、描述精炼、方便参考。这些创意十足的网站对于准备或已经进行创业的广大读者来说其有很大的参考价值，其中一些网站创意已被不少人借鉴并开始自己的创业。
+          互联网创业是大中学生、年轻人和初学者创业的首选，创业门槛低，投入风险小，特别适合没有资金、没有经验、没有社会关系的年轻人创业。在这里仅需要您具备灵活的大脑和聪明的智慧就足够了，范围分为非威风威风范围分为非威风威风范围分为非违反威风威风威风威风威风威风违法未发放</p>
+          <a class="slide" href="#">(展开全部)</a>
+          <h5 class="advice"><a href="#">举报</a></h5>
+        </article>
+        <article class="content_info content_index">
+          <h2 class="commen_content_tit">内容简介······</h2>
+          <p>
+            第1章 搜索引擎网站 001 脸谱搜索 002 聚合图片搜索 003 在线提醒搜索 004 图形化搜索 005 社会化音乐搜索 006 智能搜索 007 社会化实时信息搜索 008 启发式搜索 009 谷歌深度搜索 010 微博图片搜索 011 生活化位置搜索 012 综合各家搜索引擎技术的混合搜索 013 开放式实时搜索 014 eBay拍卖信息搜索 015 维基百科式搜索 016 撮合式搜索 017 亚马逊商品搜索 018 手机视觉搜索 019 能够提供建议的搜索 020 自由职业搜索 021 专注自然科学的搜索 022 比较搜索 023 人物图片搜索 024 关注新闻报导的搜索 025 预测未来的搜索 026 导购式搜索 027 精准搜索 028 视觉大搜索 029 3D立体搜索 030 购物搜索 031 可视化电子商务搜索 032 可视化电子商务实时搜索 033 社会活动地图搜索 034 商标搜索 035 寻找相似的网站 036 组合搜索服务 037 用画笔搜索图片第2章 SNS社会化应用网站第3章 Twitter模式应用网站第4章 3D及虚拟化应用网站第5章 手机应用网站第6章 地图服务网站第7章 电子商务网站第8章 网上商店及其服务网站第9章 国内新型创业网站第10章 新型服务网站第11章 实用工具网站第12章 休闲旅游网站第13章 Web2.0创意网站第14章 女性创意网站第15章 生活化创意网站第16章 别致实用的创意网站第17章 奇思妙想的创意网站第18章 趣味搞笑的创意网站第19章 创新工场乳化项目及相关网站
+          </p>
+        
+        </article>
+
+        <div class="tags_wrap">
+          <h2 class="commen_content_tit">豆瓣成员常用的标签(共14个)······</h2>
+          <div class="link clearfix">
+            <a href="#">互联网</a>
+            <a href="#">创业</a>
+            <a href="#">网页设计</a>
+            <a href="#">一读而过</a>
+            <a href="#">全球值得模仿的500个网站</a>
+            <a href="#">网络</a>
+            <a href="#">近期</a>
+            <a href="#">~</a>
+          </div>
+        </div>
+        <div class="also_like_book_wrap">
+          <h2 class="commen_content_tit">喜欢读"全球最值得模仿的500个网站"的人也喜欢的电子书  · · · · · ·</h2>
+          <p class="support">支持 Web、iPhone、iPad、Android 阅读器</p>
+          <ul class="clearfix book_list">
+            <li>
+              <a class="type_img" href="#">
+                <img src="images/book.jpg" alt="">
+              </a>
+              <h4 class="tit"><a href="#">技术元素</a></h4>
+              <span class="price">12.00元</span>
+            </li>
+            <li>
+              <a class="type_img" href="#">
+                <img src="images/book.jpg" alt="">
+              </a>
+              <h4 class="tit"><a href="#">浅薄: 互联网如何消化了我们的大脑</a></h4>
+              <span class="price">12.00元</span>
+            </li>
+            <li>
+              <a class="type_img" href="#">
+                <img src="images/book.jpg" alt="">
+              </a>
+              <h4 class="tit"><a href="#">浅薄: 互联网如何消化了我们的大脑</a></h4>
+              <span class="price">12.00元</span>
+            </li>
+            <li>
+              <a class="type_img" href="#">
+                <img src="images/book.jpg" alt="">
+              </a>
+              <h4 class="tit"><a href="#">浅薄: 互联网如何消化了我们的大脑</a></h4>
+              <span class="price">12.00元</span>
+            </li>
+            <li>
+              <a class="type_img" href="#">
+                <img src="images/book.jpg" alt="">
+              </a>
+              <h4 class="tit"><a href="#">浅薄: 互联网如何消化了我们的大脑</a></h4>
+              <span class="price">12.00元</span>
+            </li>
+          </ul>
+        </div>
+        <div class="also_like_book_wrap">
+          <h2 class="commen_content_tit">喜欢读"全球最值得模仿的500个网站"的人也喜欢  · · · · · ·</h2>
+          <p class="support">支持 Web、iPhone、iPad、Android 阅读器</p>
+          <ul class="clearfix book_list">
+            <li>
+              <a class="type_img" href="#">
+                <img src="images/book.jpg" alt="">
+              </a>
+              <h4 class="tit"><a href="#">复制互联网</a></h4>
+             
+            </li>
+            <li>
+              <a class="type_img" href="#">
+                <img src="images/book.jpg" alt="">
+              </a>
+              <h4 class="tit"><a href="#">浅薄: 互联网如何消化了我们的大脑</a></h4>
+         
+            </li>
+            <li>
+              <a class="type_img" href="#">
+                <img src="images/book.jpg" alt="">
+              </a>
+              <h4 class="tit"><a href="#">浅薄: 互联网如何消化了我们的大脑</a></h4>
+        
+            </li>
+            <li>
+              <a class="type_img" href="#">
+                <img src="images/book.jpg" alt="">
+              </a>
+              <h4 class="tit"><a href="#">浅薄: 互联网如何消化了我们的大脑</a></h4>
+       
+            </li>
+            <li>
+              <a class="type_img" href="#">
+                <img src="images/book.jpg" alt="">
+              </a>
+              <h4 class="tit"><a href="#">浅薄: 互联网如何消化了我们的大脑</a></h4>
+        
+            </li>
+            <li>
+              <a class="type_img" href="#">
+                <img src="images/book.jpg" alt="">
+              </a>
+              <h4 class="tit"><a href="#">复制互联网</a></h4>
+             
+            </li>
+            <li>
+              <a class="type_img" href="#">
+                <img src="images/book.jpg" alt="">
+              </a>
+              <h4 class="tit"><a href="#">浅薄: 互联网如何消化了我们的大脑</a></h4>
+         
+            </li>
+            <li>
+              <a class="type_img" href="#">
+                <img src="images/book.jpg" alt="">
+              </a>
+              <h4 class="tit"><a href="#">浅薄: 互联网如何消化了我们的大脑</a></h4>
+        
+            </li>
+            <li>
+              <a class="type_img" href="#">
+                <img src="images/book.jpg" alt="">
+              </a>
+              <h4 class="tit"><a href="#">浅薄: 互联网如何消化了我们的大脑</a></h4>
+       
+            </li>
+            <li>
+              <a class="type_img" href="#">
+                <img src="images/book.jpg" alt="">
+              </a>
+              <h4 class="tit"><a href="#">浅薄: 互联网如何消化了我们的大脑</a></h4>
+        
+            </li>
+          </ul>
+        </div>
+        <div class="clearfix">
+          <h5 class="commen_content_tit all_comments">
+            短评  · · · · · · 
+            <span class="num">(<a href="#">全部6条</a>)</span>
+          </h5>
+          <div class="letMe">我来说两句</div>
+        </div>
+        <p class="change_hot_new">
+          <a href="#">热门</a>/<a href="#">最新</a>/<a href="#">好友</a>
+        </p>
+        <ul class="short_comment">
+          <li>
+            <div class="top-line">
+              <a href="#">zhangcj</a>
+              <span class="score_xing"><i></i><i></i><i></i><i></i><i></i></span>
+              &nbsp<span class="time">2015-12-18</span>
+              <div class="value"><span>0</span> <a href="#">有用</a></div>
+            </div>
+            <p class="comment">尽管好多网站链接都打不开，但好多有想法的网站现已实现尽管好多网站链接都打不开，但好多有想法的网站现已实现。</p>
+          </li>
+          <li>
+            <div class="top-line">
+              <a href="#">zhangcj</a>
+              <span class="score_xing"><i></i><i></i><i></i><i></i><i></i></span>
+              &nbsp<span class="time">2015-12-18</span>
+              <div class="value"><span>0</span> <a href="#">有用</a></div>
+            </div>
+            <p class="comment">尽管好多网站链接都打不开，但好多有想法的网站现已实现尽管好多网站链接都打不开，但好多有想法的网站现已实现。</p>
+          </li>
+          <li>
+            <div class="top-line">
+              <a href="#">zhangcj</a>
+              <span class="score_xing"><i></i><i></i><i></i><i></i><i></i></span>
+              &nbsp<span class="time">2015-12-18</span>
+              <div class="value"><span>0</span> <a href="#">有用</a></div>
+            </div>
+            <p class="comment">尽管好多网站链接都打不开，但好多有想法的网站现已实现尽管好多网站链接都打不开，但好多有想法的网站现已实现。</p>
+          </li>
+          <li>
+            <div class="top-line">
+              <a href="#">zhangcj</a>
+              <span class="score_xing"><i></i><i></i><i></i><i></i><i></i></span>
+              &nbsp<span class="time">2015-12-18</span>
+              <div class="value"><span>0</span> <a href="#">有用</a></div>
+            </div>
+            <p class="comment">尽管好多网站链接都打不开，但好多有想法的网站现已实现尽管好多网站链接都打不开，但好多有想法的网站现已实现。</p>
+          </li>
+          <li>
+            <div class="top-line">
+              <a href="#">zhangcj</a>
+              <span class="score_xing"><i></i><i></i><i></i><i></i><i></i></span>
+              &nbsp<span class="time">2015-12-18</span>
+              <div class="value"><span>0</span> <a href="#">有用</a></div>
+            </div>
+            <p class="comment">尽管好多网站链接都打不开，但好多有想法的网站现已实现尽管好多网站链接都打不开，但好多有想法的网站现已实现。</p>
+          </li>
+          <li>
+            <div class="top-line">
+              <a href="#">zhangcj</a>
+              <span class="score_xing"><i></i><i></i><i></i><i></i><i></i></span>
+              &nbsp<span class="time">2015-12-18</span>
+              <div class="value"><span>0</span> <a href="#">有用</a></div>
+            </div>
+            <p class="comment">尽管好多网站链接都打不开，但好多有想法的网站现已实现尽管好多网站链接都打不开，但好多有想法的网站现已实现。</p>
+          </li>
+        </ul>
+        <div class="book_comment_wrap">
+          <h3 class="commen_content_tit book_comment">书评······</h3>
+          <div class="clearfix wrap">
+            <ul class="nav_ul">
+              <li><a href="#">热门评论</a></li>
+              <li><a href="#">最新评论</a></li>            
+            </ul>
+            <div class="letMe">我来评论这本书</div>
+            <div class="line"></div>
+          </div>
+          <ul class="comment_list">
+            <li>
+              <span class="img_wrap"><img src="images/author_img.jpg" alt=""></span>
+              <div class="author_info">
+                <div class="tit">
+                  <h5><a href="#">这本书看目录就够了</a></h5>
+                  <span class="slide"><i></i></span>
+                </div>
+                <a href="#">扁骰子</a> 
+                <span class="score_xing">
+                  <i></i><i></i><i></i><i></i><i></i>
+                </span>
+              </div>
+              <p class="txt">这书应该不出三个月就过时了吧，况且很多国外网站是我们无福享受的。 网站流行不起来的原因有很多：要么是创意不够好；要么是即便创意很好，但技术跟不上，很典型的一个是visualdomains，其难用无比！！！ 另外，很多生活应............ </p>
+              <p class="time_wrap">
+                <span>2011-8-07 11:52</span>&nbsp&nbsp<span>2/3有用</span>
+              </p>
+            </li>
+            <li>
+              <span class="img_wrap"><img src="images/author_img.jpg" alt=""></span>
+              <div class="author_info">
+                <div class="tit">
+                  <h5><a href="#">这本书看目录就够了</a></h5>
+                  <span class="slide"><i></i></span>
+                </div>
+                <a href="#">扁骰子</a> 
+                <span class="score_xing">
+                  <i></i><i></i><i></i><i></i><i></i>
+                </span>
+              </div>
+              <p class="txt">这书应该不出三个月就过时了吧，况且很多国外网站是我们无福享受的。 网站流行不起来的原因有很多：要么是创意不够好；要么是即便创意很好，但技术跟不上，很典型的一个是visualdomains，其难用无比！！！ 另外，很多生活应............ </p>
+              <p class="time_wrap">
+                <span>2011-8-07 11:52</span>&nbsp&nbsp<span>2/3有用</span>
+              </p>
+            </li>
+          </ul>
+        </div>
+        <div class="book_comment_wrap">
+          <h3 class="commen_content_tit book_comment">读书笔记······</h3>
+          <div class="clearfix wrap">
+            <ul class="nav_ul">
+              <li><a href="#">按有用程度</a></li>
+              <li><a href="#">按页面先后</a></li>   
+              <li><a href="#">最新笔记</a></li>         
+            </ul>
+            <div class="letMe">我来写笔记</div>
+            <div class="line"></div>
+          </div>
+          <ul class="comment_list">
+            <li>
+              <span class="img_wrap"><img src="images/author_img.jpg" alt=""></span>
+              <div class="author_info">
+                <div class="tit">
+                  <h5><a href="#">第一页</a></h5>
+                  <span class="slide"><i></i></span>
+                </div>
+                <a href="#">cancan (心安既是归处)</a> 
+                <span class="score_xing">
+                  <i></i><i></i><i></i><i></i><i></i>
+                </span>
+              </div>
+              <p class="txt">在线提醒搜索 http://alertpedia.com/ 区别于直接搜索引擎，可以按照用户设定的关键词和类别，定期自动搜索并过滤，以邮件的形式对用户进行提醒。 社会化音乐搜索 http://www.songza.com/ 专业的音乐搜索引擎，搜索的结果会根据网友的投票进行排序，增加了结果的社会性。 搜索引擎最大的敌人——大量的垃圾信息 移动搜索技术——用户地理位置定位。类似于百度地图，然后搜索到各种周边信息。 开放性、实时搜索是互联网...</p>
+              <p class="time_wrap">
+                <span>2011-8-07 11:52</span>&nbsp&nbsp<span>2/3有用</span>
+              </p>
+            </li>
+            <li>
+              <span class="img_wrap"><img src="images/author_img.jpg" alt=""></span>
+              <div class="author_info">
+                <div class="tit">
+                  <h5><a href="#">这本书看目录就够了</a></h5>
+                  <span class="slide"><i></i></span>
+                </div>
+                <a href="#">扁骰子</a> 
+                <span class="score_xing">
+                  <i></i><i></i><i></i><i></i><i></i>
+                </span>
+              </div>
+              <p class="txt">这书应该不出三个月就过时了吧，况且很多国外网站是我们无福享受的。 网站流行不起来的原因有很多：要么是创意不够好；要么是即便创意很好，但技术跟不上，很典型的一个是visualdomains，其难用无比！！！ 另外，很多生活应............ </p>
+              <p class="time_wrap">
+                <span>2011-8-07 11:52</span>&nbsp&nbsp<span>2/3有用</span>
+              </p>
+            </li>
+          </ul>
+        </div>
+        <div class="Tribune_wrap">
+          <h3 class="commen_content_tit">论坛······</h3>
+          <ul class="comment">
+            <li class="clearfix">
+              <div class="txt"><a href="#">这书的节操在哪。。。</a></div>
+              <div class="from">来自<a href="#">这书的节操在哪。。。</a></div>
+              <div class="response">1回应</div>
+              <div>2012-09-22</div>
+            </li>
+            <li class="clearfix">
+              <div class="txt"><a href="#">这书的节操在哪。。。</a></div>
+              <div class="from">来自<a href="#">这书的节操在哪。。。</a></div>
+              <div class="response">1回应</div>
+              <div>2012-09-22</div>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="main_right">
+        <h2 class="commen_content_tit talk_tit">在豆瓣App讨论这本书 · · · · · ·</h2>
+        <div class="download_byCode clearfix">
+          <img src="images/code.jpg" alt="">
+          <p>用豆瓣App扫码，找人聊聊这本书。没有豆瓣App？ <a href="#">去下载</a></p>
+        </div>
+        <div>
+          <img src="images/adver_building.jpg" alt="">
+        </div>
+        <div class="commen_getBook_from getBook_from">
+          <h2 class="tit">在哪儿买这本书？</h2>
+          <ul class="buy_from_list">
+            <li>
+              <a href="#">
+                <div class="net">京东商城</div>
+                <div class="price"><span>34.5元</span>&nbsp&nbsp<span class="cut">节省4.0</span></div>
+                <div class="buy"></div>
+              </a>
+            </li>
+            <li>
+              <a href="#">
+                <div class="net">当当网</div>
+                <div class="price"><span>34.5元</span>&nbsp&nbsp<span class="cut">节省4.0</span></div>
+                <div class="buy"></div>
+              </a>
+            </li>
+            <li>
+              <a href="#">
+                <div class="net">亚马逊</div>
+                <div class="price"><span>34.5元</span>&nbsp&nbsp<span class="cut">节省4.0</span></div>
+                <div class="buy"></div>
+              </a>
+            </li>
+            <li>
+              <a href="#">
+                <div class="net">中国图书网</div>
+                <div class="price"><span>34.5元</span>&nbsp&nbsp<span class="cut">节省4.0</span></div>
+                <div class="buy"></div>
+              </a>
+            </li>
+            <li>
+              <a href="#">
+                <div class="net">淘书网</div>
+                <div class="price"><span>34.5元</span>&nbsp&nbsp<span class="cut">节省4.0</span></div>
+                <div class="buy"></div>
+              </a>
+            </li>
+            <li class="last-one">
+              <a href="#">
+                <div class="scan">查看5家网店价格（19.90元起）</div>
+                <div class="buy"></div>
+              </a>
+            </li>
+          </ul>
+          <div class="footer">
+            <a href="#" class="letMe add_buy">加入购书单</a>
+            <p class="buys">多本比价，批量购买</p>
+          </div>
+        </div>
+        <div class="commen_getBook_from borrow_from_wrap">
+          <h2 class="tit">在哪儿买这本书？</h2>
+          <ul class="libr">
+            <li>
+              <a href="#">上海市中心图书馆(8)</a>
+            </li>
+            <li>
+              <a href="#">广州图书馆(2)</a>
+            </li>
+            <li>
+              <a href="#">沈阳师范大学图书馆</a>
+            </li>
+            <li>
+              <a href="#">温州市图书馆</a>
+            </li>
+          </ul>
+          <div class="footer">
+            <p class="find">找不到你需要的图书馆</p>
+            <a class="libriary" href="#">图书馆合作</a>
+          </div>
+        </div>
+
+        <div>
+          <h2 class="commen_content_tit all_comments recomment_tit">
+            以下豆列推荐······(<a href="#">全部</a>)
+          </h2>
+          <ul class="recomment_list">
+            <li>
+              <a href="#">2013年读书记录</a>(cancan)
+            </li>
+            <li>
+              <a href="#">网站设计</a>(喵~~~~)
+            </li>
+            <li>
+              <a href="#">网站设计</a>(喵~~~~)
+            </li>
+            <li>
+              <a href="#">网站设计</a>(喵~~~~)
+            </li>
+            <li>
+              <a href="#">网站设计</a>(喵~~~~)
+            </li>
+          </ul>
+        </div>
+        <div class="read-book-wrap">
+          <h2 class="commen_content_tit">读读这本书？</h2>
+          <ul class="read-book-list">
+            <li>
+              <img src="images/want_book.jpg" alt="">
+              <div class="txt">
+                <h4><a href="#">米科密西</a></h4>
+                <p>1月27日 想读</p>
+                <p>tags:全球值得模仿的500个网站</p>
+              </div>
+            </li>
+            <li>
+              <img src="images/want_book.jpg" alt="">
+              <div class="txt">
+                <h4><a href="#">米科密西</a></h4>
+                <p>1月27日 想读</p>
+                <p>tags:全球值得模仿的500个网站tags:全球值得模仿的500个网站tags:全球值得模仿的500个网站tags:全球值得模仿的500个网站</p>
+              </div>
+            </li>
+            <li>
+              <img src="images/want_book.jpg" alt="">
+              <div class="txt">
+                <h4><a href="#">米科密西</a></h4>
+                <p>1月27日 想读</p>
+                <p>tags:全球值得模仿的500个网站tags:全球值得模仿的500个网站tags:全球值得模仿的500个网站tags:全球值得模仿的500个网站</p>
+              </div>
+            </li>
+          </ul>
+          <ul class="num-read-wrap">
+            <li>> <a href="#">6人在读</a></li>
+            <li>> <a href="#">17人读过</a></li>
+            <li>> <a href="#">49人想读</a></li>
+          </ul>
+        </div>
+      </div>
+    </main>
+  </body>
+</html>
+</html>
