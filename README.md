@@ -1,7 +1,3 @@
-# admin
-页面
-demo
-http://htmlpreview.github.io/?https://github.com/ann-ren/admin/blob/master/qiantu/index.html
 
-2
-http://htmlpreview.github.io/?https://github.com/ann-ren/admin/blob/master/zhiyuanyun/html/zhiyuanyun/index.html
+            https://ann-ren.github.io/admin/xiaomi/index.html">模拟小米
+        https://ann-ren.github.io/admin/qiantu/index.html">模拟千图网
