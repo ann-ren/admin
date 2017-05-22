@@ -1,0 +1,27 @@
+.clearfix{*zome:1;}
+.clearfix:after{content:" ";display:block;height:0;clear:both;}
+body{font-size:14px;}
+/*banner start*/
+.bannerWrap{overflow: hidden;position: relative;}
+.bannerWrap>ul li{display:table-cell;}
+.bannerWrap>ul li img{width:100%;display: block;}
+.bannerIcon{position: absolute;bottom: 0.2rem;width:100%;text-align:center;}
+.bannerIcon span{display: inline-block;width:0.05rem;height: 0.05rem;border-radius: 100%;background: green;}
+.swiper-container img{width:100%;}
+/*banner end*/
+.linkList{padding:0 0.1rem;}
+.linkList>ul{display: flex;-webkit-justify-content:space-between;justify-content:space-between;;flex-wrap:wrap;display: -webkit-flex;}
+.linkList li{width:24%;margin-top:0.08rem;box-sizing:border-box;text-align:center;color:#666666;}
+.linkList li a{display: block;background: rgb(234,223,191);color:#666;height:0.34rem;line-height: 0.34rem;border-radius: 5px;}
+
+/*瀑布流*/
+.imgList{position: relative;margin-top:0.15rem;}
+.imgList .pic{position: absolute;width:50%;padding:0 10px 10px 0;box-sizing:border-box;}
+.imgList .pic a{display: block;max-height: 300px;overflow: hidden;}
+.imgList .pic img{width:100%;}
+
+.footer{position: fixed;align-items:center;background: white;width:100%;bottom: 0px;height:1rem;display: flex;text-align: center;}
+.footer>div{flex:1;}
+.footer i{font-size:24px;}
+.footer .txt{margin-top:0.07rem;}
+
