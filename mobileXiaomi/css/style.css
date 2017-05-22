@@ -1,0 +1,58 @@
+.clearfix{*zome:1;}
+.clearfix:after{content:" ";display:block;height:0;clear:both;}
+.w100{width:100%;display: block;}
+body{font-size:14px;}
+.price{color:#ff6000;font-size: 16px;}
+.swiper-container img{width:100%;}
+
+.main{padding-bottom:0.68rem;}
+
+.header{position: fixed;top:0;left:0;z-index: 1000;}
+.header-content{display: flex;padding: 0.1rem 0.2rem;line-height: 0.5rem;}
+.search-wrap{position: relative;width:4.65rem;height:0.5rem;}
+.search-wrap input{display: block;width:100%;height:100%;border-radius: 0.05rem;border:1px solid #ddd;text-indent:0.1rem;}
+.search-wrap .search{position: absolute;left:0.24rem;}
+.header .login{margin-left:0.2rem;white-space:nowrap;}
+.logo{margin-right:0.2rem;margin-top:0.1rem;}
+.logo img{width:0.45rem;}
+.login{color:white;}
+
+.report{display: flex;height:0.7rem;line-height: 0.7rem;}
+.report .tit{margin-left:0.2rem;margin-right:0.2rem;font-weight: bold;color:orange;}
+.report .txt{padding-left:0.1rem;}
+.phoneImg{margin-bottom:0.14rem;height:4.52rem;overflow: hidden;}
+.phoneImg>div{flex:1;justify-content:space-between;}
+.phoneImg img{width:3.18rem;}
+
+.productWrap{display: flex;flex-wrap:wrap;justify-content:space-between;}
+.productWrap>div{width:3.18rem;position: relative;}
+.productWrap img{width:100%;}
+.productWrap .txt{padding-left:0.14rem;padding-top:0.2rem;padding-bottom:0.2rem;}
+.productWrap .info{line-height: 0.6rem;}
+.productWrap .tit{font-size:16px;}
+.productWrap .price{color:#ff6000;font-size:16px;}
+.productWrap .tag{position: absolute;left:0;top:0;width:52px;height:22px;text-align: center;line-height:22px;color:white;background: rgb(137,193,74);}
+
+.moreProduct{height:0.88rem;line-height: 0.88rem;text-align: center;font-size: 14px;border-top:1px solid #ddd;border-bottom:1px solid #ddd;}
+
+/*米家智能*/
+.flex_w50{display: flex;flex-wrap: wrap;}
+.intelligent>div{width:50%;}
+.intelligent img{width:100%;display: block;}
+.intelligent .info{box-sizing:border-box;padding-left:0.27rem;padding-top:0.66rem;}
+.intelligent .tit{font-size:18px;margin-bottom: 5px;}
+.intelligent .txt{font-size:14px;color:#666;line-height: 20px;}
+.intelligent .price{font-size:16px;color:#ff6000;margin-top:10px;}
+
+.moreIntelligentProduct{justify-content: space-between;}
+.moreIntelligentProduct img{width:100%;display: block;}
+.moreIntelligentProduct>div{width:3.182rem;}
+
+.imProducts img{width:100%;}
+.imProducts .info{display: flex;padding:0.2rem;justify-content: space-between;}
+.imProducts .info h3{margin-bottom:5px;}
+.imProducts .price{text-align: right;}
+.footer{position: fixed;bottom:0;width:100%;background:white;display: flex;height:0.68rem;text-align: center;align-items:center;border-top:1px solid #ddd;}
+.footer>div{flex:1;font-size: 0.16rem;}
+.footer i{font-size:0.3rem;margin-bottom:0.05rem;}
+.footer>div:first-child{color:#FF5722;}
