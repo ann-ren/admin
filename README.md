@@ -14,3 +14,5 @@ https://ann-ren.github.io/admin/mobileQiantu/index.html
 https://ann-ren.github.io/admin/mobileXiaomi/index.html
 
 https://ann-ren.github.io/admin/tourism/index.html
+
+https://ann-ren.github.io/admin/huaban/index.html
