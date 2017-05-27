@@ -15,4 +15,4 @@ https://ann-ren.github.io/admin/mobileXiaomi/index.html 使用手机浏览
 
 https://ann-ren.github.io/admin/tourism/index.html   使用手机浏览
 
-https://ann-ren.github.io/admin/huaban/index.html
+https://ann-ren.github.io/admin/huaban/index.html  使用手机浏览
